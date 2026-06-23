@@ -1,3 +1,5 @@
+import type { Investment } from "../../types/Investment";
+
 interface InvestmentCardProps {
   item: Investment;
 }

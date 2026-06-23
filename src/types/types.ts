@@ -3,7 +3,7 @@ import type { IconType } from "react-icons";
 
 export interface TabItem {
   label: string;
-  icon?: React.ReactNode;
+  icon?: React.ElementType;
 }
 
 export interface ListingCardData {
