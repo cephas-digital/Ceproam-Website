@@ -13,7 +13,7 @@ const ListingSection = ({
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <section className=" px-6 py-20 md:px-16">
+    <section className=" px-6 py-20 max-w-8xl lg:px-28 md:px-14 mx-auto">
       {/* Header */}
       <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div>

@@ -10,6 +10,8 @@ import {
   investments,
   investmentTabs,
 } from "../data/investmentData";
+import BlogCard from "../components/home/Blog-card";
+import { blogs } from "../data/blog";
 import ListingSection from "../components/listing/ListingSection";
 import { featuredCards, featuredTabs } from "../data/featuredData";
 import { FeatureGridSection } from "../components/ui/FeaturedGrid";
@@ -17,9 +19,11 @@ import { services } from "../data/services";
 import { whyCepromas } from "../data/why-cepromas";
 import { investmentPillars } from "../data/investment-pillars";
 import TestimonialsSection from "../components/home/Testimonialsection";
+import Stats from "../components/home/Stats";
 
 import { FaCheckCircle } from "react-icons/fa";
 import Footer from "../components/shared/Footer";
+import ConsultationSection from "../components/home/Consultation-request";
 
 const Home = () => {
   const [activeFilter, setActiveFilter] = useState("All Listings");
@@ -44,8 +48,7 @@ const Home = () => {
     <div className="font-Outfit">
       <HeroSlider />
 
-      <section className="bg-[#F7F7FB] px-6 py-20 md:px-16">
-        {/* Header */}
+      {/* <section className="bg-[#F7F7FB] px-6 py-20 max-w-7xl mx-auto">
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <h2 className="text-4xl font-bold text-[#021D49]">
@@ -63,7 +66,6 @@ const Home = () => {
           </button>
         </div>
 
-        {/* Filters */}
         <div className="mt-12">
           <FilterTabs
             activeTab={activeFilter}
@@ -71,7 +73,6 @@ const Home = () => {
           />
         </div>
 
-        {/* Cards */}
         <div className="mt-12 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
           {filteredInvestments.map((item) => (
             <InvestmentCard
@@ -80,7 +81,7 @@ const Home = () => {
             />
           ))}
         </div>
-      </section>
+      </section> */}
 
       <ListingSection
         title="Investment Opportunities"
@@ -122,7 +123,7 @@ const Home = () => {
       />
 
       <section className="bg-[#FAF9FE] py-20">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-12 px-6 lg:flex-row lg:justify-between">
+        <div className="mx-auto flex max-w-7xl flex-col items-center gap-12 px-6 lg:flex-row lg:justify-between">
           {/* Content */}
           <div className="max-w-xl">
             <h2 className="mb-6 text-4xl font-bold leading-tight text-[#00193C]">
@@ -152,7 +153,6 @@ const Home = () => {
             </button>
           </div>
 
-          {/* Image */}
           <div className="group relative">
             <div className="absolute inset-0 translate-y-8 " />
 
@@ -165,7 +165,51 @@ const Home = () => {
         </div>
       </section>
 
+      <Stats />
+
       <TestimonialsSection />
+
+      <section className="bg-[#F5F5F7] py-24">
+        <div className="mx-auto max-w-7xl md:px-0 px-6 ">
+          <div className="mb-12 flex items-center justify-between">
+            <div>
+              <h2 className="text-4xl font-bold text-[#00193C]">
+                Recent Blogs
+              </h2>
+
+              <p className="mt-2 text-[#4A5568]">
+                Stay updated with the latest trends in real estate and
+                agribusiness.
+              </p>
+            </div>
+
+            <a
+              href="/blog"
+              className="
+              text-sm
+              font-semibold
+              text-[#FF6000]
+              transition-colors
+              hover:text-[#E85F00]
+            "
+            >
+              Read All Posts
+            </a>
+          </div>
+
+          {/* Cards */}
+          <div className="grid gap-6 lg:grid-cols-3">
+            {blogs.map((post) => (
+              <BlogCard
+                key={post.id}
+                post={post}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <ConsultationSection />
 
       <Footer />
     </div>

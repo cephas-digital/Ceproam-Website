@@ -12,7 +12,7 @@ import {
 export default function Footer() {
   return (
     <footer className="relative bg-[#F3F3F6]">
-      <div className="mx-auto max-w-7xl px-6 py-16">
+      <div className="mx-auto max-w-7xl md:px-0 px-6 py-16">
         <div className="grid gap-12 lg:grid-cols-[280px_220px_220px_280px] lg:justify-between">
           <div>
             <img

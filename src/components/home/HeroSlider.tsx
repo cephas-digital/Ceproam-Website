@@ -67,7 +67,7 @@ const HeroSlider = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="relative font-Outfit h-[870px] w-full">
+    <section className="relative font-Outfit w-full">
       <Swiper
         modules={[Autoplay, Pagination]}
         autoplay={{ delay: 4000, disableOnInteraction: false }}

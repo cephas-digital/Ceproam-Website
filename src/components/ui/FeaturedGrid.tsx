@@ -9,7 +9,7 @@ export function FeatureGridSection({
   const styles = {
     light: {
       section: "bg-[#F4F3F8]",
-      card: "",
+      card: "transition-all duration-300 ease-out hover:scale-105 hover:border-l-4 hover:border-t-4 hover:border-[#00193C] hover:shadow-[-8px_-8px_20px_rgba(59,130,246,0.3)] rounded-lg",
       iconWrapper: "bg-[#00193C0D] mx-auto",
       title: "text-[#00193C]",
       text: "text-slate-500",
@@ -18,7 +18,7 @@ export function FeatureGridSection({
 
     dark: {
       section: "bg-gradient-to-t from-[#00193C] to-[#0044A2]",
-      card: "bg-white/2 border border-white/10 rounded-2xl p-6",
+      card: "bg-white/2 border border-white/10 rounded-2xl p-6 transition-all duration-300 ease-out hover:scale-105 hover:border-l-4 hover:border-t-4 hover:border-b[#00193C] hover:shadow-[-8px_-8px_20px_rgba(147,197,253,0.4)]",
       iconWrapper: "text-orange-500 font-bold w-20",
       title: "text-white",
       text: "text-slate-300",
@@ -27,7 +27,7 @@ export function FeatureGridSection({
 
     compact: {
       section: "bg-[#F4F3F8]",
-      card: "bg-white rounded-xl p-6 shadow-sm",
+      card: "bg-white rounded-xl p-6 shadow-sm transition-all duration-300 ease-out hover:scale-105 hover:border-l-4 hover:border-t-4 hover:border-[#00193C] hover:shadow-[-8px_-8px_20px_rgba(59,130,246,0.3)]",
       iconWrapper: "text-orange-500 mx-auto font-bold",
       title: "text-[#00193C]",
       text: "text-slate-500",
@@ -39,7 +39,7 @@ export function FeatureGridSection({
 
   return (
     <section className={`${current.section} py-20`}>
-      <div className="mx-auto max-w-8xl lg:px-28 md:px-20  px-6">
+      <div className="mx-auto w-full lg:px-28 ">
         <div className="mb-14 text-center">
           <h2 className={`text-4xl font-bold ${current.title}`}>{title}</h2>
 

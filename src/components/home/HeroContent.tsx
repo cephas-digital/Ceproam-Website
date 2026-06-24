@@ -15,7 +15,7 @@ interface HeroContentProps {
 
 const HeroContent = ({
   backgroundImage,
-  overlayClassName = "bg-[#00193CE5]",
+  overlayClassName = "",
   overlayStyle,
   title,
   // subtitle,
@@ -42,15 +42,15 @@ const HeroContent = ({
         />
       )}
 
-      <div className="relative z-10 py-4 flex h-full flex-col items-center mx-auto justify-center px-4 text-center">
+      <div className="relative z-10 flex h-screen w-full flex-col items-center justify-center px-4 py-12 text-center lg:py-4">
         <div
-          className={`max-w-6xl transform transition-all duration-800 ${
+          className={`max-w-2xl transform transition-all duration-800 sm:max-w-4xl lg:max-w-6xl ${
             isActive
               ? "opacity-100 translate-y-0 scale-100"
               : "opacity-0 translate-y-6 scale-95"
           }`}
         >
-          <h1 className="text-3xl font-bold  text-white md:text-6xl">
+          <h1 className="text-2xl font-bold text-white sm:text-4xl md:text-5xl lg:text-6xl">
             {title ? (
               Array.isArray(title) ? (
                 title.map((part, i) => (
@@ -76,17 +76,17 @@ const HeroContent = ({
 
           {/* {subtitle && <h2 className="mt-4 text-lg text-white">{subtitle}</h2>} */}
 
-          <p className="mt-6 max-w-4xl text-sm leading-7 mx-auto text-white md:text-lg">
+          <p className="mt-4 text-xs leading-6 text-white sm:text-sm sm:leading-7 md:mt-6 md:text-base lg:text-lg">
             {description ??
               "We bridge the gap between owners seeking seamless management and tenants seeking quality spaces. Creating a property experience built on trust, clarity and mutual value."}
           </p>
 
-          <div className="mt-8 flex flex-col mx-auto justify-center items-center gap-4 md:flex-row">
-            <button className="rounded-md bg-orange-500 px-8 py-4 font-semibold text-white">
+          <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:gap-4 md:mt-8 md:flex-row">
+            <button className="w-full rounded-md bg-orange-500 px-6 py-3 font-semibold text-white sm:w-auto sm:px-8 sm:py-4">
               Invest Now
             </button>
 
-            <button className="rounded-md border border-white px-8 py-4 font-semibold text-white">
+            <button className="w-full rounded-md border border-white px-6 py-3 font-semibold text-white sm:w-auto sm:px-8 sm:py-4">
               Explore Listings
             </button>
           </div>

@@ -84,3 +84,18 @@ export interface Testimonial {
   initials: string;
   review: string;
 }
+
+export interface BlogPost {
+  id: number;
+  title: string;
+  category: string;
+  excerpt: string;
+  image: string;
+  href: string;
+}
+
+export interface ConsultationForm {
+  fullName: string;
+  email: string;
+  interest: string;
+}

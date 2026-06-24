@@ -4,18 +4,17 @@ import { FaStar } from "react-icons/fa";
 
 import { testimonials } from "../../data/testimonial";
 
-export default function TestimonialsSection() {
+export default function Blog() {
   return (
     <section className="bg-[#ffffff]">
-      <div className="mx-auto max-w-7xl md:px-0 px-6 py-16">
+      <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="mt-24">
           <div className="text-center">
-            <h2 className="text-4xl font-bold text-[#0A2540]">
-              What Our Partners and Clients Say
-            </h2>
+            <h2 className="text-4xl font-bold text-[#0A2540]">Recent Blogs</h2>
 
             <p className="mt-3 text-slate-500">
-              Real stories from real investors who have built wealth with{" "}
+              Stay updated with the latest trends in real estate and
+              agribusiness.
               <span className="font-semibold">CEPROAM.</span>
             </p>
           </div>
