@@ -1,15 +1,8 @@
 // import Button from "../components/ui/Button";
-import { useMemo, useState } from "react";
 import HeroSlider from "../components/home/HeroSlider";
-import FilterTabs from "../components/home/Filtertab";
 import AboutSection from "../components/home/Aboutus";
-import InvestmentCard from "../components/home/InvestmentCard";
 import LandAppreciation from "../assets/images/Land appreciation and growth.png";
-import {
-  investmentCards,
-  investments,
-  investmentTabs,
-} from "../data/investmentData";
+import { investmentCards, investmentTabs } from "../data/investmentData";
 import BlogCard from "../components/home/Blog-card";
 import { blogs } from "../data/blog";
 import ListingSection from "../components/listing/ListingSection";
@@ -26,18 +19,6 @@ import Footer from "../components/shared/Footer";
 import ConsultationSection from "../components/home/Consultation-request";
 
 const Home = () => {
-  const [activeFilter, setActiveFilter] = useState("All Listings");
-
-  const filteredInvestments = useMemo(
-    () =>
-      activeFilter === "All Listings"
-        ? investments
-        : investments.filter(
-            (investment) => investment.category === activeFilter,
-          ),
-    [activeFilter],
-  );
-
   const benefits = [
     "Strategic acquisition in high-growth corridors.",
     "Hedge against inflation with tangible assets.",

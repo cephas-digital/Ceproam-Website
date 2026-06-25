@@ -1,6 +1,7 @@
 // components/ConsultationSection.tsx
 
-import { useState, ChangeEvent, FormEvent } from "react";
+import { useState } from "react";
+import type { ChangeEvent, FormEvent } from "react";
 import { Users } from "lucide-react";
 import TA from "../../assets/images/Team.png";
 import TAtwo from "../../assets/images/Team (1).png";
