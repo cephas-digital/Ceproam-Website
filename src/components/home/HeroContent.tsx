@@ -42,7 +42,7 @@ const HeroContent = ({
         />
       )}
 
-      <div className="relative z-10 flex h-screen w-full flex-col items-center justify-center px-4 py-12 text-center lg:py-4">
+      <div className="relative z-10 flex h-screen w-full flex-col items-center justify-start px-4 pt-24 pb-12 text-center lg:justify-center lg:py-4 lg:pt-0">
         <div
           className={`max-w-2xl transform transition-all duration-800 sm:max-w-4xl lg:max-w-6xl ${
             isActive
@@ -50,7 +50,7 @@ const HeroContent = ({
               : "opacity-0 translate-y-6 scale-95"
           }`}
         >
-          <h1 className="text-2xl font-bold text-white sm:text-4xl md:text-5xl lg:text-6xl">
+          <h1 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl lg:text-6xl">
             {title ? (
               Array.isArray(title) ? (
                 title.map((part, i) => (

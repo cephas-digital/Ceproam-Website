@@ -2,9 +2,9 @@ import { stats } from "../../data/testimonial";
 
 const Stats = () => {
   return (
-    <section className=" bg-[#F6F6F8] py-8">
-      <div className=" max-w-7xl mx-auto">
-        <div className="grid gap-6 md:grid-cols-3">
+    <section className=" bg-[#F6F6F8] py-12">
+      <div className=" max-w-7xl mx-auto md:px-0 px-6">
+        <div className="grid gap-10 md:grid-cols-3">
           {stats.map((stat) => {
             const Icon = stat.icon;
 

@@ -39,7 +39,7 @@ export function FeatureGridSection({
 
   return (
     <section className={`${current.section} py-20`}>
-      <div className="mx-auto w-full lg:px-28 ">
+      <div className="mx-auto w-full lg:px-28 md:px-14 px-6 ">
         <div className="mb-14 text-center">
           <h2 className={`text-4xl font-bold ${current.title}`}>{title}</h2>
 
