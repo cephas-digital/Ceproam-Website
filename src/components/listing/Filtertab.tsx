@@ -8,7 +8,7 @@ interface FilterTabsProps {
 
 const FilterTabs = ({ tabs, activeTab, setActiveTab }: FilterTabsProps) => {
   return (
-    <div className="flex flex-wrap gap-4">
+    <div className="flex md:overflow-x-hidden overflow-x-scroll gap-4">
       {tabs.map((tab, index) => {
         const Icon = tab.icon;
 
@@ -16,11 +16,11 @@ const FilterTabs = ({ tabs, activeTab, setActiveTab }: FilterTabsProps) => {
           <button
             key={tab.label + index}
             onClick={() => setActiveTab(index)}
-            className={`flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-all
+            className={`flex items-center lg:w-auto md:w-auto min-w-[160px] gap-2 rounded-full px-6 py-3 text-lg font-medium transition-all
               ${
                 activeTab === index
                   ? "bg-[#021D49] text-white"
-                  : "border border-gray-300 bg-white text-gray-700"
+                  : "border border-[#C4C6D1] bg-white text-gray-700"
               }
             `}
           >

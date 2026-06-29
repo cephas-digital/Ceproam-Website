@@ -50,7 +50,7 @@ const HeroContent = ({
               : "opacity-0 translate-y-6 scale-95"
           }`}
         >
-          <h1 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl lg:text-6xl">
+          <h1 className="text-3xl font-bold text-white  md:text-5xl lg:text-6xl">
             {title ? (
               Array.isArray(title) ? (
                 title.map((part, i) => (
@@ -74,25 +74,27 @@ const HeroContent = ({
             )}
           </h1>
 
-          {/* {subtitle && <h2 className="mt-4 text-lg text-white">{subtitle}</h2>} */}
-
           <p className="mt-4 text-xs leading-6 text-white sm:text-sm sm:leading-7 md:mt-6 md:text-base lg:text-lg">
             {description ??
               "We bridge the gap between owners seeking seamless management and tenants seeking quality spaces. Creating a property experience built on trust, clarity and mutual value."}
           </p>
 
-          <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:gap-4 md:mt-8 md:flex-row">
-            <button className="w-full rounded-md bg-orange-500 px-6 py-3 font-semibold text-white sm:w-auto sm:px-8 sm:py-4">
+          <div className="mt-6 flex w-full flex-col items-center justify-center gap-3 sm:gap-4 md:mt-8 md:flex-row">
+            <button className="w-full rounded-xl bg-orange-500 px-6 py-4 text-lg font-semibold text-white sm:w-auto sm:px-8 sm:py-4">
               Invest Now
             </button>
 
-            <button className="w-full rounded-md border border-white px-6 py-3 font-semibold text-white sm:w-auto sm:px-8 sm:py-4">
+            <button className="w-full rounded-xl border-2 border-white px-6 py-4 text-lg font-semibold text-white sm:w-auto sm:px-8 sm:py-4">
               Explore Listings
             </button>
           </div>
         </div>
 
-        <SearchCard />
+        <div className="absolute left-1/2 bottom-[-36px] w-full max-w-4xl transform -translate-x-1/2 px-4 sm:bottom-[-48px] lg:static lg:translate-x-0 lg:transform-none lg:px-0">
+          <div className="mx-auto w-full">
+            <SearchCard />
+          </div>
+        </div>
       </div>
     </section>
   );

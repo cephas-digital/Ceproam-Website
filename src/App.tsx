@@ -1,10 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router";
 import Navbar from "./components/shared/Navbar";
 import Home from "./pages/Home";
-
-// function Placeholder() {
-//   return <div className="p-10">Page Content</div>;
-// }
+import Listings from "./pages/Listings";
+import ListingDetails from "./pages/ListingDetails";
 
 export default function App() {
   return (
@@ -16,22 +14,14 @@ export default function App() {
           path="/"
           element={<Home />}
         />
-        {/* <Route
-          path="/about"
-          element={<Placeholder />}
-        />
         <Route
           path="/listings"
-          element={<Placeholder />}
+          element={<Listings />}
         />
         <Route
-          path="/blog"
-          element={<Placeholder />}
+          path="/listing/:id"
+          element={<ListingDetails />}
         />
-        <Route
-          path="/contact"
-          element={<Placeholder />}
-        /> */}
       </Routes>
     </BrowserRouter>
   );

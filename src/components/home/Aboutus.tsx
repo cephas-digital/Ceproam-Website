@@ -42,7 +42,7 @@ const AboutSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.6 }}
-          className="mb-14 text-center text-4xl font-bold"
+          className="mb-14 text-center lg:text-4xl md:text-3xl text-2xl font-bold"
         >
           About US
         </motion.h2>
@@ -57,7 +57,9 @@ const AboutSection = () => {
             viewport={{ once: true, amount: 0.2 }}
           >
             <motion.div variants={itemVariants}>
-              <h3 className="mb-4 text-2xl font-semibold">About CEPROMAS</h3>
+              <h3 className="mb-4 lg:text-2xl md:text-2xl text-xl font-semibold">
+                About CEPROMAS
+              </h3>
 
               <p className="leading-8 text-gray-700">
                 <span className="font-semibold">CEPROMAS</span> is a
@@ -75,7 +77,9 @@ const AboutSection = () => {
             </motion.div>
 
             <motion.div variants={itemVariants}>
-              <h3 className="mb-4 text-2xl font-semibold">Our Mission</h3>
+              <h3 className="mb-4 lg:text-2xl md:text-2xl text-xl font-semibold">
+                Our Mission
+              </h3>
 
               <p className="leading-8 text-gray-700">
                 To democratize access to real estate and agricultural
@@ -85,7 +89,9 @@ const AboutSection = () => {
             </motion.div>
 
             <motion.div variants={itemVariants}>
-              <h3 className="mb-4 text-2xl font-semibold">Our Vision</h3>
+              <h3 className="mb-4 lg:text-2xl md:text-2xl text-xl font-semibold">
+                Our Vision
+              </h3>
 
               <p className="leading-8 text-gray-700">
                 To become Africa's leading digital ecosystem for real estate

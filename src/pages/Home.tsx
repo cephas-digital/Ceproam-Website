@@ -14,7 +14,8 @@ import { investmentPillars } from "../data/investment-pillars";
 import TestimonialsSection from "../components/home/Testimonialsection";
 import Stats from "../components/home/Stats";
 
-import { FaCheckCircle } from "react-icons/fa";
+import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
+import { Link } from "react-router";
 import Footer from "../components/shared/Footer";
 import ConsultationSection from "../components/home/Consultation-request";
 
@@ -29,53 +30,34 @@ const Home = () => {
     <div className="font-Outfit">
       <HeroSlider />
 
-      {/* <section className="bg-[#F7F7FB] px-6 py-20 max-w-7xl mx-auto">
-        <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-          <div>
-            <h2 className="text-4xl font-bold text-[#021D49]">
-              Investment Opportunities
-            </h2>
-
-            <p className="mt-3 max-w-xl text-gray-500">
-              Diversify your portfolio with asset-backed projects designed for
-              long-term capital appreciation and consistent cash flow.
-            </p>
-          </div>
-
-          <button className="font-semibold text-[#021D49]">
-            View All Listings →
-          </button>
-        </div>
-
-        <div className="mt-12">
-          <FilterTabs
-            activeTab={activeFilter}
-            onChange={setActiveFilter}
-          />
-        </div>
-
-        <div className="mt-12 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-          {filteredInvestments.map((item) => (
-            <InvestmentCard
-              key={item.id}
-              item={item}
-            />
-          ))}
-        </div>
-      </section> */}
-
       <ListingSection
         title="Investment Opportunities"
-        subtitle="Diversify your portfolio..."
-        ctaText="View All Listings →"
+        subtitle="Diversify your portfolio with asset-backed projects designed for long-term capital appreciation and consistent cash flow."
+        ctaText={
+          <Link
+            to="/listings"
+            className="inline-flex items-center gap-2 text-[#021D49]"
+          >
+            View All Listings
+            <FaArrowRight />
+          </Link>
+        }
         tabs={investmentTabs}
-        cards={investmentCards}
+        cards={investmentCards.slice(0, 3)}
       />
 
       <ListingSection
         title="Featured Listings"
         subtitle="Hand-picked premium assets currently open for investment."
-        ctaText="View All →"
+        ctaText={
+          <Link
+            to="/listings"
+            className="inline-flex items-center gap-2 text-[#021D49]"
+          >
+            View All
+            <FaArrowRight />
+          </Link>
+        }
         tabs={featuredTabs}
         cards={featuredCards}
       />
@@ -154,7 +136,7 @@ const Home = () => {
         <div className="mx-auto max-w-7xl md:px-0 px-6 ">
           <div className="mb-12 flex items-center justify-between">
             <div>
-              <h2 className="text-4xl font-bold text-[#00193C]">
+              <h2 className="md:text-4xl text-2xl font-bold text-[#00193C]">
                 Recent Blogs
               </h2>
 
@@ -167,6 +149,7 @@ const Home = () => {
             <a
               href="/blog"
               className="
+              md:block hidden
               text-sm
               font-semibold
               text-[#FF6000]

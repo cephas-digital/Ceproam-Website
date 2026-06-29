@@ -1,4 +1,4 @@
-import React from "react";
+import type { ReactNode } from "react";
 import type { IconType } from "react-icons";
 
 export interface TabItem {
@@ -23,6 +23,7 @@ export interface ListingCardData {
   progressLeftText?: string;
   progressRightText?: string;
 
+  category?: string;
   badgeLeft?: string;
   badgeRight?: string;
 
@@ -32,13 +33,13 @@ export interface ListingCardData {
 export interface ListingSectionProps {
   title: string;
   subtitle: string;
-  ctaText?: string;
+  ctaText?: ReactNode;
 
   tabs: TabItem[];
   cards: ListingCardData[];
 }
 
-type Variant = "light" | "dark" | "compact";
+type Variant = "light" | "dark" | "compact" | "impact";
 
 export interface FeatureItem {
   title: string;

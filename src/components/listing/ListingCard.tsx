@@ -27,13 +27,13 @@ const ListingCard = ({ card }: ListingCardProps) => {
         )}
       </div>
 
-      {/* Content */}
       <div className="p-5">
-        <h3 className="text-2xl font-bold text-[#021D49]">{card.title}</h3>
+        <h3 className="lg:text-2xl md:text-2xl text-lg font-bold text-[#021D49]">
+          {card.title}
+        </h3>
 
         <p className="mt-2 text-sm text-gray-500">{card.location}</p>
 
-        {/* Stats */}
         <div
           className={`mt-5 grid gap-4 ${
             card.secondaryValue ? "grid-cols-2" : "grid-cols-1"
@@ -54,8 +54,7 @@ const ListingCard = ({ card }: ListingCardProps) => {
           )}
         </div>
 
-        {/* Progress */}
-        {card.progress !== undefined && (
+         {card.progress !== undefined && (
           <>
             <div className="mt-6 h-2 rounded-full bg-gray-200">
               <div

@@ -33,7 +33,7 @@ export default function BlogCard({ post }: BlogCardProps) {
           {post.category}
         </span>
 
-        <h3 className="mt-3 text-2xl leading-tight font-bold text-[#00193C]">
+        <h3 className="mt-3 text-2xl leading-[32px] font-semibold text-[#00193C]">
           {post.title}
         </h3>
 

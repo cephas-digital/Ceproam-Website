@@ -33,6 +33,15 @@ export function FeatureGridSection({
       text: "text-slate-500",
       cols: "lg:grid-cols-5 text-center",
     },
+
+    impact: {
+      section: "bg-[#ffffff]",
+      card: "",
+      iconWrapper: "",
+      title: "",
+      text: "",
+      cols: "",
+    },
   };
 
   const current = styles[variant];
