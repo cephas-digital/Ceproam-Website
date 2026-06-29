@@ -1,5 +1,6 @@
 // components/blog/BlogCard.tsx
 
+import { motion } from "motion/react";
 import type { BlogPost } from "../../types/types";
 
 interface BlogCardProps {
@@ -8,7 +9,11 @@ interface BlogCardProps {
 
 export default function BlogCard({ post }: BlogCardProps) {
   return (
-    <article
+    <motion.article
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.45 }}
       className="
         overflow-hidden
         rounded-2xl
@@ -41,6 +46,6 @@ export default function BlogCard({ post }: BlogCardProps) {
           {post.excerpt}
         </p>
       </div>
-    </article>
+    </motion.article>
   );
 }

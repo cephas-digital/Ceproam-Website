@@ -85,44 +85,43 @@ const Home = () => {
         variant="compact"
       />
 
-      <section className="bg-[#FAF9FE] py-20">
-        <div className="mx-auto flex max-w-7xl flex-col items-center gap-12 px-6 lg:flex-row lg:justify-between">
-          {/* Content */}
-          <div className="max-w-xl">
-            <h2 className="mb-6 text-4xl font-bold leading-tight text-[#00193C]">
+      <section className="bg-[#FAF9FE] py-16 sm:py-20">
+        <div className="mx-auto flex max-w-7xl flex-col items-center gap-8 px-4 sm:px-6 sm:gap-10 lg:flex-row lg:justify-between lg:gap-12">
+          <div className="max-w-xl text-center lg:text-left">
+            <h2 className="mb-4 text-2xl font-bold leading-tight text-[#00193C] sm:mb-6 sm:text-3xl md:text-4xl">
               Wealth Creation through Land Banking
             </h2>
 
-            <p className="mb-8 text-lg leading-relaxed text-slate-600">
+            <p className="mb-6 text-base leading-relaxed text-slate-600 sm:mb-8 sm:text-lg">
               Land banking is the secret of the wealthy. By acquiring land in
               the path of urban expansion, you position yourself for exponential
               capital appreciation as infrastructure develops.
             </p>
 
-            <div className="mb-8 space-y-4">
+            <div className="mb-6 space-y-3 sm:mb-8 sm:space-y-4">
               {benefits.map((benefit) => (
                 <div
                   key={benefit}
                   className="flex items-start gap-3"
                 >
                   <FaCheckCircle className="mt-1 shrink-0 text-lg text-orange-500" />
-                  <p className="text-slate-700">{benefit}</p>
+                  <p className="text-left text-slate-700">{benefit}</p>
                 </div>
               ))}
             </div>
 
-            <button className="rounded-xl bg-orange-500 px-8 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-orange-600">
+            <button className="w-full rounded-xl bg-orange-500 px-6 py-3.5 font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-orange-600 sm:w-auto sm:px-8 sm:py-4">
               Learn About Land Banking
             </button>
           </div>
 
-          <div className="group relative">
-            <div className="absolute inset-0 translate-y-8 " />
+          <div className="group relative w-full max-w-[520px]">
+            <div className="absolute inset-0 translate-y-6 sm:translate-y-8" />
 
             <img
               src={LandAppreciation}
               alt="Land Banking"
-              className="relative h-[500px] w-full max-w-[520px] rounded-3xl object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+              className="relative h-[280px] w-full rounded-3xl object-cover transition-transform duration-500 group-hover:scale-[1.02] sm:h-[360px] md:h-[500px]"
             />
           </div>
         </div>
@@ -132,15 +131,15 @@ const Home = () => {
 
       <TestimonialsSection />
 
-      <section className="bg-[#F5F5F7] py-24">
-        <div className="mx-auto max-w-7xl md:px-0 px-6 ">
-          <div className="mb-12 flex items-center justify-between">
+      <section className="bg-[#F5F5F7] py-16 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-0">
+          <div className="mb-8 flex flex-col gap-3 text-center sm:mb-12 sm:flex-row sm:items-center sm:justify-between sm:text-left">
             <div>
-              <h2 className="md:text-4xl text-2xl font-bold text-[#00193C]">
+              <h2 className="text-2xl font-bold text-[#00193C] sm:text-3xl md:text-4xl">
                 Recent Blogs
               </h2>
 
-              <p className="mt-2 text-[#4A5568]">
+              <p className="mt-2 text-sm text-[#4A5568] sm:text-base">
                 Stay updated with the latest trends in real estate and
                 agribusiness.
               </p>
@@ -148,14 +147,7 @@ const Home = () => {
 
             <a
               href="/blog"
-              className="
-              md:block hidden
-              text-sm
-              font-semibold
-              text-[#FF6000]
-              transition-colors
-              hover:text-[#E85F00]
-            "
+              className="text-sm font-semibold text-[#FF6000] transition-colors hover:text-[#E85F00]"
             >
               Read All Posts
             </a>

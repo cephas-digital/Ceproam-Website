@@ -48,14 +48,20 @@ export function FeatureGridSection({
 
   return (
     <section className={`${current.section} py-20`}>
-      <div className="mx-auto w-full lg:px-28 md:px-14 px-6 ">
-        <div className="mb-14 text-center">
-          <h2 className={`text-4xl font-bold ${current.title}`}>{title}</h2>
+      <div className="mx-auto w-full px-4 sm:px-6 md:px-14 lg:px-28">
+        <div className="mb-10 text-center sm:mb-14">
+          <h2
+            className={`text-2xl font-bold sm:text-3xl md:text-4xl ${current.title}`}
+          >
+            {title}
+          </h2>
 
-          <p className={`mt-2 ${current.text}`}>{subtitle}</p>
+          <p className={`mt-2 text-sm sm:text-base ${current.text}`}>
+            {subtitle}
+          </p>
         </div>
 
-        <div className={`grid gap-6  md:grid-cols-2 ${current.cols}`}>
+        <div className={`grid gap-4 sm:gap-6 sm:grid-cols-2 ${current.cols}`}>
           {items.map((item) => {
             const Icon = item.icon;
 

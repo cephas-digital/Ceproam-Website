@@ -5,34 +5,31 @@ import { FaMountain } from "react-icons/fa";
 
 const SearchCard = () => {
   return (
-    <div className="mt-14 overflow-x-scroll w-full rounded-3xl border border-white/30 bg-white/50 p-4 sm:p-6 backdrop-blur-lg shadow-xl">
-      <div
-        className="flex gap-3 overflow-x-auto py-2 sm:grid sm:grid-cols-2 lg:grid-cols-3"
-        style={{ WebkitOverflowScrolling: "touch" }}
-      >
-        <button className="flex min-w-[100px] flex-shrink-0 items-center justify-center gap-2 rounded-full bg-[#002B66] px-6 py-3 text-white">
+    <div className="w-full mx-auto rounded-[1.5rem] border border-white/30 bg-white/70 p-4 shadow-xl backdrop-blur-lg sm:p-6">
+      <div className="flex flex-col gap-3 sm:grid sm:grid-cols-2 lg:grid-cols-3">
+        <button className="flex w-full items-center justify-center gap-2 rounded-full bg-[#002B66] px-5 py-3 text-sm font-medium text-white sm:text-base">
           <IoHomeOutline />
           Property
         </button>
 
-        <button className="flex min-w-[100px] flex-shrink-0 items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-gray-700">
+        <button className="flex w-full items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-gray-700 sm:text-base">
           <GiFarmTractor />
           Agri-Projects
         </button>
 
-        <button className="flex min-w-[100px] flex-shrink-0 items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-gray-700">
+        <button className="flex w-full items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-gray-700 sm:text-base">
           <FaMountain />
           Land Banking
         </button>
       </div>
 
-      <div className="mt-6 flex items-center justify-between border-t border-white/30 pt-4">
+      <div className="mt-6 flex flex-col gap-4 border-t border-white/30 pt-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <p className="text-[#43474F]">Active Market</p>
+          <p className="text-sm text-[#43474F] sm:text-base">Active Market</p>
           <p className="font-semibold text-[#1A1B1F]">Nairobi & Environs</p>
         </div>
 
-        <button className="rounded-full bg-white p-3 text-black shadow-md">
+        <button className="flex w-full items-center justify-center rounded-full bg-white p-3 text-black shadow-md sm:w-auto">
           <HiOutlineAdjustmentsHorizontal size={22} />
         </button>
       </div>
