@@ -25,6 +25,16 @@ export function FeatureGridSection({
       cols: "lg:grid-cols-4",
     },
 
+    darkValue: {
+      section: "bg-gradient-to-t from-[#00193C] to-[#0044A2]",
+      card: "bg-white/2 border border-white/10 rounded-2xl p-6 transition-all duration-300 ease-out hover:scale-105 hover:border-l-4 hover:border-t-4 hover:border-b[#00193C] hover:shadow-[-8px_-8px_20px_rgba(147,197,253,0.4)]",
+      iconWrapper:
+        "text-[#7796D1] bg-gradient-to-t from-[#00193C] to-[#0044A2] font-bold ",
+      title: "text-white",
+      text: "text-slate-300",
+      cols: "lg:grid-cols-3",
+    },
+
     compact: {
       section: "bg-[#F4F3F8]",
       card: "bg-white rounded-xl p-6 shadow-sm transition-all duration-300 ease-out hover:scale-105 hover:border-l-4 hover:border-t-4 hover:border-[#00193C] hover:shadow-[-8px_-8px_20px_rgba(59,130,246,0.3)]",
@@ -32,15 +42,6 @@ export function FeatureGridSection({
       title: "text-[#00193C]",
       text: "text-slate-500",
       cols: "lg:grid-cols-5 text-center",
-    },
-
-    impact: {
-      section: "bg-[#ffffff]",
-      card: "",
-      iconWrapper: "",
-      title: "",
-      text: "",
-      cols: "",
     },
   };
 

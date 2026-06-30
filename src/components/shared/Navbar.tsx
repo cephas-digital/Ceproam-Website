@@ -86,7 +86,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* <div
+        <div
           className={`md:hidden overflow-hidden transition-[max-height,opacity] duration-300 ease-out ${
             isMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
           }`}
@@ -123,7 +123,7 @@ export default function Navbar() {
               </button>
             </div>
           </div>
-        </div> */}
+        </div>
       </header>
 
       <div className="h-14 md:h-16" />

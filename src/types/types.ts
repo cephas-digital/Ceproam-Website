@@ -39,7 +39,7 @@ export interface ListingSectionProps {
   cards: ListingCardData[];
 }
 
-type Variant = "light" | "dark" | "compact" | "impact";
+type Variant = "light" | "dark" | "compact" | "darkValue";
 
 export interface FeatureItem {
   title: string;
