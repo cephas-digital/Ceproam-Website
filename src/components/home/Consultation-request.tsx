@@ -1,5 +1,6 @@
 // components/ConsultationSection.tsx
 
+import { motion } from "motion/react";
 import { useState } from "react";
 import type { ChangeEvent, FormEvent } from "react";
 import { Users } from "lucide-react";
@@ -38,25 +39,28 @@ export default function ConsultationSection() {
     e.preventDefault();
 
     console.log(formData);
-
-    // API call goes here
   };
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-t from-[#00193C] to-[#0044A2] ">
-      {/* Decorative Shape */}
+    <section className="relative overflow-hidden bg-gradient-to-t from-[#00193C] to-[#0044A2]">
       <div className="absolute right-0 top-0 h-full w-[28%] bg-white/10 [clip-path:polygon(35%_0%,100%_0%,100%_100%,0%_100%)]" />
 
-      <div className="relative mx-auto max-w-7xl md:px-0 px-6 py-20">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
-          <div className="max-w-lg text-white">
-            <h2 className="text-4xl font-bold leading-tight md:text-5xl">
+      <div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+          <motion.div
+            initial={{ opacity: 0, x: -24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-lg text-white"
+          >
+            <h2 className="text-2xl font-bold leading-tight sm:text-4xl md:text-5xl">
               Ready to Start Your
               <br />
               Investment Journey?
             </h2>
 
-            <p className="mt-6 max-w-md text-md leading-7 text-blue-100">
+            <p className="mt-6 max-w-md md:text-base text-sm leading-7 text-blue-100">
               Schedule a consultation with our investment advisors to build a
               personalized strategy aligned with your financial goals.
             </p>
@@ -66,14 +70,7 @@ export default function ConsultationSection() {
                 {avatarData.map((avatar) => (
                   <div
                     key={avatar.id}
-                    className="
-                      flex h-10 w-10 items-center justify-center
-                      rounded-full border-2 border-[#003A93]
-                      bg-gradient-to-br
-                      from-slate-300
-                      to-slate-600
-                      overflow-hidden
-                    "
+                    className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border-2 border-[#003A93] bg-gradient-to-br from-slate-300 to-slate-600"
                     title={avatar.name}
                   >
                     {avatar.image ? (
@@ -93,11 +90,17 @@ export default function ConsultationSection() {
                 Talk to our expert team
               </span>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="flex justify-center lg:justify-end">
-            <div className="w-full max-w-md rounded-xl bg-white p-8 shadow-2xl">
-              <h3 className="mb-6 text-2xl font-bold text-[#0A2540]">
+          <motion.div
+            initial={{ opacity: 0, x: 24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.05 }}
+            className="flex justify-center lg:justify-end"
+          >
+            <div className="w-full max-w-md rounded-xl bg-white p-6 shadow-2xl sm:p-8">
+              <h3 className="mb-6 md:text-2xl text-xl font-bold text-[#0A2540]">
                 Request Consultation
               </h3>
 
@@ -120,11 +123,7 @@ export default function ConsultationSection() {
                     placeholder="John Doe"
                     value={formData.fullName}
                     onChange={handleChange}
-                    className="
-                      w-full rounded-md border-2 border-slate-300
-                      px-4 py-4 text-sm outline-none
-                      transition focus:border-[#003A93]
-                    "
+                    className="w-full rounded-md border-2 border-slate-300 px-4 py-4 text-sm outline-none transition focus:border-[#003A93]"
                   />
                 </div>
 
@@ -143,11 +142,7 @@ export default function ConsultationSection() {
                     placeholder="john@example.com"
                     value={formData.email}
                     onChange={handleChange}
-                    className="
-                      w-full rounded-md border-2 border-slate-300
-                      px-4 py-4 text-sm outline-none
-                      transition focus:border-[#003A93]
-                    "
+                    className="w-full rounded-md border-2 border-slate-300 px-4 py-4 text-sm outline-none transition focus:border-[#003A93]"
                   />
                 </div>
 
@@ -164,11 +159,7 @@ export default function ConsultationSection() {
                     name="interest"
                     value={formData.interest}
                     onChange={handleChange}
-                    className="
-                      w-full rounded-md border-2 border-slate-300
-                      px-4 py-4 text-sm outline-none
-                      transition focus:border-[#003A93]
-                    "
+                    className="w-full rounded-md border-2 border-slate-300 px-4 py-4 text-sm outline-none transition focus:border-[#003A93]"
                   >
                     {investmentInterests.map((interest) => (
                       <option
@@ -183,20 +174,13 @@ export default function ConsultationSection() {
 
                 <button
                   type="submit"
-                  className="
-                    mt-2 w-full rounded-md
-                    bg-[#FF6B00]
-                    px-6 py-4
-                    text-xs font-bold uppercase tracking-widest
-                    text-white
-                    transition hover:bg-[#E85F00]
-                  "
+                  className="mt-2 w-full rounded-md bg-[#FF6B00] px-6 py-4 text-xs font-bold uppercase tracking-widest text-white transition hover:bg-[#E85F00]"
                 >
                   Send Request
                 </button>
               </form>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

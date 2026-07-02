@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import About from "../../assets/images/About1.png";
 import AboutTwo from "../../assets/images/About2.png";
 import AboutThree from "../../assets/images/About3.png";
+import { FaArrowRight } from "react-icons/fa";
 
 const AboutSection = () => {
   const containerVariants = {
@@ -61,15 +62,15 @@ const AboutSection = () => {
                 About CEPROMAS
               </h3>
 
-              <p className="leading-8 text-gray-700">
-                <span className="font-semibold">CEPROMAS</span> is a
+              <p className="leading-8 md:text-base  text-sm text-gray-700">
+                <span className="font-semibold ">CEPROMAS</span> is a
                 technology-driven agro and real asset management system designed
                 to connect investors, individuals, businesses, and institutions
                 with profitable opportunities in property solutions, strategic
                 asset acquisition, and agriculture investments.
               </p>
 
-              <p className="mt-4 leading-8 text-gray-700">
+              <p className="mt-4 md:text-base  text-sm leading-8 text-gray-700">
                 It's an integrated asset management and development platform
                 focused on agricultural, real estate, and infrastructure
                 investments.
@@ -81,7 +82,7 @@ const AboutSection = () => {
                 Our Mission
               </h3>
 
-              <p className="leading-8 text-gray-700">
+              <p className="leading-8 md:text-base text-sm text-gray-700">
                 To democratize access to real estate and agricultural
                 investments through secure technology, transparency, and
                 innovative financing models.
@@ -93,7 +94,7 @@ const AboutSection = () => {
                 Our Vision
               </h3>
 
-              <p className="leading-8 text-gray-700">
+              <p className="leading-8 md:text-base text-sm text-gray-700">
                 To become Africa's leading digital ecosystem for real estate
                 access, property ownership, and agricultural investment
                 opportunities.
@@ -102,10 +103,10 @@ const AboutSection = () => {
               <motion.button
                 whileHover={{ x: 10 }}
                 whileTap={{ scale: 0.95 }}
-                className="mt-6 flex items-center gap-2 font-semibold text-orange-500 transition hover:text-orange-600"
+                className="mt-6 flex items-center gap-2 text-sm font-semibold text-orange-500 transition hover:text-orange-600"
               >
                 Learn More about CEPROMAS
-                <span>→</span>
+                <FaArrowRight className="h-4 w-4" />
               </motion.button>
             </motion.div>
           </motion.div>
@@ -153,7 +154,7 @@ const AboutSection = () => {
               transition={{ duration: 0.3 }}
             >
               <motion.h4
-                className="text-5xl font-bold"
+                className="md:text-5xl text-2xl font-bold"
                 initial={{ opacity: 0, scale: 0 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -162,7 +163,7 @@ const AboutSection = () => {
                 22.5%
               </motion.h4>
               <motion.p
-                className="mt-2 text-sm uppercase tracking-wider"
+                className="mt-2 md:text-sm text-xs uppercase tracking-wider"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}

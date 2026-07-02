@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import { useState } from "react";
 import { NavLink } from "react-router";
 import NavImg from "../../assets/images/navabr.png";
@@ -14,12 +15,17 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 z-40 w-full border-b font-Outfit border-gray-200 bg-white shadow-sm">
-        <div className="mx-auto flex lg:px-28 md:px-16  items-center justify-between px-6 py-2 ">
+      <motion.header
+        initial={{ y: -12, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.45 }}
+        className="fixed left-0 top-0 z-40 w-full border-b border-gray-200 bg-white shadow-sm font-Outfit"
+      >
+        <div className="mx-auto flex items-center justify-between px-4 py-2 sm:px-6 md:px-16 lg:px-28">
           <img
             src={NavImg}
             alt="CEPROAM"
-            className="mb-6 h-10"
+            className="h-9 sm:h-10"
           />
 
           <div className="flex items-center gap-4 md:gap-6">
@@ -41,7 +47,7 @@ export default function Navbar() {
                         <>
                           {link.label}
                           {isActive && (
-                            <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-orange-500" />
+                            <span className="absolute -bottom-1 left-0 h-[2px] w-full bg-orange-500" />
                           )}
                         </>
                       )}
@@ -87,11 +93,11 @@ export default function Navbar() {
         </div>
 
         <div
-          className={`md:hidden overflow-hidden transition-[max-height,opacity] duration-300 ease-out ${
+          className={`overflow-hidden transition-[max-height,opacity] duration-300 ease-out md:hidden ${
             isMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="space-y-4 border-t border-gray-200 bg-white px-6 pb-6 pt-4">
+          <div className="space-y-4 border-t border-gray-200 bg-white px-4 pb-6 pt-4 sm:px-6">
             <nav>
               <ul className="space-y-3">
                 {navLinks.map((link) => (
@@ -115,16 +121,16 @@ export default function Navbar() {
             </nav>
 
             <div className="space-y-3">
-              <button className="w-full rounded-md border border-[#0B1F4D] px-6 py-3 text-sm font-semibold text-[#0B1F4D] transition hover:bg-[#0B1F4D] hover:text-white">
+              <button className="w-full rounded-md border-2 border-[#00193C] px-6 py-3 text-sm font-semibold text-[#0B1F4D] transition hover:bg-[#0B1F4D] hover:text-white">
                 Explore Listings
               </button>
-              <button className="w-full rounded-md bg-[#0B1F4D] px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90">
+              <button className="w-full rounded-md bg-[#00193C] px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90">
                 Invest Now
               </button>
             </div>
           </div>
         </div>
-      </header>
+      </motion.header>
 
       <div className="h-14 md:h-16" />
     </>

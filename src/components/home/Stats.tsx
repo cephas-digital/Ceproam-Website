@@ -42,7 +42,7 @@ const Stats = () => {
                   }
                 />
 
-                <h3 className="mt-6 text-5xl font-bold tracking-tight">
+                <h3 className="mt-6 md:text-5xl text-2xl font-bold tracking-tight">
                   {stat.value}
                 </h3>
 

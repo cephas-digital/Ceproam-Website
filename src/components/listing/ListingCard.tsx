@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import type { ListingCardData } from "../../types/types";
 
 interface ListingCardProps {
@@ -6,12 +7,19 @@ interface ListingCardProps {
 
 const ListingCard = ({ card }: ListingCardProps) => {
   return (
-    <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition duration-300 ease-out hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-200">
+    <motion.article
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.45 }}
+      whileHover={{ y: -6, scale: 1.01 }}
+      className="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm"
+    >
       <div className="relative h-56 overflow-hidden">
         <img
           src={card.image}
           alt={card.title}
-          className="h-full w-full object-cover transition duration-500 ease-out hover:scale-105"
+          className="h-full w-full object-cover transition duration-500 ease-out group-hover:scale-105"
         />
 
         {card.badgeLeft && (
@@ -28,20 +36,24 @@ const ListingCard = ({ card }: ListingCardProps) => {
       </div>
 
       <div className="p-5">
-        <h3 className="lg:text-2xl md:text-2xl text-lg font-bold text-[#021D49]">
+        <h3 className="text-base font-bold text-[#021D49] sm:text-xl lg:text-2xl">
           {card.title}
         </h3>
 
-        <p className="mt-2 text-sm text-gray-500">{card.location}</p>
+        <p className="mt-2 text-sm sm:text-base  text-gray-500">
+          {card.location}
+        </p>
 
         <div
-          className={`mt-5 grid gap-4 ${
+          className={`mt-5 text-sm sm:text-base  grid gap-4 ${
             card.secondaryValue ? "grid-cols-2" : "grid-cols-1"
           }`}
         >
           <div>
             <p className="text-xs uppercase text-gray-400">{card.priceLabel}</p>
-            <p className="font-bold text-[#021D49]">{card.priceValue}</p>
+            <p className="font-bold text-sm sm:text-base  text-[#021D49]">
+              {card.priceValue}
+            </p>
           </div>
 
           {card.secondaryValue && (
@@ -49,12 +61,14 @@ const ListingCard = ({ card }: ListingCardProps) => {
               <p className="text-xs uppercase text-gray-400">
                 {card.secondaryLabel}
               </p>
-              <p className="font-bold text-orange-500">{card.secondaryValue}</p>
+              <p className="font-bold text-sm sm:text-base  text-orange-500">
+                {card.secondaryValue}
+              </p>
             </div>
           )}
         </div>
 
-         {card.progress !== undefined && (
+        {card.progress !== undefined && (
           <>
             <div className="mt-6 h-2 rounded-full bg-gray-200">
               <div
@@ -70,11 +84,11 @@ const ListingCard = ({ card }: ListingCardProps) => {
           </>
         )}
 
-        <button className="mt-6 w-full rounded-md bg-[#021D49] py-4 font-semibold text-white transition duration-300 hover:bg-[#16356c]">
+        <button className="mt-6 w-full text-sm sm:text-base  rounded-md bg-[#021D49] py-4 font-semibold text-white transition duration-300 hover:bg-[#16356c]">
           {card.buttonText}
         </button>
       </div>
-    </div>
+    </motion.article>
   );
 };
 

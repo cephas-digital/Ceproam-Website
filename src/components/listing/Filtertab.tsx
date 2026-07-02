@@ -16,7 +16,7 @@ const FilterTabs = ({ tabs, activeTab, setActiveTab }: FilterTabsProps) => {
           <button
             key={tab.label + index}
             onClick={() => setActiveTab(index)}
-            className={`flex items-center justify-center lg:w-auto md:w-auto w-full min-w-[220px] gap-2 rounded-full px-6 py-3 text-lg font-medium transition-all
+            className={`flex items-center justify-center lg:w-auto md:w-auto min-w-[180px] gap-2 rounded-full px-6 py-3 text-sm sm:text-base  font-medium transition-all
               ${
                 activeTab === index
                   ? "bg-[#021D49] text-white"

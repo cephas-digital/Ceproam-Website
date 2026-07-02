@@ -38,11 +38,11 @@ export default function BlogCard({ post }: BlogCardProps) {
           {post.category}
         </span>
 
-        <h3 className="mt-3 text-2xl leading-[32px] font-semibold text-[#00193C]">
+        <h3 className="mt-3 md:text-2xl text-xl leading-[32px] font-semibold text-[#00193C]">
           {post.title}
         </h3>
 
-        <p className="mt-4 line-clamp-3 text-[15px] leading-7 text-slate-500">
+        <p className="mt-4 line-clamp-3 md:text-[15px] text-sm leading-7 text-slate-500">
           {post.excerpt}
         </p>
       </div>
