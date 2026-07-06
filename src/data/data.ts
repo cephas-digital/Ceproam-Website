@@ -1,6 +1,9 @@
 import type { ServiceItem } from "../components/about/CoreServiceSection";
-import Property from "../assets/images/property.png";
-import Industry from "../assets/images/industrypics.png";
+import Property from "../assets/images/property.svg";
+import Industry from "../assets/images/industry.svg";
+import Vetted from "../assets/icons/vetted.png";
+import Transparent from "../assets/icons/transparent.png";
+import Community from "../assets/icons/community.png";
 
 export const realEstateService: ServiceItem = {
   id: 1,
@@ -36,3 +39,32 @@ export const agroManagementService: ServiceItem = {
 
   imagePosition: "right",
 };
+
+export const whyInvestWithUs = [
+  {
+    title: "Vetted Assets",
+    description:
+      "Every asset undergoes rigorous legal and physical due diligence before listing.",
+    image: Vetted,
+  },
+  {
+    title: "Community Led",
+    description:
+      "Owned and governed by members, ensuring your interests always come first.",
+    image: Community,
+  },
+
+  {
+    title: "Transparent Tracking",
+    description:
+      "Real-time reporting and physical visitations scheduled for all investors.",
+    image: Transparent,
+  },
+
+  // {
+  //   title: "Secure",
+  //   description:
+  //     "Cooperative structure ensures investor protection and collective bargaining power.",
+  //   image: Transparent,
+  // },
+];

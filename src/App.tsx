@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes, useLocation } from "react-router";
 import Navbar from "./components/shared/Navbar";
 import Home from "./pages/Home";
 import AboutUs from "./pages/About-us";
+import ContactUs from "./pages/Contact-us";
 import Listings from "./pages/Listings";
 import ListingDetails from "./pages/ListingDetails";
 
@@ -39,6 +40,11 @@ export default function App() {
         <Route
           path="/listing/:id"
           element={<ListingDetails />}
+        />
+
+        <Route
+          path="/contact"
+          element={<ContactUs />}
         />
       </Routes>
     </BrowserRouter>

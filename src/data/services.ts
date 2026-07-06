@@ -1,6 +1,7 @@
 import { BsCheckCircleFill } from "react-icons/bs";
 import { GiPickle, GiShield } from "react-icons/gi";
 import { FiEye } from "react-icons/fi";
+// import Property from "../assets/images/property.png";
 
 export const services = [
   {

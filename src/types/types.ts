@@ -44,7 +44,8 @@ type Variant = "light" | "dark" | "compact" | "darkValue";
 export interface FeatureItem {
   title: string;
   description: string;
-  icon: React.ElementType;
+  icon?: React.ElementType | ReactNode;
+  image?: string;
 }
 
 export interface FeatureGridSectionProps {

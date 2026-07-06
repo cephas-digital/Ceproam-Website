@@ -36,10 +36,10 @@ export default function Navbar() {
                     <NavLink
                       to={link.path}
                       className={({ isActive }) =>
-                        `relative pb-1 text-sm font-medium transition-colors ${
+                        `relative pb-1 text-sm font-semibold transition-colors ${
                           isActive
                             ? "text-[#0B1F4D]"
-                            : "text-gray-600 hover:text-[#0B1F4D]"
+                            : "text-[#43474F] hover:text-[#0B1F4D]"
                         }`
                       }
                     >

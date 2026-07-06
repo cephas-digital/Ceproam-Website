@@ -2,6 +2,10 @@ import { useEffect, useMemo, useState } from "react";
 import ListingTile from "../components/listing/ListingTile";
 import { investmentCards, investmentTabs } from "../data/investmentData";
 import FilterTabs from "../components/listing/Filtertab";
+import GrowthCalculator from "../components/listing/Listing-calculator";
+import { FeatureGridSection } from "../components/ui/FeaturedGrid";
+import { whyInvestWithUs } from "../data/data";
+import Footer from "../components/shared/Footer";
 
 const Listings = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -28,12 +32,12 @@ const Listings = () => {
 
   return (
     <main
-      className={`relative min-h-screen font-Outfit lg:px-28 md:px-14 px-6 bg-slate-50 py-20 transition-transform duration-700 ease-out ${
+      className={`relative min-h-screen font-Outfit  bg-slate-50 py-20 transition-transform duration-700 ease-out ${
         isVisible ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
       }`}
     >
       <div>
-        <div className="mb-10 flex flex-col gap-6 py-8 sm:py-4">
+        <div className="mb-10 lg:px-28 md:px-14 px-6 flex flex-col gap-6 py-8 sm:py-4">
           <div className="flex flex-col gap-6 xl:flex-row xl:items-center xl:justify-between">
             <div className="max-w-3xl">
               <h1 className="text-4xl font-bold tracking-tight text-[#00193C] sm:text-5xl">
@@ -135,7 +139,7 @@ const Listings = () => {
           </div>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid lg:px-28 md:px-14 mb-10 px-6 gap-8 md:grid-cols-2 xl:grid-cols-3">
           {listings.map((card) => (
             <ListingTile
               key={card.id}
@@ -143,6 +147,17 @@ const Listings = () => {
             />
           ))}
         </div>
+
+        <GrowthCalculator />
+
+        <FeatureGridSection
+          title="Why Invest With Us?"
+          subtitle="Why thousands of investors trust CEPROMAS."
+          items={whyInvestWithUs}
+          variant="light"
+        />
+
+        <Footer />
       </div>
     </main>
   );

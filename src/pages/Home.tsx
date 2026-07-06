@@ -1,7 +1,7 @@
 // import Button from "../components/ui/Button";
 import HeroSlider from "../components/home/HeroSlider";
 import AboutSection from "../components/home/Aboutus";
-import LandAppreciation from "../assets/images/Land appreciation and growth.png";
+import LandAppreciation from "../assets/images/Land appreciation and growth.svg";
 import { investmentCards, investmentTabs } from "../data/investmentData";
 import BlogCard from "../components/home/Blog-card";
 import { blogs } from "../data/blog";

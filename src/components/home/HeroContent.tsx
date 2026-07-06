@@ -83,12 +83,12 @@ const HeroContent = ({
               "We bridge the gap between owners seeking seamless management and tenants seeking quality spaces. Creating a property experience built on trust, clarity and mutual value."}
           </p>
 
-          <div className="mt-6 flex w-full flex-col items-center justify-center gap-3 sm:gap-4 md:mt-8 md:flex-row">
-            <button className="w-full rounded-xl bg-orange-500 px-6 py-3.5 text-base font-semibold text-white transition hover:bg-orange-600 sm:w-auto sm:px-8 sm:py-4 sm:text-lg">
+          <div className="mt-6 flex w-full flex-row items-center justify-center gap-3 sm:gap-4 md:mt-8 md:flex-row">
+            <button className="lg:w-[162px] md:w-auto w-[140px] rounded-xl bg-orange-500 px-6 py-3.5 text-base font-semibold text-white transition hover:bg-orange-600 sm:w-auto sm:px-8 sm:py-4 sm:text-lg">
               Invest Now
             </button>
 
-            <button className="w-full rounded-xl border-2 border-white px-6 py-3.5 text-base font-semibold text-white transition hover:bg-white/10 sm:w-auto sm:px-8 sm:py-4 sm:text-lg">
+            <button className=" lg:w-[201px] md:w-auto w-[180px] rounded-xl border-2 border-white px-6 py-3.5 text-base font-semibold text-white transition hover:bg-white/10 sm:w-auto sm:px-8 sm:py-4 sm:text-lg">
               Explore Listings
             </button>
           </div>

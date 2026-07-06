@@ -1,7 +1,7 @@
-import Johnson from "../assets/images/team/Johnson.png";
-import Testimony from "../assets/images/team/Testimony.png";
-import Abidemi from "../assets/images/team/Abidemi.png";
-import Fola from "../assets/images/team/Fola.png";
+import Johnson from "../assets/images/team/Johnson.svg";
+import Testimony from "../assets/images/team/Testimony.svg";
+import Abidemi from "../assets/images/team/Abidemi.svg";
+import Fola from "../assets/images/team/Fola.svg";
 
 export interface TeamMember {
   id: number;

@@ -47,9 +47,14 @@ export function FeatureGridSection({
   };
 
   const current = styles[variant];
+  const isLightCompact = variant === "light" && items.length <= 3;
+  const sectionBg = isLightCompact ? "bg-white" : current.section;
+  const gridCols = isLightCompact
+    ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 text-center"
+    : current.cols;
 
   return (
-    <section className={`${current.section} py-14 sm:py-16 lg:py-20`}>
+    <section className={`${sectionBg} py-14 sm:py-16 lg:py-20`}>
       <div className="mx-auto w-full px-4 sm:px-6 md:px-14 lg:px-28">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -67,9 +72,9 @@ export function FeatureGridSection({
           </p>
         </motion.div>
 
-        <div className={`grid gap-4 sm:gap-6 ${current.cols}`}>
+        <div className={`grid gap-8 sm:gap-6 ${gridCols}`}>
           {items.map((item, index) => {
-            const Icon = item.icon;
+            const Icon = item.icon as React.ElementType | undefined;
 
             return (
               <motion.article
@@ -84,7 +89,15 @@ export function FeatureGridSection({
                 <div
                   className={`mb-4 flex h-14 w-14 items-center justify-center rounded-full ${current.iconWrapper}`}
                 >
-                  <Icon size={30} />
+                  {item.image ? (
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="h-10 w-10 rounded-full object-cover"
+                    />
+                  ) : Icon ? (
+                    <Icon size={30} />
+                  ) : null}
                 </div>
 
                 <h3

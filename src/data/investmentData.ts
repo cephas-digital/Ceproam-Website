@@ -355,4 +355,130 @@ export const investmentCards = [
 
     buttonText: "Invest Now",
   },
+  {
+    id: 7,
+    image: "https://images.unsplash.com/photo-1448630360428-65456885c650",
+    title: "Golden Green Farms",
+    location: "Iseyin, Oyo State",
+
+    priceLabel: "Entry Price",
+    priceValue: "₦980,000",
+
+    secondaryLabel: "Proj. ROI",
+    secondaryValue: "21% p.a",
+
+    progress: 48,
+    progressLeftText: "48% Funded",
+    progressRightText: "14 Days Left",
+
+    badgeRight: "NEW FARMING",
+    category: "Farmlands",
+
+    buttonText: "Invest Now",
+  },
+  {
+    id: 8,
+    image: "https://images.unsplash.com/photo-1460317442991-0ec209397118",
+    title: "Harbor Commerce Hub",
+    location: "Ikeja, Lagos",
+
+    priceLabel: "Unit Price",
+    priceValue: "₦32,000,000",
+
+    secondaryLabel: "Yield",
+    secondaryValue: "14% Rental",
+
+    progress: 62,
+    progressLeftText: "62% Funded",
+    progressRightText: "8 Units Left",
+
+    badgeRight: "COMMERCIAL",
+    category: "Commercial",
+
+    buttonText: "Book Unit",
+  },
+  {
+    id: 9,
+    image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688",
+    title: "Riverstone Estates",
+    location: "Ajah, Lagos",
+
+    priceLabel: "Entry Price",
+    priceValue: "₦3,400,000",
+
+    secondaryLabel: "Proj. ROI",
+    secondaryValue: "18.8% p.a",
+
+    progress: 72,
+    progressLeftText: "72% Funded",
+    progressRightText: "11 Days Left",
+
+    badgeRight: "PREMIUM",
+    category: "Land Banking",
+
+    buttonText: "Reserve Plot",
+  },
+  {
+    id: 10,
+    image: "https://images.unsplash.com/photo-1513694203232-719a280e022f",
+    title: "Lagos Green Terrace",
+    location: "Mende, Maryland",
+
+    priceLabel: "Unit Price",
+    priceValue: "₦24,500,000",
+
+    secondaryLabel: "Yield",
+    secondaryValue: "13% Rental",
+
+    progress: 58,
+    progressLeftText: "58% Funded",
+    progressRightText: "9 Units Left",
+
+    badgeRight: "EARLY ACCESS",
+    category: "Residential",
+
+    buttonText: "Reserve Unit",
+  },
+  {
+    id: 11,
+    image: "https://images.unsplash.com/photo-1494526585095-c41746248156",
+    title: "Sunrise Agro Park",
+    location: "Iwo, Osun State",
+
+    priceLabel: "Plot Price",
+    priceValue: "₦760,000",
+
+    secondaryLabel: "Proj. ROI",
+    secondaryValue: "20.5% p.a",
+
+    progress: 81,
+    progressLeftText: "81% Funded",
+    progressRightText: "7 Days Left",
+
+    badgeRight: "HOT DEAL",
+    category: "Agro Projects",
+
+    buttonText: "Invest Now",
+  },
+  {
+    id: 12,
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab",
+    title: "Prime Office Plaza",
+    location: "Allen Avenue, Ikeja",
+
+    priceLabel: "Unit Price",
+    priceValue: "₦41,000,000",
+
+    secondaryLabel: "Yield",
+    secondaryValue: "16% Rental",
+
+    progress: 67,
+    progressLeftText: "67% Funded",
+    progressRightText: "5 Units Left",
+
+    badgeRight: "INCOME READY",
+    category: "Commercial",
+
+    buttonText: "Book Office",
+  },
 ];

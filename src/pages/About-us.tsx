@@ -1,8 +1,8 @@
 import { motion } from "motion/react";
 import { FiArrowRight } from "react-icons/fi";
-import About from "../assets/images/aboutpics.png";
-import vision from "../assets/images/vision.png";
-import mission from "../assets/images/mission.png";
+import About from "../assets/images/aboutpics.svg";
+import vision from "../assets/images/vision.svg";
+import mission from "../assets/images/mission.svg";
 import RealEsateOne from "../assets/images/real-estateOne.png";
 import RealEsateTwo from "../assets/images/Background.png";
 import RealEsateThree from "../assets/images/real-esatte-3.png";
