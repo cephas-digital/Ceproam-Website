@@ -157,7 +157,7 @@ export default function AboutSection() {
                 whileInView={{ scale: 1, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ type: "spring", stiffness: 220, damping: 20 }}
-                className=" absolute md:left-[200px] left-[60px] top-[100px] sm:top-[200px] md:top-[200px] z-20 flex h-32 w-32 items-center justify-center rounded-full bg-[#FF6A00] text-white shadow-xl sm:h-36 sm:w-36 md:h-44 md:w-44
+                className=" absolute md:left-[200px] left-[100px] top-[100px] sm:top-[200px] md:top-[200px] z-20 flex h-32 w-32 items-center justify-center rounded-full bg-[#FF6A00] text-white shadow-xl sm:h-36 sm:w-36 md:h-44 md:w-44
   "
               >
                 <div className="text-center">

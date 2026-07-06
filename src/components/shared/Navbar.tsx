@@ -21,7 +21,7 @@ export default function Navbar() {
         transition={{ duration: 0.45 }}
         className="fixed left-0 top-0 z-40 w-full border-b border-gray-200 bg-white shadow-sm font-Outfit"
       >
-        <div className="mx-auto flex items-center justify-between px-4 py-2 sm:px-6 md:px-16 lg:px-28">
+        <div className="mx-auto flex items-center justify-between px-4 md:py-2 py-4 sm:px-6 md:px-16 lg:px-28">
           <img
             src={NavImg}
             alt="CEPROAM"
