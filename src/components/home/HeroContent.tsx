@@ -24,7 +24,7 @@ const HeroContent = ({
   isActive = false,
 }: HeroContentProps) => {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden">
+    <section className="relative min-h-[60vh] sm:min-h-[70vh] md:min-h-screen w-full overflow-hidden">
       {backgroundImage && (
         <div
           className={`absolute inset-0 bg-cover bg-center transition-transform duration-1000 ease-out transform ${
@@ -43,7 +43,7 @@ const HeroContent = ({
         />
       )}
 
-      <div className="relative z-10 flex md:min-h-screen h-[600px]  w-full flex-col items-center justify-start px-4 pt-20 pb-24 text-center sm:px-6 lg:justify-center lg:py-4 lg:pt-0">
+      <div className="relative z-10 flex md:min-h-screen h-[420px] sm:h-[520px] md:h-[600px] w-full flex-col items-center justify-start px-4 pt-20 pb-24 text-center sm:px-6 lg:justify-center lg:py-4 lg:pt-0">
         <motion.div
           initial={{ opacity: 0, y: 32, scale: 0.97 }}
           animate={{
