@@ -25,7 +25,6 @@ const InvestmentCard = ({ item }: InvestmentCardProps) => {
 
         <p className="mt-2 text-sm text-gray-500">{item.location}</p>
 
-        {/* Stats */}
         <div className="mt-6 grid grid-cols-2 gap-4">
           <div>
             <p className="text-xs text-gray-400 uppercase">{item.leftLabel}</p>

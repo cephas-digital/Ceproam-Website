@@ -17,14 +17,14 @@ const AboutUs = () => {
   return (
     <div className="font-Outfit">
       <section
-        className="relative min-h-screen overflow-hidden"
+        className="relative min-h-[60vh] sm:min-h-[70vh] md:min-h-screen overflow-hidden"
         style={{
           backgroundImage: `url(${About})`,
           backgroundSize: "cover",
           backgroundPosition: "center bottom",
         }}
       >
-        <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-center px-4 py-24 sm:px-6 lg:px-0 lg:py-0">
+        <div className="relative z-10 mx-auto flex  md:min-h-screen h-[420px] sm:h-[520px] md:h-[600px] max-w-7xl items-center px-4 py-24 sm:px-6 lg:px-0 lg:py-0">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}

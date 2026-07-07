@@ -4,6 +4,13 @@ import Industry from "../assets/images/industry.svg";
 import Vetted from "../assets/icons/vetted.png";
 import Transparent from "../assets/icons/transparent.png";
 import Community from "../assets/icons/community.png";
+import type { Insight } from "../types/types";
+
+import featured from "../assets/images/featured.svg";
+import realEstate from "../assets/images/real-estate.svg";
+import finance from "../assets/images/finance.svg";
+import farmland from "../assets/images/farmaland.svg";
+import resort from "../assets/images/resort.svg";
 
 export const realEstateService: ServiceItem = {
   id: 1,
@@ -67,4 +74,80 @@ export const whyInvestWithUs = [
   //     "Cooperative structure ensures investor protection and collective bargaining power.",
   //   image: Transparent,
   // },
+];
+
+export const Filtertabs: Array<{ label: string }> = [
+  {
+    label: "All Articles",
+    // icon: MdGridView,
+  },
+  {
+    label: "Real Estate",
+    // icon: FaHome,
+  },
+  {
+    label: "Agribusiness News",
+    // icon: FaBuilding,
+  },
+  {
+    label: "Land Banking",
+  },
+  {
+    label: "Property Management",
+  },
+];
+
+export const insights: Insight[] = [
+  {
+    id: 1,
+    title: "Why Agribusiness is the Next Frontier for Savvy Investors",
+    description:
+      "Traditional stocks are volatile. Discover how agricultural land provides a hedge against inflation while generating consistent quarterly returns.",
+    image: featured,
+    category: "FEATURED INSIGHT",
+    readTime: "8 min read",
+    author: "Olufunso Akinsanya",
+    date: "Mar 16, 2024",
+    featured: true,
+  },
+
+  {
+    id: 2,
+    title: "Navigating Lagos Real Estate in 2024",
+    description:
+      "The current landscape of property acquisition in high-growth corridors of Lagos.",
+    image: realEstate,
+    category: "Real Estate",
+    readTime: "6 min read",
+  },
+
+  {
+    id: 3,
+    title: "The Power of Compound Interest in Savings",
+    description:
+      "How our USD savings program leverages global financial instruments.",
+    image: finance,
+    category: "Financial Growth",
+    readTime: "12 min read",
+  },
+
+  {
+    id: 4,
+    title: "Future-Proofing through Land Acquisition",
+    description:
+      "Understanding the strategic importance of title documents and zoning.",
+    image: farmland,
+    category: "Land Banking",
+    readTime: "5 min read",
+  },
+
+  {
+    id: 5,
+    title: "Farm Resorts: The Future of Eco-Tourism",
+    description:
+      "The intersection of agriculture and hospitality as a high-yield investment.",
+    image: resort,
+    category: "Hospitality",
+    readTime: "9 min read",
+  },
 ];

@@ -1,8 +1,7 @@
 import { motion } from "motion/react";
 import ContactImg from "../assets/images/contact-us.svg";
 import ContactSection from "../components/contact/Contact";
-import CoreServiceSection from "../components/about/CoreServiceSection";
-import { realEstateService } from "../data/data";
+
 import Footer from "../components/shared/Footer";
 import VirtualTour from "../components/contact/Virtual-tour";
 const ContactUs = () => {
@@ -11,7 +10,7 @@ const ContactUs = () => {
       <section
         className="relative h-[440px] overflow-hidden"
         style={{
-          backgroundImage: `linear-gradient(rgba(0,25,60,0.65), rgba(0,25,60,0.65)), url(${ContactImg})`,
+          backgroundImage: `linear-gradient(#00193C, #00193C00), url(${ContactImg})`,
           backgroundSize: "cover",
           backgroundPosition: "center bottom",
         }}
@@ -23,7 +22,7 @@ const ContactUs = () => {
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-4xl"
           >
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-[#FF5500]">
+            <p className="mb-4 text-sm font-semibold uppercase text-[#FF5500]  py-1 px-3 rounded-full">
               GET IN TOUCH
             </p>
 
@@ -34,8 +33,8 @@ const ContactUs = () => {
             </h1>
 
             <p className="mt-6 max-w-2xl text-sm leading-7 text-gray-300 sm:text-base">
-              Connect with our investment experts to secure your future through
-              diversified real estate and agribusiness opportunities.
+              Expert perspectives on Nigerian real estate, sustainable
+              agribusiness, and strategic
             </p>
           </motion.div>
         </div>
@@ -43,10 +42,10 @@ const ContactUs = () => {
 
       <ContactSection />
 
-      <CoreServiceSection
+      {/* <CoreServiceSection
         heading=""
         service={realEstateService}
-      />
+      /> */}
 
       <VirtualTour />
 

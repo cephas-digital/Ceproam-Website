@@ -101,3 +101,16 @@ export interface ConsultationForm {
   email: string;
   interest: string;
 }
+
+export interface Insight {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  category: string;
+  readTime: string;
+
+  author?: string;
+  date?: string;
+  featured?: boolean;
+}

@@ -72,8 +72,8 @@ const HeroContent = ({
             ) : (
               <>
                 Smarter Property Management System,{" "}
-                <span className="text-orange-500">Designed Around People</span>{" "}
-                and Built for Africa
+                {/* <span className="text-orange-500">Designed Around People</span>{" "}
+                and Built for Africa */}
               </>
             )}
           </h1>

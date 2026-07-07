@@ -25,11 +25,6 @@ const Listings = () => {
     return () => window.clearTimeout(timeout);
   }, []);
 
-  // useEffect(() => {
-  //   const timeout = window.setTimeout(() => setIsVisible(true), 20)
-  //   return () => window.clearTimeout(timeout)
-  // })
-
   return (
     <main
       className={`relative min-h-screen font-Outfit  bg-slate-50 py-20 transition-transform duration-700 ease-out ${
@@ -73,27 +68,6 @@ const Listings = () => {
               </div>
             </div>
           </div>
-          {/* 
-          <div className="mt-8 grid gap-4 md:grid-cols-[repeat(3,1fr)] md:grid-rows-[1fr]">
-            <button className="rounded-full border border-slate-200 bg-slate-950 px-5 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-white shadow-sm transition hover:bg-slate-800 md:col-span-1">
-              All Listings
-            </button>
-            <button className="rounded-full border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-700 transition hover:bg-slate-50">
-              Residential
-            </button>
-            <button className="rounded-full border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-700 transition hover:bg-slate-50">
-              Commercial
-            </button>
-            <button className="rounded-full border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 md:col-span-2">
-              Land Banking
-            </button>
-            <button className="rounded-full border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-700 transition hover:bg-slate-50">
-              Farmlands
-            </button>
-            <button className="rounded-full border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-700 transition hover:bg-slate-50">
-              Agro Projects
-            </button>
-          </div> */}
 
           <FilterTabs
             tabs={investmentTabs}

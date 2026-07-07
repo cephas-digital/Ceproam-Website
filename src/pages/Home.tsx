@@ -153,7 +153,6 @@ const Home = () => {
             </a>
           </div>
 
-          {/* Cards */}
           <div className="grid gap-6 lg:grid-cols-3">
             {blogs.map((post) => (
               <BlogCard
