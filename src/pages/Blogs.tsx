@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import BlogsImg from "../assets/images/blogs.svg";
+import BlogsImg from "../assets/images/Blogs.svg";
 import FarmImage from "../assets/images/Cashew Farm Investment.png";
 import FilterTabs from "../components/listing/Filtertab";
 import FeaturedBlog from "../components/blogs/FeaturedBlogs";
