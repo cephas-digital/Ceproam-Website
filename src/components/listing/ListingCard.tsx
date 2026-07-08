@@ -8,18 +8,19 @@ interface ListingCardProps {
 const ListingCard = ({ card }: ListingCardProps) => {
   return (
     <motion.article
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.45 }}
-      whileHover={{ y: -6, scale: 1.01 }}
+      // initial={{ opacity: 0, y: 20 }}
+      // whileInView={{ opacity: 1, y: 0 }}
+      // viewport={{ once: true, amount: 0.2 }}
+      // transition={{ duration: 0.45 }}
+      // whileHover={{ y: -6, scale: 1.01 }}
       className="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm"
     >
       <div className="relative h-56 overflow-hidden">
         <img
           src={card.image}
           alt={card.title}
-          className="h-full w-full object-cover transition duration-500 ease-out group-hover:scale-105"
+          className="h-full w-full object-cover "
+          // transition duration-500 ease-out group-hover:scale-105
         />
 
         {card.badgeLeft && (

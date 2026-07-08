@@ -9,7 +9,7 @@ const VirtualTour = () => {
   ];
 
   return (
-    <section className="bg-[#F6F7FB] py-12 px-4 md:px-8 lg:px-16">
+    <section className="bg-[#F4F3F8] py-12 px-4 md:px-8 lg:px-16">
       <div className="mx-auto max-w-7xl overflow-hidden rounded-2xl bg-white shadow-lg">
         <div className="grid lg:grid-cols-2">
           <div className="flex flex-col justify-center px-8 py-12 md:px-12 lg:px-16">

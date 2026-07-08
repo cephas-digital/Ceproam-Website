@@ -82,7 +82,8 @@ export const investmentTabs: Array<{ label: string; icon: IconType }> = [
 export const investmentCards = [
   {
     id: 1,
-    image: "/images/farm1.png",
+    image:
+      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80",
     title: "CEPROMAS Heights",
     location: "Epe, Lagos State",
 
@@ -102,7 +103,8 @@ export const investmentCards = [
   },
   {
     id: 2,
-    image: "/images/building1.png",
+    image:
+      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
     title: "CEPROMAS Heights",
     location: "Lekki Phase 1, Lagos",
 

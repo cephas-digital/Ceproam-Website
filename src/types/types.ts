@@ -114,3 +114,23 @@ export interface Insight {
   date?: string;
   featured?: boolean;
 }
+
+export interface Property {
+  id: number;
+  title: string;
+  image: string;
+  badge: string;
+  badgeColor: string;
+  roi: string;
+  location: string;
+  description: string;
+
+  leftLabel: string;
+  leftValue: string;
+
+  rightLabel: string;
+  rightValue: string;
+
+  priceLabel: string;
+  price: string;
+}

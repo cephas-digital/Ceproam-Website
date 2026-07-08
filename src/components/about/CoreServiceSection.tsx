@@ -39,7 +39,7 @@ const CoreServiceSection = ({ service, heading }: CoreServiceSectionProps) => {
               <img
                 src={service.image}
                 alt={service.title}
-                className="h-[500px] w-full rounded-lg object-cover shadow-lg"
+                className="h-[500px] w-full rounded-lg object-cover "
               />
             </div>
           )}
@@ -82,13 +82,12 @@ const CoreServiceSection = ({ service, heading }: CoreServiceSectionProps) => {
             ) : null}
           </div>
 
-          {/* Image Right */}
           {service.imagePosition === "right" && (
             <div>
               <img
                 src={service.image}
                 alt={service.title}
-                className="h-[500px] w-full rounded-lg object-cover shadow-lg"
+                className="h-[500px] w-full rounded-lg object-cover "
               />
             </div>
           )}

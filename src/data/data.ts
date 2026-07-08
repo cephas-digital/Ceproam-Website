@@ -1,11 +1,14 @@
 import type { ServiceItem } from "../components/about/CoreServiceSection";
-import Property from "../assets/images/property.svg";
+import PropertyImg from "../assets/images/property.svg";
 import Industry from "../assets/images/industry.svg";
+import cashewFarm from "../assets/images/cashew-farm.svg";
+import urbanHub from "../assets/images/urban-hub.svg";
+import Greenfield from "../assets/images/greenfield.svg";
 import Vetted from "../assets/icons/vetted.png";
 import Transparent from "../assets/icons/transparent.png";
 import Community from "../assets/icons/community.png";
 import type { Insight } from "../types/types";
-
+import type { Property } from "../types/types";
 import featured from "../assets/images/featured.svg";
 import realEstate from "../assets/images/real-estate.svg";
 import finance from "../assets/images/finance.svg";
@@ -20,7 +23,7 @@ export const realEstateService: ServiceItem = {
   description:
     "We identify high-growth corridors in Lagos and across Nigeria before they peak. Our members benefit from off-market land banking opportunities and premium residential leasing portfolios managed by our internal property desk.",
 
-  image: Property,
+  image: PropertyImg,
 
   features: [
     "Strategic Acquisition Analytics",
@@ -149,5 +152,230 @@ export const insights: Insight[] = [
     image: resort,
     category: "Hospitality",
     readTime: "9 min read",
+  },
+];
+
+export const properties: Property[] = [
+  {
+    id: 1,
+    title: "Cashew Farm",
+    image: cashewFarm,
+    badge: "Selling Fast",
+    badgeColor: "bg-orange-500",
+    roi: "22.5%",
+    location: "Ogbomosho",
+    description:
+      "High-yield cashew cultivation project with guaranteed off-take agreements and titled land.",
+    leftLabel: "Unit Size",
+    leftValue: "1 Acre",
+    rightLabel: "Duration",
+    rightValue: "24 Months",
+    priceLabel: "Price per Unit",
+    price: "₦1,100,000",
+  },
+
+  {
+    id: 2,
+    title: "Urban Hub",
+    image: urbanHub,
+    badge: "Available",
+    badgeColor: "bg-slate-900",
+    roi: "18%",
+    location: "Ibeju-Lekki",
+    description:
+      "Prime residential land banking opportunity in the heart of the fastest growing district.",
+    leftLabel: "Unit Size",
+    leftValue: "500sqm",
+    rightLabel: "Hold Period",
+    rightValue: "12 Months",
+    priceLabel: "Investment",
+    price: "₦4,500,000",
+  },
+
+  {
+    id: 3,
+    title: "Greenfield Agro Hub",
+    image: Greenfield,
+    badge: "New Listing",
+    badgeColor: "bg-orange-500",
+    roi: "25%",
+    location: "Ogun State",
+    description:
+      "Smart greenhouse technology designed for year-round vegetable cultivation.",
+    leftLabel: "Risk Level",
+    leftValue: "Moderate",
+    rightLabel: "Cycle",
+    rightValue: "9 Months",
+    priceLabel: "Slot Price",
+    price: "₦250,000",
+  },
+
+  {
+    id: 4,
+    title: "Palm Plantation",
+    image:
+      "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=80",
+    badge: "Hot Deal",
+    badgeColor: "bg-red-500",
+    roi: "20%",
+    location: "Ondo",
+    description:
+      "Commercial palm plantation with high annual dividend potential.",
+    leftLabel: "Land Size",
+    leftValue: "2 Acres",
+    rightLabel: "Duration",
+    rightValue: "18 Months",
+    priceLabel: "Investment",
+    price: "₦2,000,000",
+  },
+
+  {
+    id: 5,
+    title: "Luxury Estate",
+    image:
+      "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80",
+    badge: "Available",
+    badgeColor: "bg-slate-900",
+    roi: "15%",
+    location: "Abuja",
+    description:
+      "Premium residential estate with excellent infrastructure and secure documentation.",
+    leftLabel: "Plot",
+    leftValue: "600sqm",
+    rightLabel: "Hold",
+    rightValue: "18 Months",
+    priceLabel: "Price",
+    price: "₦8,500,000",
+  },
+
+  {
+    id: 6,
+    title: "Cocoa Farm",
+    image:
+      "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1200&q=80",
+    badge: "Best ROI",
+    badgeColor: "bg-green-700",
+    roi: "28%",
+    location: "Ekiti",
+    description:
+      "Large-scale cocoa plantation with export-ready processing facilities.",
+    leftLabel: "Land",
+    leftValue: "3 Acres",
+    rightLabel: "Cycle",
+    rightValue: "30 Months",
+    priceLabel: "Investment",
+    price: "₦3,300,000",
+  },
+
+  {
+    id: 7,
+    title: "Smart Estate",
+    image:
+      "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=1200&q=80",
+    badge: "Selling Fast",
+    badgeColor: "bg-orange-500",
+    roi: "17%",
+    location: "Lekki",
+    description:
+      "Technology-enabled residential development with modern amenities.",
+    leftLabel: "Plot",
+    leftValue: "450sqm",
+    rightLabel: "Hold",
+    rightValue: "12 Months",
+    priceLabel: "Price",
+    price: "₦6,200,000",
+  },
+
+  {
+    id: 8,
+    title: "Rice Farm",
+    image:
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80",
+    badge: "New",
+    badgeColor: "bg-blue-600",
+    roi: "24%",
+    location: "Kebbi",
+    description:
+      "Mechanized rice production scheme supported by government initiatives.",
+    leftLabel: "Unit",
+    leftValue: "2 Acres",
+    rightLabel: "Cycle",
+    rightValue: "8 Months",
+    priceLabel: "Investment",
+    price: "₦900,000",
+  },
+
+  {
+    id: 9,
+    title: "Urban Hub",
+    image: urbanHub,
+    badge: "Available",
+    badgeColor: "bg-slate-900",
+    roi: "18%",
+    location: "Ibeju-Lekki",
+    description:
+      "Prime residential land banking opportunity in the heart of the fastest growing district.",
+    leftLabel: "Unit Size",
+    leftValue: "500sqm",
+    rightLabel: "Hold Period",
+    rightValue: "12 Months",
+    priceLabel: "Investment",
+    price: "₦4,500,000",
+  },
+
+  {
+    id: 10,
+    title: "Luxury Estate",
+    image:
+      "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80",
+    badge: "Available",
+    badgeColor: "bg-slate-900",
+    roi: "15%",
+    location: "Abuja",
+    description:
+      "Premium residential estate with excellent infrastructure and secure documentation.",
+    leftLabel: "Plot",
+    leftValue: "600sqm",
+    rightLabel: "Hold",
+    rightValue: "18 Months",
+    priceLabel: "Price",
+    price: "₦8,500,000",
+  },
+
+  {
+    id: 11,
+    title: "Cashew Farm",
+    image: cashewFarm,
+    badge: "Selling Fast",
+    badgeColor: "bg-orange-500",
+    roi: "22.5%",
+    location: "Ogbomosho",
+    description:
+      "High-yield cashew cultivation project with guaranteed off-take agreements and titled land.",
+    leftLabel: "Unit Size",
+    leftValue: "1 Acre",
+    rightLabel: "Duration",
+    rightValue: "24 Months",
+    priceLabel: "Price per Unit",
+    price: "₦1,100,000",
+  },
+
+  {
+    id: 12,
+    title: "Cocoa Farm",
+    image:
+      "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1200&q=80",
+    badge: "Best ROI",
+    badgeColor: "bg-green-700",
+    roi: "28%",
+    location: "Ekiti",
+    description:
+      "Large-scale cocoa plantation with export-ready processing facilities.",
+    leftLabel: "Land",
+    leftValue: "3 Acres",
+    rightLabel: "Cycle",
+    rightValue: "30 Months",
+    priceLabel: "Investment",
+    price: "₦3,300,000",
   },
 ];

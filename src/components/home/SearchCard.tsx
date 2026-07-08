@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
 import { IoHomeOutline } from "react-icons/io5";
 import { GiFarmTractor } from "react-icons/gi";
@@ -7,10 +8,13 @@ const SearchCard = () => {
   return (
     <div className="w-full mx-auto rounded-[1.5rem] border border-white/30 bg-white/50 p-4 shadow-xl backdrop-blur-lg sm:p-6">
       <div className="flex flex-row md:overflow-x-auto  overflow-x-scroll gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <button className="flex  lg:w-full md:w-auto min-w-[148px] items-center justify-center gap-2 rounded-full bg-[#002B66] px-5 py-3 text-sm font-medium text-white sm:text-base">
+        <Link
+          to="/properties"
+          className="flex  lg:w-full md:w-auto min-w-[148px] items-center justify-center gap-2 rounded-full bg-[#002B66] px-5 py-3 text-sm font-medium text-white sm:text-base"
+        >
           <IoHomeOutline />
           Property
-        </button>
+        </Link>
 
         <button className="flex  lg:w-full md:w-auto min-w-[148px] items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-gray-700 sm:text-base">
           <GiFarmTractor />

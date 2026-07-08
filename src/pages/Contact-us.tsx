@@ -42,11 +42,6 @@ const ContactUs = () => {
 
       <ContactSection />
 
-      {/* <CoreServiceSection
-        heading=""
-        service={realEstateService}
-      /> */}
-
       <VirtualTour />
 
       <Footer />

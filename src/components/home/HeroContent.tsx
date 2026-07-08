@@ -52,7 +52,8 @@ const HeroContent = ({
             scale: isActive ? 1 : 0.97,
           }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-2xl transform transition-all duration-800 sm:max-w-4xl lg:max-w-6xl"
+          // sm:max-w-4xl lg:max-w-5xl max-w-2xl
+          className=" transform transition-all duration-800 sm:max-w-4xl lg:max-w-5xl max-w-2xl "
         >
           <h1 className="text-[clamp(1.8rem,4vw,3.5rem)] font-bold leading-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
             {title ? (
@@ -84,11 +85,11 @@ const HeroContent = ({
           </p>
 
           <div className="mt-6 flex w-full flex-row items-center justify-center gap-3 sm:gap-4 md:mt-8 md:flex-row">
-            <button className="lg:w-[162px] md:w-auto w-[140px] rounded-xl bg-orange-500 px-6 py-3.5 text-base font-semibold text-white transition hover:bg-orange-600 sm:w-auto sm:px-8 sm:py-4 sm:text-lg">
+            <button className="lg:w-[162px] md:w-auto w-[140px] rounded-md bg-orange-500 px-6 py-3.5 text-base font-semibold text-white transition hover:bg-orange-600 sm:w-auto sm:px-8 sm:py-4 sm:text-lg">
               Invest Now
             </button>
 
-            <button className=" lg:w-[201px] md:w-auto w-[180px] rounded-xl border-2 border-white px-6 py-3.5 text-base font-semibold text-white transition hover:bg-white/10 sm:w-auto sm:px-8 sm:py-4 sm:text-lg">
+            <button className=" lg:w-[201px] md:w-auto w-[180px] rounded-md border-2 border-white px-6 py-3.5 text-base font-semibold text-white transition hover:bg-white/10 sm:w-auto sm:px-8 sm:py-4 sm:text-lg">
               Explore Listings
             </button>
           </div>

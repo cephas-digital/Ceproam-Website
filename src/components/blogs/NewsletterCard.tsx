@@ -1,13 +1,15 @@
 const NewsletterCard = () => {
   return (
-    <div className="rounded-2xl bg-gradient-to-b from-[#00193C] to-[#0044A2] p-5 text-white sm:p-7">
-      <h3 className="text-xl font-bold sm:text-2xl">Market Intelligence Delivered</h3>
+    <div className="rounded-2xl space-y-6 bg-gradient-to-b from-[#00193C] to-[#0044A2] p-5 text-white sm:p-7">
+      <h3 className="text-xl font-bold sm:text-2xl">
+        Market Intelligence Delivered
+      </h3>
 
       <p className="mt-3 text-sm text-blue-100 sm:mt-4 sm:text-base">
         Get bi-weekly investment reports and early access to property listings.
       </p>
 
-      <div className="mb-8 sm:mb-10">
+      <div className="">
         <input
           placeholder="Email Address"
           className="mt-8 w-full rounded-lg border border-blue-400 bg-transparent p-3 outline-none"

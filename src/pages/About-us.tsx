@@ -24,7 +24,7 @@ const AboutUs = () => {
           backgroundPosition: "center bottom",
         }}
       >
-        <div className="relative z-10 mx-auto flex  md:min-h-screen h-[420px] sm:h-[520px] md:h-[600px] max-w-7xl items-center px-4 py-24 sm:px-6 lg:px-0 lg:py-0">
+        <div className="relative z-10 mx-auto  flex  md:min-h-screen h-[420px] sm:h-[520px] md:h-[600px] max-w-7xl items-center px-4 py-24 sm:px-6 lg:px-0 lg:py-0">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -35,7 +35,7 @@ const AboutUs = () => {
               Ceproam
             </p>
 
-            <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl sm:leading-[1.15] lg:text-6xl lg:leading-[1.1]">
+            <h1 className="text-3xl md:mt-0 pt-6 font-bold leading-tight text-white sm:text-4xl sm:leading-[1.15] lg:text-6xl lg:leading-[1.1]">
               The Intersection of{" "}
               <span className="text-[#ff6b00]">Agriculture</span>,
               <br />
@@ -54,7 +54,8 @@ const AboutUs = () => {
                 Download Prospectus
               </button>
 
-              <button className="flex w-full items-center justify-center gap-2 rounded-lg border border-white/50 bg-white/5 px-8 py-4 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/10 sm:w-auto">
+              <button className="flex w-full items-center justify-center gap-2 rounded-lg border border-white/50 px-8 py-4 text-sm font-semibold text-white  transition hover:bg-white/10 sm:w-auto">
+                {/* backdrop-blur-sm */}
                 Our Strategic Model
                 <FiArrowRight />
               </button>

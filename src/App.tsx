@@ -7,6 +7,7 @@ import Blogs from "./pages/Blogs";
 import ContactUs from "./pages/Contact-us";
 import Listings from "./pages/Listings";
 import ListingDetails from "./pages/ListingDetails";
+import Properties from "./pages/Properties";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -41,6 +42,10 @@ export default function App() {
         <Route
           path="/listing/:id"
           element={<ListingDetails />}
+        />
+        <Route
+          path="/properties"
+          element={<Properties />}
         />
 
         <Route

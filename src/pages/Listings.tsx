@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import ListingTile from "../components/listing/ListingTile";
 import { investmentCards, investmentTabs } from "../data/investmentData";
 import FilterTabs from "../components/listing/Filtertab";
@@ -9,7 +9,7 @@ import Footer from "../components/shared/Footer";
 
 const Listings = () => {
   const [activeTab, setActiveTab] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
+  // const [isVisible, setIsVisible] = useState(false);
 
   const listings = useMemo(() => {
     if (activeTab === 0) {
@@ -20,17 +20,16 @@ const Listings = () => {
     return investmentCards.filter((card) => card.category === selectedCategory);
   }, [activeTab]);
 
-  useEffect(() => {
-    const timeout = window.setTimeout(() => setIsVisible(true), 20);
-    return () => window.clearTimeout(timeout);
-  }, []);
+  // useEffect(() => {
+  //   const timeout = window.setTimeout(() => setIsVisible(true), 20);
+  //   return () => window.clearTimeout(timeout);
+  // }, []);
 
   return (
-    <main
-      className={`relative min-h-screen font-Outfit  bg-slate-50 py-20 transition-transform duration-700 ease-out ${
+    <main className={`relative min-h-screen font-Outfit  bg-slate-50 py-20 `}>
+      {/* transition-transform duration-700 ease-out ${
         isVisible ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
-      }`}
-    >
+      } */}
       <div>
         <div className="mb-10 lg:px-28 md:px-14 px-6 flex flex-col gap-6 py-8 sm:py-4">
           <div className="flex flex-col gap-6 xl:flex-row xl:items-center xl:justify-between">

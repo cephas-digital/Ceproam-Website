@@ -88,7 +88,7 @@ const Blogs = () => {
             </div>
           </div>
 
-          <aside className="space-y-8 sm:space-y-10">
+          <aside className="space-y-8 sm:space-y-14 ">
             <SearchBlog />
 
             <NewsletterCard />
@@ -100,13 +100,13 @@ const Blogs = () => {
         </div>
       </section>
 
-      <section className="bg-gradient-to-r from-[#00193C] to-[#0044A2] py-16 sm:py-20">
+      <section className="bg-[#F4F3F8] py-16 sm:py-20">
         <div className="mx-auto flex max-w-4xl flex-col items-center px-4 text-center sm:px-6">
-          <h2 className="md:text-4xl text-2xl font-bold text-white ">
-            Ready to Secure Your CEPROAM?
+          <h2 className="md:text-4xl text-2xl font-bold text-[#00193C] ">
+            Ready to Secure Your financial future?
           </h2>
 
-          <p className="mt-6 md:text-base text-sm  max-w-2xl  leading-7 text-blue-100">
+          <p className="mt-6 md:text-base text-sm  max-w-2xl  leading-7 text-[#43474F]">
             Join over 5,000+ members building a more resilient financial future
             through the power of collective agro-investment and real estate
             banking.
@@ -115,16 +115,16 @@ const Blogs = () => {
           <div className="mt-10 flex w-full flex-col gap-4 sm:w-auto sm:flex-row">
             <button
               type="button"
-              className="rounded-md bg-[#FF6000] px-8 py-3 font-semibold text-white transition hover:bg-orange-600"
+              className="rounded-md bg-[#00193C] px-8 md:w-[363px] md:h-[64px] text-xl font-bold text-white transition hover:bg-orange-600"
             >
-              Become a Member
+              Get Started Today
             </button>
 
             <button
               type="button"
-              className="rounded-md border border-white px-8 py-3 font-semibold text-white transition hover:bg-white hover:text-[#0B3D91]"
+              className="rounded-md md:w-[285px] md:h-[68px]  border-[#00193C] text-xl border-2 px-8 py-3 font-bold text-[#00193C] transition hover:bg-white hover:text-[#0B3D91]"
             >
-              Schedule a Consultation
+              Contact Us
             </button>
           </div>
         </div>

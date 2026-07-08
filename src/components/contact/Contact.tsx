@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { FiMapPin, FiMail, FiPhone, FiClock } from "react-icons/fi";
 import { FaFacebookF, FaLinkedinIn, FaShareAlt } from "react-icons/fa";
 
@@ -38,17 +39,57 @@ const interests = [
 ];
 
 export default function ContactSection() {
+  type ContactForm = {
+    name: string;
+    email: string;
+    phone: string;
+    interest: string;
+    message: string;
+  };
+
+  const [form, setForm] = useState<ContactForm>({
+    name: "",
+    email: "",
+    phone: "",
+    interest: interests[0],
+    message: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // TODO: replace with real submit logic (API call)
+    // For now just log the form values
+    console.log("Contact form submitted:", form);
+    setForm({
+      name: "",
+      email: "",
+      phone: "",
+      interest: interests[0],
+      message: "",
+    });
+  };
   return (
     <section className="bg-[#F8F8FD] py-20">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-12 lg:grid-cols-[2fr_1fr]">
-          {/* FORM */}
-          <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm md:p-10">
+          <div className="rounded-2xl border border-[#C4C6D14D] bg-white p-8 shadow-sm md:p-10">
             <h2 className="mb-10 text-4xl font-bold text-[#00193C]">
               Request a Consultation
             </h2>
 
-            <form className="space-y-6">
+            <form
+              className="space-y-6"
+              onSubmit={handleSubmit}
+            >
               {/* Row */}
               <div className="grid gap-5 md:grid-cols-2">
                 <div>
@@ -57,9 +98,12 @@ export default function ContactSection() {
                   </label>
 
                   <input
+                    name="name"
                     type="text"
+                    value={form.name}
+                    onChange={handleChange}
                     placeholder="John Doe"
-                    className="h-12 w-full rounded-lg border border-gray-300 px-4 outline-none transition focus:border-[#FF6200]"
+                    className="h-12 w-full rounded-lg border border-[#C4C6D1] bg-[#F7FAFC] px-4 outline-none transition focus:border-[#FF6200]"
                   />
                 </div>
 
@@ -69,9 +113,12 @@ export default function ContactSection() {
                   </label>
 
                   <input
+                    name="email"
                     type="email"
+                    value={form.email}
+                    onChange={handleChange}
                     placeholder="john@example.com"
-                    className="h-12 w-full rounded-lg border border-gray-300 px-4 outline-none transition focus:border-[#FF6200]"
+                    className="h-12 w-full rounded-lg border border-[#C4C6D1] bg-[#F7FAFC] px-4 outline-none transition focus:border-[#FF6200]"
                   />
                 </div>
               </div>
@@ -84,9 +131,12 @@ export default function ContactSection() {
                   </label>
 
                   <input
+                    name="phone"
                     type="tel"
+                    value={form.phone}
+                    onChange={handleChange}
                     placeholder="+234 ..."
-                    className="h-12 w-full rounded-lg border border-gray-300 px-4 outline-none transition focus:border-[#FF6200]"
+                    className="h-12 w-full rounded-lg border border-[#C4C6D1] bg-[#F7FAFC] px-4 outline-none transition focus:border-[#FF6200]"
                   />
                 </div>
 
@@ -95,9 +145,19 @@ export default function ContactSection() {
                     Interest
                   </label>
 
-                  <select className="h-12 w-full rounded-lg border border-gray-300 bg-white px-4 outline-none focus:border-[#FF6200]">
+                  <select
+                    name="interest"
+                    value={form.interest}
+                    onChange={handleChange}
+                    className="h-12 w-full rounded-lg border border-[#C4C6D1] bg-[#F7FAFC]  px-4 outline-none focus:border-[#FF6200]"
+                  >
                     {interests.map((item) => (
-                      <option key={item}>{item}</option>
+                      <option
+                        key={item}
+                        value={item}
+                      >
+                        {item}
+                      </option>
                     ))}
                   </select>
                 </div>
@@ -110,15 +170,18 @@ export default function ContactSection() {
                 </label>
 
                 <textarea
+                  name="message"
+                  value={form.message}
+                  onChange={handleChange}
                   rows={6}
                   placeholder="How can we help you grow your portfolio?"
-                  className="w-full rounded-lg border border-gray-300 p-4 outline-none transition focus:border-[#FF6200]"
+                  className="w-full rounded-lg border border-[#C4C6D1] bg-[#F7FAFC] p-4 outline-none transition focus:border-[#FF6200]"
                 />
               </div>
 
               <button
                 type="submit"
-                className="rounded-lg bg-[#FF6200] px-10 py-4 font-semibold text-white shadow-md transition hover:bg-orange-600"
+                className="rounded-lg bg-[#FF6000] md:w-[316px] px-10 py-4 font-semibold text-white shadow-md transition hover:bg-orange-600"
               >
                 Request Consultation
               </button>
