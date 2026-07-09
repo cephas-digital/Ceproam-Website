@@ -82,10 +82,6 @@ const Blogs = () => {
                 />
               ))}
             </div>
-
-            <div className="mt-10 flex justify-center">
-              <Pagination />
-            </div>
           </div>
 
           <aside className="space-y-8 sm:space-y-14 ">
@@ -97,6 +93,10 @@ const Blogs = () => {
 
             <ListingBanner image={FarmImage} />
           </aside>
+        </div>
+
+        <div className="mt-10 flex justify-center">
+          <Pagination />
         </div>
       </section>
 
@@ -115,14 +115,14 @@ const Blogs = () => {
           <div className="mt-10 flex w-full flex-col gap-4 sm:w-auto sm:flex-row">
             <button
               type="button"
-              className="rounded-md bg-[#00193C] px-8 md:w-[363px] md:h-[64px] text-xl font-bold text-white transition hover:bg-orange-600"
+              className="rounded-md bg-[#00193C] px-8 py-4 md:w-[363px] md:h-[64px] text-xl font-bold text-white transition hover:bg-orange-600"
             >
               Get Started Today
             </button>
 
             <button
               type="button"
-              className="rounded-md md:w-[285px] md:h-[68px]  border-[#00193C] text-xl border-2 px-8 py-3 font-bold text-[#00193C] transition hover:bg-white hover:text-[#0B3D91]"
+              className="rounded-md md:w-[285px] md:h-[68px]  border-[#00193C] text-xl border-2 px-8 py-4 font-bold text-[#00193C] transition hover:bg-white hover:text-[#0B3D91]"
             >
               Contact Us
             </button>

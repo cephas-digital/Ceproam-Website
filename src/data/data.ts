@@ -270,8 +270,7 @@ export const properties: Property[] = [
   {
     id: 7,
     title: "Smart Estate",
-    image:
-      "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1460317442991-0ec209397118",
     badge: "Selling Fast",
     badgeColor: "bg-orange-500",
     roi: "17%",
@@ -363,8 +362,7 @@ export const properties: Property[] = [
   {
     id: 12,
     title: "Cocoa Farm",
-    image:
-      "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449",
     badge: "Best ROI",
     badgeColor: "bg-green-700",
     roi: "28%",

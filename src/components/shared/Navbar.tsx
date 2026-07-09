@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { useState } from "react";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import NavImg from "../../assets/images/navabr.png";
 const navLinks = [
   { label: "Home", path: "/" },
@@ -22,11 +22,13 @@ export default function Navbar() {
         className="fixed left-0 top-0 z-40 w-full border-b border-gray-200 bg-white shadow-sm font-Outfit"
       >
         <div className="mx-auto flex items-center justify-between px-4 md:py-2 py-4 sm:px-6 md:px-16 lg:px-28">
-          <img
-            src={NavImg}
-            alt="CEPROAM"
-            className="h-9 sm:h-10"
-          />
+          <Link to="/">
+            <img
+              src={NavImg}
+              alt="CEPROAM"
+              className="h-9 sm:h-10"
+            />
+          </Link>
 
           <div className="flex items-center gap-4 md:gap-6">
             <nav className="hidden md:block">

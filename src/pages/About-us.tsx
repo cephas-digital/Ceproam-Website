@@ -17,45 +17,43 @@ const AboutUs = () => {
   return (
     <div className="font-Outfit">
       <section
-        className="relative min-h-[60vh] sm:min-h-[70vh] md:min-h-screen overflow-hidden"
+        className="relative min-h-[70vh] sm:min-h-[80vh] md:min-h-screen overflow-hidden"
         style={{
           backgroundImage: `url(${About})`,
           backgroundSize: "cover",
           backgroundPosition: "center bottom",
         }}
       >
-        <div className="relative z-10 mx-auto  flex  md:min-h-screen h-[420px] sm:h-[520px] md:h-[600px] max-w-7xl items-center px-4 py-24 sm:px-6 lg:px-0 lg:py-0">
+        <div className="relative z-10 mx-auto flex min-h-[520px] items-center max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:px-0 lg:min-h-[620px] lg:py-0">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-4xl"
+            className="w-full max-w-3xl"
           >
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-[#ff6b00]">
               Ceproam
             </p>
 
-            <h1 className="text-3xl md:mt-0 pt-6 font-bold leading-tight text-white sm:text-4xl sm:leading-[1.15] lg:text-6xl lg:leading-[1.1]">
-              The Intersection of{" "}
+            <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl sm:leading-[1.15] lg:text-6xl lg:leading-[1.1]">
+              The Intersection of
               <span className="text-[#ff6b00]">Agriculture</span>,
-              <br />
-              <span className="text-[#ff6b00]">Investment</span> and{" "}
+              <span className="text-[#ff6b00]">Investment</span> and
               <span className="text-[#ff6b00]">Asset</span> Management
             </h1>
 
-            <p className="mt-6 max-w-2xl text-sm leading-7 text-gray-300 sm:text-base">
+            <p className="mt-6 max-w-xl text-sm leading-7 text-gray-300 sm:text-base">
               Bridging the gap between traditional agricultural yields and
               modern real estate security through a data-driven investment
               ecosystem designed for the forward-thinking investor.
             </p>
 
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <button className="w-full rounded-lg bg-[#ff6b00] px-8 py-4 text-sm font-semibold text-white transition hover:bg-orange-600 sm:w-auto">
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-start">
+              <button className="w-full rounded-lg bg-[#ff6b00] px-6 py-4 text-base font-semibold text-white transition hover:bg-orange-600 sm:w-auto">
                 Download Prospectus
               </button>
 
-              <button className="flex w-full items-center justify-center gap-2 rounded-lg border border-white/50 px-8 py-4 text-sm font-semibold text-white  transition hover:bg-white/10 sm:w-auto">
-                {/* backdrop-blur-sm */}
+              <button className="flex w-full items-center justify-center gap-2 rounded-lg border border-white/50 px-6 py-4 text-base font-semibold text-white transition hover:bg-white/10 sm:w-auto">
                 Our Strategic Model
                 <FiArrowRight />
               </button>

@@ -1,6 +1,7 @@
 import type { CSSProperties, ReactNode } from "react";
 import { motion } from "motion/react";
 import SearchCard from "./SearchCard";
+import { Link } from "react-router";
 
 interface HeroContentProps {
   backgroundImage?: string;
@@ -89,9 +90,11 @@ const HeroContent = ({
               Invest Now
             </button>
 
-            <button className=" lg:w-[201px] md:w-auto w-[180px] rounded-md border-2 border-white px-6 py-3.5 text-base font-semibold text-white transition hover:bg-white/10 sm:w-auto sm:px-8 sm:py-4 sm:text-lg">
-              Explore Listings
-            </button>
+            <Link to="/listings">
+              <button className=" lg:w-[201px] md:w-auto w-[180px] rounded-md border-2 border-white px-6 py-3.5 text-base font-semibold text-white transition hover:bg-white/10 sm:w-auto sm:px-8 sm:py-4 sm:text-lg">
+                Explore Listings
+              </button>
+            </Link>
           </div>
         </motion.div>
 

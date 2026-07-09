@@ -1,9 +1,10 @@
 import { motion } from "motion/react";
 import ContactImg from "../assets/images/contact-us.svg";
 import ContactSection from "../components/contact/Contact";
-
+import OfficeMap from "../components/contact/Map";
 import Footer from "../components/shared/Footer";
 import VirtualTour from "../components/contact/Virtual-tour";
+
 const ContactUs = () => {
   return (
     <div className=" font-Outfit">
@@ -43,6 +44,8 @@ const ContactUs = () => {
       <ContactSection />
 
       <VirtualTour />
+
+      <OfficeMap />
 
       <Footer />
     </div>
