@@ -45,7 +45,7 @@ const ListingSection = ({
         </div>
 
         {ctaText && (
-          <button className="inline-flex items-center text-sm sm:text-base  justify-center gap-2 rounded-full px-4 py-2 text-[#021D49] transition hover:bg-[#f8f8f9]">
+          <button className="inline-flex items-center text-sm sm:text-base  justify-center gap-2 rounded-full px-4 py-2 text-[#021D49] transition md:hover:bg-[#f8f8f9]">
             {ctaText}
           </button>
         )}

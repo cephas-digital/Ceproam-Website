@@ -37,9 +37,9 @@ const AboutUs = () => {
 
             <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl sm:leading-[1.15] lg:text-6xl lg:leading-[1.1]">
               The Intersection of
-              <span className="text-[#ff6b00]">Agriculture</span>,
-              <span className="text-[#ff6b00]">Investment</span> and
-              <span className="text-[#ff6b00]">Asset</span> Management
+              <span className="text-[#ff6b00]"> Agriculture</span>,
+              <span className="text-[#ff6b00]"> Investment</span> and
+              <span className="text-[#ff6b00]"> Asset</span> Management
             </h1>
 
             <p className="mt-6 max-w-xl text-sm leading-7 text-gray-300 sm:text-base">

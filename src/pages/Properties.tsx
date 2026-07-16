@@ -1,9 +1,9 @@
-import { HiArrowRight } from "react-icons/hi";
 import PropertyCard from "../components/properties/PropertyCard";
 import StatsCard from "../components/properties/StatsCard";
 import Footer from "../components/shared/Footer";
 import { properties } from "../data/data";
 import { Link } from "react-router";
+import { HiArrowLeft } from "react-icons/hi2";
 
 const Properties = () => {
   return (
@@ -13,8 +13,8 @@ const Properties = () => {
           <div>
             <Link to="/">
               <button className="mb-8 flex items-center gap-2 font-bold text-[#00193C]">
+                <HiArrowLeft />
                 Back to Home
-                <HiArrowRight />
               </button>
             </Link>
 

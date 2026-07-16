@@ -9,7 +9,7 @@ interface ListingTileProps {
 const ListingTile = ({ card }: ListingTileProps) => {
   return (
     <article className="group overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_20px_60px_rgba(15,23,42,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_80px_rgba(15,23,42,0.12)]">
-      <div className="relative h-64 overflow-hidden">
+      <div className="relative h-56 overflow-hidden sm:h-64">
         <img
           src={card.image}
           alt={card.title}
@@ -29,28 +29,28 @@ const ListingTile = ({ card }: ListingTileProps) => {
         )}
       </div>
 
-      <div className="space-y-5 p-6">
-        <div className="flex items-start justify-between gap-4">
+      <div className="space-y-4 p-4 sm:space-y-5 sm:p-6">
+        <div className="flex items-start justify-between gap-3 sm:gap-4">
           <div>
-            <h3 className="text-2xl font-semibold text-slate-900">
+            <h3 className="text-xl font-semibold text-slate-900 sm:text-2xl">
               {card.title}
             </h3>
-            <div className="mt-3 flex items-center gap-2 text-sm text-slate-500">
+            <div className="mt-2 flex items-center gap-2 text-sm text-slate-500 sm:mt-3">
               <FaMapMarkerAlt className="text-orange-500" />
               <span>{card.location}</span>
             </div>
           </div>
-          <button className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-slate-900 text-white transition hover:bg-slate-800">
+          <button className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-900 text-white transition hover:bg-slate-800 sm:h-12 sm:w-12">
             <FaArrowRight />
           </button>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-3 sm:grid-cols-2 sm:gap-4">
           <div className="rounded-3xl bg-slate-50 p-4">
             <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
               {card.priceLabel}
             </p>
-            <p className="mt-2 text-xl font-semibold text-slate-900">
+            <p className="mt-2 text-lg font-semibold text-slate-900 sm:text-xl">
               {card.priceValue}
             </p>
           </div>
@@ -59,7 +59,7 @@ const ListingTile = ({ card }: ListingTileProps) => {
               <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
                 {card.secondaryLabel}
               </p>
-              <p className="mt-2 text-xl font-semibold text-orange-500">
+              <p className="mt-2 text-lg font-semibold text-orange-500 sm:text-xl">
                 {card.secondaryValue}
               </p>
             </div>
