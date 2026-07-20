@@ -8,6 +8,7 @@ import BackgroundThree from "../../assets/images/slide3.svg";
 import "swiper/css";
 import "swiper/css/pagination";
 import HeroContent from "./HeroContent";
+import SearchCard from "./SearchCard";
 
 interface Slide {
   id: number;
@@ -90,6 +91,10 @@ const HeroSlider = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+
+      <div className=" md:max-w-2xl z-20 mt-8 w-full  px-0 sm:mt-10 lg:absolute lg:bottom-[-36px] lg:left-1/2 lg:mt-0 lg:w-[calc(100%-2rem)] lg:-translate-x-1/2 lg:px-4 mx-auto">
+        <SearchCard />
+      </div>
     </section>
   );
 };

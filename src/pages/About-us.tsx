@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { FiArrowRight } from "react-icons/fi";
-import About from "../assets/images/aboutpics.svg";
+import About from "../assets/images/updated-about.svg";
 import vision from "../assets/images/vision.svg";
 import mission from "../assets/images/mission.svg";
 import RealEsateOne from "../assets/images/real-estateOne.png";
@@ -17,7 +17,7 @@ const AboutUs = () => {
   return (
     <div className="font-Outfit">
       <section
-        className="relative min-h-[70vh] sm:min-h-[80vh] md:min-h-screen overflow-hidden"
+        className="relative min-h-[60vh] sm:min-h-[70vh] md:min-h-screen overflow-hidden"
         style={{
           backgroundImage: `url(${About})`,
           backgroundSize: "cover",

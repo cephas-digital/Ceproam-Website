@@ -1,6 +1,6 @@
 import type { CSSProperties, ReactNode } from "react";
 import { motion } from "motion/react";
-import SearchCard from "./SearchCard";
+// import SearchCard from "./SearchCard";
 import { Link } from "react-router";
 
 interface HeroContentProps {
@@ -187,10 +187,6 @@ const HeroContent = ({
             <SearchCard />
           </div>
         </motion.div> */}
-
-        <div className=" md:max-w-2xl mt-8 w-full  px-0 sm:mt-10 lg:absolute lg:bottom-[-36px] lg:left-1/2 lg:mt-0 lg:w-[calc(100%-2rem)] lg:-translate-x-1/2 lg:px-4 mx-auto">
-          <SearchCard />
-        </div>
       </div>
     </section>
   );
