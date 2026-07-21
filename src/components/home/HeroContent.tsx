@@ -122,8 +122,8 @@ const HeroContent = ({
           style={overlayStyle}
         />
       )}
-
-      <div className="relative z-10 flex min-h-[440px] sm:min-h-[520px] md:min-h-screen md:h-[600px] w-full flex-col items-center justify-start px-4 pt-16 pb-28 text-center sm:px-6 sm:pt-20 sm:pb-32 md:justify-center md:py-4 md:pt-0 md:pb-24 lg:justify-center lg:py-4 lg:pt-0">
+      {/* min-h-[440px] sm:min-h-[520px] */}
+      <div className="relative z-10 flex  md:min-h-screen md:h-[600px] w-full flex-col items-center justify-start px-4 pt-16 pb-28 text-center sm:px-6 sm:pt-20 sm:pb-32 md:justify-center md:py-4 md:pt-0 md:pb-24 lg:justify-center lg:py-4 lg:pt-0">
         <motion.div
           initial={{ opacity: 0, y: 32, scale: 0.97 }}
           animate={{
