@@ -68,7 +68,7 @@ const HeroSlider = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="relative font-Outfit w-full">
+    <section className="relative  font-Outfit w-full">
       <Swiper
         modules={[Autoplay, Pagination]}
         autoplay={{ delay: 4000, disableOnInteraction: false }}
@@ -92,7 +92,7 @@ const HeroSlider = () => {
         ))}
       </Swiper>
 
-      <div className=" md:max-w-2xl z-20 mt-8 w-full  px-0 sm:mt-10 lg:absolute lg:bottom-[-36px] lg:left-1/2 lg:mt-0 lg:w-[calc(100%-2rem)] lg:-translate-x-1/2 lg:px-4 mx-auto">
+      <div className=" md:max-w-2xl z-20 w-[calc(100%-2rem)]  px-0 lg:absolute lg:bottom-[-36px] lg:left-1/2 lg:mt-0 lg:w-[calc(100%-2rem)] lg:-translate-x-1/2 lg:px-4 mx-auto">
         <SearchCard />
       </div>
     </section>

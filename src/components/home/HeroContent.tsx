@@ -104,7 +104,7 @@ const HeroContent = ({
     //   </div>
     // </section>
 
-    <section className="relative min-h-[90vh] sm:min-h-[80vh] md:min-h-screen w-full overflow-hidden">
+    <section className="relative min-h-[70vh] sm:min-h-[80vh] md:min-h-screen w-full overflow-hidden">
       {backgroundImage && (
         <div
           className={`absolute inset-0 bg-cover bg-center transition-transform duration-1000 ease-out transform ${
