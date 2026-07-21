@@ -33,7 +33,7 @@ const SearchCard = () => {
           <p className="font-semibold text-[#1A1B1F]">Nairobi & Environs</p>
         </div>
 
-        <button className="md:flex hidden w-full items-center justify-center rounded-full bg-white p-3 text-black shadow-md sm:w-auto">
+        <button className="flex w-full items-center justify-center rounded-full bg-white p-3 text-black shadow-md sm:w-auto">
           <HiOutlineAdjustmentsHorizontal size={22} />
         </button>
       </div>
