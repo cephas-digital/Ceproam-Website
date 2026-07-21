@@ -104,7 +104,7 @@ const HeroContent = ({
     //   </div>
     // </section>
 
-    <section className="relative min-h-[70vh] sm:min-h-[80vh] md:min-h-screen w-full overflow-hidden">
+    <section className="relative min-h-[74vh] sm:min-h-[80vh] md:min-h-screen w-full overflow-hidden">
       {backgroundImage && (
         <div
           className={`absolute inset-0 bg-cover bg-center transition-transform duration-1000 ease-out transform ${
@@ -123,7 +123,7 @@ const HeroContent = ({
         />
       )}
 
-      <div className="relative z-10 flex md:min-h-screen h-[420px] sm:h-[520px] md:h-[600px] w-full flex-col items-center justify-start px-4 pt-20 pb-24 text-center sm:px-6 lg:justify-center lg:py-4 lg:pt-0">
+      <div className="relative z-10 flex min-h-[440px] sm:min-h-[520px] md:min-h-screen md:h-[600px] w-full flex-col items-center justify-start px-4 pt-16 pb-28 text-center sm:px-6 sm:pt-20 sm:pb-32 md:justify-center md:py-4 md:pt-0 md:pb-24 lg:justify-center lg:py-4 lg:pt-0">
         <motion.div
           initial={{ opacity: 0, y: 32, scale: 0.97 }}
           animate={{
