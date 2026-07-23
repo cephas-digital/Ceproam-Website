@@ -1,47 +1,134 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import ListingTile from "../components/listing/ListingTile";
-import { investmentCards, investmentTabs } from "../data/investmentData";
 import FilterTabs from "../components/listing/Filtertab";
 import GrowthCalculator from "../components/listing/Listing-calculator";
 import { FeatureGridSection } from "../components/ui/FeaturedGrid";
 import { whyInvestWithUs } from "../data/data";
 import Footer from "../components/shared/Footer";
 
-const Listings = () => {
-  const [activeTab, setActiveTab] = useState(0);
-  // const [isVisible, setIsVisible] = useState(false);
+// API Helpers & Transformers
+import { getAllInvestments } from "../api/investments";
+import { getAllProperties } from "../api/properties";
+import { transformBackendInvestmentToCard } from "../utils/transformInvestment";
+import { transformBackendPropertyToCard } from "../utils/transformProperty";
+import type { ListingCardData } from "../types/types";
 
-  const listings = useMemo(() => {
-    if (activeTab === 0) {
-      return investmentCards;
+const Listings = () => {
+  const [activeTab, setActiveTab] = useState<number>(0);
+  const [searchQuery, setSearchQuery] = useState<string>("");
+
+  const [allItems, setAllItems] = useState<ListingCardData[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+
+  // Define tab categories
+  const marketplaceTabs = [
+    { label: "All" },
+    { label: "Investments" },
+    { label: "Properties" },
+    { label: "Real Estate" },
+    { label: "Agriculture" },
+    { label: "Sale" },
+    { label: "Rent" },
+  ];
+
+  useEffect(() => {
+    const fetchMarketplaceData = async () => {
+      try {
+        setLoading(true);
+
+        const [investmentsRes, propertiesRes] = await Promise.allSettled([
+          getAllInvestments(),
+          getAllProperties(),
+        ]);
+
+        const rawInvestments =
+          investmentsRes.status === "fulfilled"
+            ? investmentsRes.value.data || []
+            : [];
+        const rawProperties =
+          propertiesRes.status === "fulfilled"
+            ? propertiesRes.value.data || []
+            : [];
+
+        const investmentCards = rawInvestments.map(
+          transformBackendInvestmentToCard,
+        );
+        const propertyCards = rawProperties.map(transformBackendPropertyToCard);
+
+        setAllItems([...investmentCards, ...propertyCards]);
+      } catch (error) {
+        console.error("Failed to fetch marketplace assets:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchMarketplaceData();
+  }, []);
+
+  const filteredListings = useMemo(() => {
+    let result = allItems;
+
+    // 1. Tab Filter
+    if (activeTab !== 0) {
+      const selectedTab =
+        marketplaceTabs[activeTab]?.label?.toLowerCase().trim() || "";
+
+      result = result.filter((item) => {
+        // Check discriminator OR itemType string matching
+        if (selectedTab === "investments" || selectedTab === "investment") {
+          return (
+            item.itemType === "INVESTMENT" ||
+            item.category?.toLowerCase().includes("investment")
+          );
+        }
+
+        if (selectedTab === "properties" || selectedTab === "property") {
+          return (
+            item.itemType === "PROPERTY" ||
+            item.category?.toLowerCase().includes("property")
+          );
+        }
+
+        // Sub-category matching (e.g. "real estate", "agriculture", "sale", "rent")
+        const itemCategory = item.category?.toLowerCase() || "";
+        const itemBadgeLeft = item.badgeLeft?.toLowerCase() || "";
+        const itemBadgeRight = item.badgeRight?.toLowerCase() || "";
+
+        return (
+          itemCategory.includes(selectedTab) ||
+          itemBadgeLeft.includes(selectedTab) ||
+          itemBadgeRight.includes(selectedTab)
+        );
+      });
     }
 
-    const selectedCategory = investmentTabs[activeTab]?.label;
-    return investmentCards.filter((card) => card.category === selectedCategory);
-  }, [activeTab]);
+    // 2. Search Query Filter
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase().trim();
+      result = result.filter(
+        (item) =>
+          item.title.toLowerCase().includes(query) ||
+          item.location.toLowerCase().includes(query),
+      );
+    }
 
-  // useEffect(() => {
-  //   const timeout = window.setTimeout(() => setIsVisible(true), 20);
-  //   return () => window.clearTimeout(timeout);
-  // }, []);
+    return result;
+  }, [activeTab, allItems, searchQuery]);
 
   return (
     <main className="relative min-h-screen bg-slate-50 py-16 font-Outfit sm:py-20">
-      {/* transition-transform duration-700 ease-out ${
-        isVisible ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
-      } */}
       <div>
         <div className="mb-10 flex flex-col gap-6 px-4 py-6 sm:px-6 sm:py-8 md:px-14 lg:px-28">
           <div className="flex flex-col gap-6 xl:flex-row xl:items-center xl:justify-between">
             <div className="max-w-3xl">
               <h1 className="text-3xl font-bold tracking-tight text-[#00193C] sm:text-4xl lg:text-5xl">
-                Marketplace of <span className="text-[#FF5500]">Secure</span>
+                Marketplace of <span className="text-[#FF5500]">Secure</span>{" "}
                 Assets
               </h1>
               <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base lg:text-lg">
-                Discover vetted real estate and agro-projects designed for
-                sustainable wealth preservation. Each listing is backed by legal
-                frameworks and physical land assets.
+                Discover vetted real estate, outright properties, and high-yield
+                agro-projects designed for sustainable wealth creation.
               </p>
             </div>
 
@@ -69,7 +156,7 @@ const Listings = () => {
           </div>
 
           <FilterTabs
-            tabs={investmentTabs}
+            tabs={marketplaceTabs}
             activeTab={activeTab}
             setActiveTab={setActiveTab}
           />
@@ -79,21 +166,15 @@ const Listings = () => {
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <div className="grow">
                   <p className="text-sm font-medium uppercase tracking-[0.25em] text-slate-500">
-                    Search by location
+                    Search by title or location
                   </p>
                   <input
                     type="text"
-                    placeholder="Search by location..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder="Search e.g. Lagos, Abuja, Agro..."
                     className="mt-3 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3.5 text-sm text-slate-900 outline-none transition focus:border-orange-500 focus:ring-2 focus:ring-orange-200 sm:px-5 sm:py-4"
                   />
-                </div>
-                <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
-                  <button className="rounded-2xl border border-slate-200 bg-white px-5 py-3.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 sm:py-4">
-                    Min Budget
-                  </button>
-                  <button className="rounded-2xl border border-slate-200 bg-white px-5 py-3.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 sm:py-4">
-                    ROI Range
-                  </button>
                 </div>
               </div>
             </div>
@@ -107,20 +188,31 @@ const Listings = () => {
                 High-yield cashew cultivation project with offtake agreements
                 and attractive exit terms.
               </p>
-              <button className="mt-6 inline-flex items-center gap-2 rounded-2xl bg-white px-5 py-3.5 text-sm font-semibold text-slate-900 transition hover:bg-slate-200 sm:px-6 sm:py-4">
+              <button className="mt-6 inline-flex items-center gap-2 rounded-2xl bg-white px-5 py-3.5 text-sm font-semibold text-slate-900 transition hover:bg-slate-200 sm:px-6 sm:py-4 cursor-pointer">
                 Explore Launch
               </button>
             </div>
           </div>
         </div>
 
+        {/* Listings Display Grid */}
         <div className="mb-10 grid gap-6 px-4 sm:px-6 md:grid-cols-2 md:px-14 lg:px-28 xl:grid-cols-3">
-          {listings.map((card) => (
-            <ListingTile
-              key={card.id}
-              card={card}
-            />
-          ))}
+          {loading ? (
+            [1, 2, 3, 4, 5, 6].map((idx) => (
+              <div
+                key={idx}
+                className="h-[420px] w-full animate-pulse rounded-2xl bg-slate-200"
+              />
+            ))
+          ) : filteredListings.length > 0 ? (
+            filteredListings.map((card) => (
+              <ListingTile key={card.id} card={card} />
+            ))
+          ) : (
+            <div className="col-span-full rounded-3xl border border-dashed border-slate-300 bg-white p-12 text-center text-slate-600">
+              No investments or properties found matching your search criteria.
+            </div>
+          )}
         </div>
 
         <GrowthCalculator />

@@ -1,27 +1,39 @@
-import { useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { motion } from "motion/react";
 import FilterTabs from "./Filtertab";
 import ListingCard from "./ListingCard";
 import type { ListingSectionProps } from "../../types/types";
 
-const ListingSection = ({
+interface ExtendedListingSectionProps extends ListingSectionProps {
+  loading?: boolean;
+}
+
+const ListingSection: React.FC<ExtendedListingSectionProps> = ({
   title,
   subtitle,
   ctaText,
-  tabs,
-  cards,
-}: ListingSectionProps) => {
-  const [activeTab, setActiveTab] = useState(0);
+  tabs = [],
+  cards = [], // 👈 Default to an empty array to prevent undefined errors
+  loading = false,
+}) => {
+  const [activeTab, setActiveTab] = useState<number>(0);
 
   const visibleCards = useMemo(() => {
-    if (activeTab === 0) return cards;
+    const safeCards = cards || [];
+    if (activeTab === 0) return safeCards;
 
-    const selectedLabel = tabs[activeTab]?.label?.toLowerCase();
-    if (!selectedLabel) return cards;
+    const rawTabLabel = tabs[activeTab]?.label?.toLowerCase() || "";
+    const normalizedTab = rawTabLabel.trim().replace(/\s+/g, "_");
 
-    return cards.filter((card) => {
-      const cardCategory = card.category?.toLowerCase();
-      return cardCategory === selectedLabel;
+    return safeCards.filter((card) => {
+      if (!card?.category) return false;
+      const cardCategory = card.category.toLowerCase();
+
+      // Check if card category contains tab label
+      return (
+        cardCategory.includes(rawTabLabel) ||
+        cardCategory.includes(normalizedTab)
+      );
     });
   }, [activeTab, cards, tabs]);
 
@@ -39,15 +51,15 @@ const ListingSection = ({
             {title}
           </h2>
 
-          <p className="mt-3 max-w-2xl text-sm sm:text-base  text-gray-500">
+          <p className="mt-3 max-w-2xl text-sm sm:text-base text-gray-500">
             {subtitle}
           </p>
         </div>
 
         {ctaText && (
-          <button className="inline-flex items-center text-sm sm:text-base  justify-center gap-2 rounded-full px-4 py-2 text-[#021D49] transition md:hover:bg-[#f8f8f9]">
+          <div className="inline-flex items-center text-sm sm:text-base justify-center gap-2 rounded-full px-4 py-2 text-[#021D49] transition md:hover:bg-[#f8f8f9]">
             {ctaText}
-          </button>
+          </div>
         )}
       </motion.div>
 
@@ -72,13 +84,16 @@ const ListingSection = ({
         transition={{ duration: 0.5, delay: 0.1 }}
         className="mt-8 grid gap-6 sm:mt-10 sm:grid-cols-2 xl:grid-cols-3"
       >
-        {visibleCards.length > 0 ? (
-          visibleCards.map((card) => (
-            <ListingCard
-              key={card.id}
-              card={card}
+        {loading ? (
+          // Skeleton loaders during API fetch
+          [1, 2, 3].map((index) => (
+            <div
+              key={index}
+              className="h-[430px] w-full animate-pulse rounded-2xl bg-gray-100"
             />
           ))
+        ) : (visibleCards?.length ?? 0) > 0 ? (
+          visibleCards.map((card) => <ListingCard key={card.id} card={card} />)
         ) : (
           <div className="col-span-full rounded-2xl border border-dashed border-gray-300 bg-gray-50 px-6 py-10 text-center text-sm text-gray-600 sm:text-base">
             No listings match this category yet.

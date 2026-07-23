@@ -165,9 +165,11 @@ const HeroContent = ({
           </p>
 
           <div className="mt-6 flex w-full flex-row items-center justify-center gap-3 sm:gap-4 md:mt-8 md:flex-row">
-            <button className="lg:w-[162px] md:w-auto w-[140px] rounded-md bg-orange-500 px-6 py-3.5 text-base font-semibold text-white transition hover:bg-orange-600 sm:w-auto sm:px-8 sm:py-4 sm:text-lg">
-              Invest Now
-            </button>
+            <a href="https://cepromas-users-admin.vercel.app">
+              <button className="lg:w-[162px] md:w-auto w-[140px] rounded-md bg-orange-500 px-6 py-3.5 text-base font-semibold text-white transition hover:bg-orange-600 sm:w-auto sm:px-8 sm:py-4 sm:text-lg">
+                Invest Now
+              </button>
+            </a>
 
             <Link to="/listings">
               <button className=" lg:w-[201px] md:w-auto w-[180px] rounded-md border-2 border-white px-6 py-3.5 text-base font-semibold text-white transition hover:bg-white/10 sm:w-auto sm:px-8 sm:py-4 sm:text-lg">

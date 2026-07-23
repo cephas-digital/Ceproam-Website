@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { Link } from "react-router"; // or "react-router-dom" depending on your setup
 import type { ListingCardData } from "../../types/types";
 
 interface ListingCardProps {
@@ -7,20 +8,12 @@ interface ListingCardProps {
 
 const ListingCard = ({ card }: ListingCardProps) => {
   return (
-    <motion.article
-      // initial={{ opacity: 0, y: 20 }}
-      // whileInView={{ opacity: 1, y: 0 }}
-      // viewport={{ once: true, amount: 0.2 }}
-      // transition={{ duration: 0.45 }}
-      // whileHover={{ y: -6, scale: 1.01 }}
-      className="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm"
-    >
+    <motion.article className="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
       <div className="relative h-56 overflow-hidden">
         <img
           src={card.image}
           alt={card.title}
-          className="h-full w-full object-cover "
-          // transition duration-500 ease-out group-hover:scale-105
+          className="h-full w-full object-cover"
         />
 
         {card.badgeLeft && (
@@ -41,18 +34,18 @@ const ListingCard = ({ card }: ListingCardProps) => {
           {card.title}
         </h3>
 
-        <p className="mt-2 text-sm sm:text-base  text-gray-500">
+        <p className="mt-2 text-sm sm:text-base text-gray-500">
           {card.location}
         </p>
 
         <div
-          className={`mt-5 text-sm sm:text-base  grid gap-4 ${
+          className={`mt-5 text-sm sm:text-base grid gap-4 ${
             card.secondaryValue ? "grid-cols-2" : "grid-cols-1"
           }`}
         >
           <div>
             <p className="text-xs uppercase text-gray-400">{card.priceLabel}</p>
-            <p className="font-bold text-sm sm:text-base  text-[#021D49]">
+            <p className="font-bold text-sm sm:text-base text-[#021D49]">
               {card.priceValue}
             </p>
           </div>
@@ -62,7 +55,7 @@ const ListingCard = ({ card }: ListingCardProps) => {
               <p className="text-xs uppercase text-gray-400">
                 {card.secondaryLabel}
               </p>
-              <p className="font-bold text-sm sm:text-base  text-orange-500">
+              <p className="font-bold text-sm sm:text-base text-orange-500">
                 {card.secondaryValue}
               </p>
             </div>
@@ -85,9 +78,13 @@ const ListingCard = ({ card }: ListingCardProps) => {
           </>
         )}
 
-        <button className="mt-6 w-full text-sm sm:text-base  rounded-md bg-[#021D49] py-4 font-semibold text-white transition duration-300 hover:bg-[#16356c]">
-          {card.buttonText}
-        </button>
+        {/* Dynamic Route Navigation Link */}
+        <Link
+          to={`/listing/${card.id}`}
+          className="mt-6 block w-full text-center text-sm sm:text-base rounded-md bg-[#021D49] py-4 font-semibold text-white transition duration-300 hover:bg-[#16356c]"
+        >
+          {card.buttonText || "View Details"}
+        </Link>
       </div>
     </motion.article>
   );
