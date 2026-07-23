@@ -25,32 +25,32 @@ const imageVariants = {
 
 export default function AboutSection() {
   return (
-    <section className="bg-[#f4f4f4] py-20">
-      <div className="mx-auto max-w-7xl px-6">
+    <section className="bg-[#f4f4f4] py-14 sm:py-16 md:py-18 lg:py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
         <motion.h2
           initial={{ opacity: 0, y: -18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.6 }}
-          className="mb-14 text-center lg:text-4xl md:text-3xl text-2xl font-bold"
+          className="mb-10 text-center text-2xl font-bold md:mb-12 md:text-3xl lg:mb-14 lg:text-4xl"
         >
           About US
         </motion.h2>
 
-        <div className="grid gap-12 items-center lg:grid-cols-2">
+        <div className="grid items-center gap-8 md:grid-cols-2 md:gap-10 lg:grid-cols-2 lg:gap-12">
           <motion.div
-            className="space-y-8"
+            className="space-y-6 md:space-y-8"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
           >
             <motion.div variants={itemVariants}>
-              <h3 className="mb-10 lg:text-2xl md:text-2xl text-xl font-semibold">
+              <h3 className="mb-6 text-xl font-semibold md:mb-8 md:text-2xl lg:mb-10 lg:text-2xl">
                 About CEPROAM
               </h3>
 
-              <p className="leading-8 md:text-base text-sm text-gray-700">
+              <p className="text-sm leading-8 text-gray-700 md:text-base">
                 <span className="font-semibold">CEPROAM</span> is a
                 technology-driven agro and real asset management system designed
                 to connect investors, individuals, businesses, and institutions
@@ -58,7 +58,7 @@ export default function AboutSection() {
                 asset acquisition, and agriculture investments.
               </p>
 
-              <p className="mt-4 md:text-base text-sm leading-8 text-gray-700">
+              <p className="mt-4 text-sm leading-8 text-gray-700 md:text-base">
                 It's an integrated asset management and development platform
                 focused on agricultural, real estate, and infrastructure
                 investments.
@@ -66,11 +66,11 @@ export default function AboutSection() {
             </motion.div>
 
             <motion.div variants={itemVariants}>
-              <h3 className="mb-4 lg:text-2xl md:text-2xl text-xl font-semibold">
+              <h3 className="mb-4 text-xl font-semibold md:text-2xl lg:text-2xl">
                 Our Mission
               </h3>
 
-              <p className="leading-8 md:text-base text-sm text-gray-700">
+              <p className="text-sm leading-8 text-gray-700 md:text-base">
                 To democratize access to real estate and agricultural
                 investments through secure technology, transparency, and
                 innovative financing models.
@@ -78,11 +78,11 @@ export default function AboutSection() {
             </motion.div>
 
             <motion.div variants={itemVariants}>
-              <h3 className="mb-4 lg:text-2xl md:text-2xl text-xl font-semibold">
+              <h3 className="mb-4 text-xl font-semibold md:text-2xl lg:text-2xl">
                 Our Vision
               </h3>
 
-              <p className="leading-8 md:text-base text-sm text-gray-700">
+              <p className="text-sm leading-8 text-gray-700 md:text-base">
                 To become Africa's leading digital ecosystem for real estate
                 access, property ownership, and agricultural investment
                 opportunities.
@@ -106,10 +106,9 @@ export default function AboutSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="bg-[#F5F5F8] py-16 px-4"
+            className="bg-[#F5F5F8] px-3 py-10 sm:px-4 md:px-5 md:py-12 lg:py-16"
           >
             <div className="relative mx-auto max-w-6xl">
-              {/* Top two cards - keep two columns even on small screens to match example */}
               <div className="grid grid-cols-2 gap-4">
                 <motion.div
                   variants={imageVariants}
@@ -157,16 +156,26 @@ export default function AboutSection() {
                 whileInView={{ scale: 1, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ type: "spring", stiffness: 220, damping: 20 }}
-                className=" absolute md:left-[200px] left-20 sm:left-14 top-[100px] sm:top-[200px] md:top-[200px] z-20 flex h-32 w-32 items-center justify-center rounded-full bg-[#FF6A00] text-white shadow-xl sm:h-36 sm:w-36 md:h-44 md:w-44
-  "
+                className="absolute md:left-[200px] left-20 sm:left-14 top-[100px] sm:top-[200px] md:top-[200px] z-20 flex h-32 w-32 items-center justify-center rounded-full bg-[#FF6A00] text-white shadow-xl sm:h-36 sm:w-36 md:h-44 md:w-44"
               >
-                <div className="text-center">
+                {/* <div className="text-center">
                   <div className="text-2xl font-bold sm:text-3xl md:text-4xl">
                     22.5%
                   </div>
                   <div className="mt-1 text-[10px] font-semibold uppercase tracking-[0.18em] sm:text-xs">
                     TARGET ANNUAL ROI
                   </div>
+                </div> */}
+                <div className="flex h-full w-full flex-col items-center justify-center text-center px-3">
+                  <span className="text-xl font-bold sm:text-3xl md:text-4xl leading-none">
+                    22.5%
+                  </span>
+
+                  <span className="mt-2 text-[8px] sm:text-[10px] md:text-xs font-semibold uppercase leading-tight">
+                    TARGET ANNUAL
+                    <br />
+                    ROI
+                  </span>
                 </div>
               </motion.div>
 

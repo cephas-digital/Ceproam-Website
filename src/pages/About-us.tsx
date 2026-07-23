@@ -17,19 +17,19 @@ const AboutUs = () => {
   return (
     <div className="font-Outfit">
       <section
-        className="relative min-h-[60vh] sm:min-h-[70vh] md:min-h-screen overflow-hidden"
+        className="relative min-h-[60vh] overflow-hidden sm:min-h-[70vh] md:min-h-[72vh] lg:min-h-screen"
         style={{
           backgroundImage: `url(${About})`,
           backgroundSize: "cover",
           backgroundPosition: "center bottom",
         }}
       >
-        <div className="relative z-10 mx-auto flex min-h-[520px] items-center max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:px-0 lg:min-h-[620px] lg:py-0">
+        <div className="relative z-10 mx-auto flex min-h-[520px] max-w-7xl items-center px-4 py-20 sm:px-6 sm:py-24 md:px-8 md:py-20 lg:min-h-[620px] lg:px-0 lg:py-0">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="w-full max-w-3xl"
+            className="w-full max-w-3xl md:max-w-4xl"
           >
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-[#ff6b00]">
               Ceproam
@@ -63,14 +63,14 @@ const AboutUs = () => {
       </section>
 
       <section className="bg-[#f7f8fb] py-14 sm:py-16 lg:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-6 lg:grid-cols-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 lg:px-8">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-12">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6 }}
-              className="rounded-2xl bg-white p-6 shadow-sm sm:p-8 lg:col-span-7"
+              className="rounded-2xl bg-white p-6 shadow-sm sm:p-8 md:col-span-2 lg:col-span-7"
             >
               <h2 className="mb-6 text-2xl font-bold text-[#0B3B82] sm:text-3xl">
                 Our Vision
@@ -98,7 +98,7 @@ const AboutUs = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6 }}
-              className="overflow-hidden rounded-2xl lg:col-span-5"
+              className="overflow-hidden rounded-2xl md:col-span-1 lg:col-span-5"
             >
               <img
                 src={vision}
@@ -112,7 +112,7 @@ const AboutUs = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, delay: 0.05 }}
-              className="overflow-hidden rounded-2xl lg:col-span-4"
+              className="overflow-hidden rounded-2xl md:col-span-1 lg:col-span-4"
             >
               <img
                 src={mission}
@@ -126,7 +126,7 @@ const AboutUs = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, delay: 0.05 }}
-              className="rounded-2xl bg-[#051D47] p-6 text-white sm:p-8 lg:col-span-8"
+              className="rounded-2xl bg-[#051D47] p-6 text-white sm:p-8 md:col-span-1 lg:col-span-8"
             >
               <h2 className="mb-6 text-2xl font-bold sm:text-3xl">
                 Our Mission
@@ -175,7 +175,7 @@ const AboutUs = () => {
       <CoreServiceSection service={agroManagementService} />
 
       <section className="bg-[#F7F7FA] py-14 sm:py-16 lg:py-20">
-        <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-8">
+        <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 sm:px-6 md:px-8 lg:grid-cols-2 lg:gap-12 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}

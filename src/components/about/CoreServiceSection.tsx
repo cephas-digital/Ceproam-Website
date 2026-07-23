@@ -19,9 +19,9 @@ interface CoreServiceSectionProps {
 
 const CoreServiceSection = ({ service, heading }: CoreServiceSectionProps) => {
   return (
-    <section className="md:py-20 py-6">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-16 text-center">
+    <section className="py-6 md:py-14 lg:py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
+        <div className="mb-10 text-center sm:mb-14 lg:mb-16">
           {heading && (
             <div className="mb-16 text-center">
               <h2 className="md:text-4xl text-2xl font-bold text-slate-900">
@@ -33,13 +33,13 @@ const CoreServiceSection = ({ service, heading }: CoreServiceSectionProps) => {
           )}
         </div>
 
-        <div className="grid items-center gap-12 lg:grid-cols-2">
+        <div className="grid items-center gap-8 md:gap-10 lg:grid-cols-2 lg:gap-12">
           {service.imagePosition !== "right" && (
             <div>
               <img
                 src={service.image}
                 alt={service.title}
-                className="h-[500px] w-full rounded-lg object-cover "
+                className="h-[320px] w-full rounded-lg object-cover sm:h-[380px] md:h-[420px] lg:h-[500px]"
               />
             </div>
           )}
@@ -87,7 +87,7 @@ const CoreServiceSection = ({ service, heading }: CoreServiceSectionProps) => {
               <img
                 src={service.image}
                 alt={service.title}
-                className="h-[500px] w-full rounded-lg object-cover "
+                className="h-[320px] w-full rounded-lg object-cover sm:h-[380px] md:h-[420px] lg:h-[500px]"
               />
             </div>
           )}

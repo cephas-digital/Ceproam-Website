@@ -31,20 +31,20 @@ export default function TestimonialsSection() {
 
   return (
     <section className="bg-[#ffffff]">
-      <div className="mx-auto max-w-7xl md:px-0 px-6 md:py-16 py-8">
-        <div className="mt-24">
+      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 md:px-8 md:py-16 lg:px-0">
+        <div className="mt-16 md:mt-20 lg:mt-24">
           <div className="text-center">
-            <h2 className="md:text-4xl text-2xl font-bold  text-[#0A2540]">
+            <h2 className="text-2xl font-bold text-[#0A2540] md:text-3xl lg:text-4xl">
               What Our Partners and Clients Say
             </h2>
 
-            <p className="mt-3 text-slate-500">
+            <p className="mt-3 text-sm text-slate-500 md:text-base">
               Real stories from real investors who have built wealth with{" "}
               <span className="font-semibold">CEPROAM.</span>
             </p>
           </div>
 
-          <div className="mt-14 hidden gap-6 lg:grid lg:grid-cols-3">
+          <div className="mt-12 hidden gap-6 md:grid md:grid-cols-2 lg:grid lg:grid-cols-3">
             {testimonials.map((testimonial) => (
               <article
                 key={testimonial.id}
@@ -80,8 +80,8 @@ export default function TestimonialsSection() {
             ))}
           </div>
 
-          <div className="mt-14 lg:hidden">
-            <div className="rounded-xl border border-[#C4C6D1] bg-[#FAF9FE] p-6 shadow-sm">
+          <div className="mt-12 md:hidden">
+            <div className="rounded-xl border border-[#C4C6D1] bg-[#FAF9FE] p-5 shadow-sm sm:p-6">
               <div className="flex items-center justify-between">
                 <div className="flex gap-2">
                   <button
@@ -118,7 +118,7 @@ export default function TestimonialsSection() {
                     ))}
                   </div>
 
-                  <p className="mt-5 text-[15px] leading-7 text-slate-600">
+                  <p className="mt-5 text-[15px] leading-7 text-slate-600 sm:text-base">
                     "{activeTestimonial.review}"
                   </p>
 

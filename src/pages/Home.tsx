@@ -86,7 +86,7 @@ const Home = () => {
       />
 
       <section className="bg-[#FAF9FE] py-16 sm:py-20">
-        <div className="mx-auto flex max-w-7xl flex-col items-center gap-8 px-4 sm:px-6 sm:gap-10 lg:flex-row lg:justify-between lg:gap-12">
+        <div className="mx-auto flex max-w-7xl md:flex-row flex-col items-center gap-8 px-4 sm:px-6 sm:gap-10 lg:flex-row lg:justify-between lg:gap-12">
           <div className="max-w-xl text-center lg:text-left">
             <h2 className="mb-4 text-2xl font-bold leading-tight text-[#00193C] sm:mb-6 sm:text-3xl md:text-4xl">
               Wealth Creation through Land Banking
@@ -132,7 +132,7 @@ const Home = () => {
       <TestimonialsSection />
 
       <section className="bg-[#F5F5F7] py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-0">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-4">
           <div className="mb-8 flex flex-col gap-3 text-center sm:mb-12 sm:flex-row sm:items-center sm:justify-between sm:text-left">
             <div>
               <h2 className="text-2xl font-bold text-[#00193C] sm:text-3xl md:text-4xl">
@@ -153,7 +153,7 @@ const Home = () => {
             </a>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-3">
+          <div className="grid gap-6 lg:grid-cols-3 md:grid-cols-2">
             {blogs.map((post) => (
               <BlogCard
                 key={post.id}

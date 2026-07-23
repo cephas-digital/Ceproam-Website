@@ -12,8 +12,8 @@ import {
 export default function Footer() {
   return (
     <footer className="relative bg-[#F3F3F6]">
-      <div className="mx-auto max-w-7xl md:px-0 px-6 py-16">
-        <div className="grid gap-12 lg:grid-cols-[280px_220px_220px_280px] lg:justify-between">
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:px-8 lg:px-0">
+        <div className="grid gap-8 md:grid-cols-2 md:gap-10 lg:grid-cols-[280px_220px_220px_280px] lg:justify-between">
           <div>
             <img
               src={FooterImg}
@@ -87,13 +87,13 @@ export default function Footer() {
         </div>
 
         <div className="mt-14 border-t border-[#E5E7EB] pt-6">
-          <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-            <p className="text-sm text-[#5B5B5B]">
+          <div className="flex flex-col items-center justify-between gap-4 md:flex-row md:items-center">
+            <p className="text-center text-sm text-[#5B5B5B] md:text-left">
               © 2026 CEPROAM. All rights reserved. Developed by{" "}
               <span className="font-medium">Cephas ICT Hub</span>
             </p>
 
-            <div className="flex gap-8">
+            <div className="flex flex-wrap justify-center gap-4 md:gap-8">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}

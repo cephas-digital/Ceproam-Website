@@ -92,6 +92,9 @@ const HeroSlider = () => {
         ))}
       </Swiper>
 
+      {/* "absolute bottom-[-1rem] left-1/2 z-20 mx-auto w-[calc(100%-1rem)] -translate-x-1/2 px-0 sm:static sm:mt-6 sm:w-full sm:max-w-2xl sm:translate-x-0 sm:px-4 md:max-w-2xl lg:absolute lg:bottom-[-36px] lg:left-1/2 lg:mt-0 lg:w-[calc(100%-2rem)] lg:-translate-x-1/2 lg:px-4" */}
+      {/* "relative z-20 mx-auto mt-6 w-[calc(100%-1rem)] px-0 sm:mt-8 sm:w-full sm:max-w-2xl sm:px-4 md:mt-10 md:max-w-2xl lg:absolute lg:bottom-[-36px] lg:left-1/2 lg:mt-0 lg:w-[calc(100%-2rem)] lg:-translate-x-1/2 lg:px-4" */}
+
       <div className="absolute bottom-[-1rem] left-1/2 z-20 mx-auto w-[calc(100%-1rem)] -translate-x-1/2 px-0 sm:static sm:mt-6 sm:w-full sm:max-w-2xl sm:translate-x-0 sm:px-4 md:max-w-2xl lg:absolute lg:bottom-[-36px] lg:left-1/2 lg:mt-0 lg:w-[calc(100%-2rem)] lg:-translate-x-1/2 lg:px-4">
         <SearchCard />
       </div>
