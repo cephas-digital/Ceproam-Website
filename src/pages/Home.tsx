@@ -1,23 +1,28 @@
-// import Button from "../components/ui/Button";
+import { useEffect, useState } from "react";
+import { Link } from "react-router";
+import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
+
 import HeroSlider from "../components/home/HeroSlider";
 import AboutSection from "../components/home/Aboutus";
 import LandAppreciation from "../assets/images/Land appreciation and growth.svg";
-import { investmentCards, investmentTabs } from "../data/investmentData";
 import BlogCard from "../components/home/Blog-card";
 import { blogs } from "../data/blog";
 import ListingSection from "../components/listing/ListingSection";
-import { featuredCards, featuredTabs } from "../data/featuredData";
 import { FeatureGridSection } from "../components/ui/FeaturedGrid";
 import { services } from "../data/services";
 import { whyCepromas } from "../data/why-cepromas";
 import { investmentPillars } from "../data/investment-pillars";
 import TestimonialsSection from "../components/home/Testimonialsection";
 import Stats from "../components/home/Stats";
-
-import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
-import { Link } from "react-router";
 import Footer from "../components/shared/Footer";
 import ConsultationSection from "../components/home/Consultation-request";
+
+// API Helpers & Transformers
+import { getAllInvestments } from "../api/investments";
+import { getAllProperties } from "../api/properties";
+import { transformBackendInvestmentToCard } from "../utils/transformInvestment";
+import { transformBackendPropertyToCard } from "../utils/transformProperty";
+import type { ListingCardData } from "../types/types";
 
 const Home = () => {
   const benefits = [
@@ -26,10 +31,82 @@ const Home = () => {
     "Zero-effort management with high-yield potential.",
   ];
 
+  // States
+  const [investments, setInvestments] = useState<ListingCardData[]>([]);
+  const [properties, setProperties] = useState<ListingCardData[]>([]);
+  const [loadingInvestments, setLoadingInvestments] = useState<boolean>(true);
+  const [loadingProperties, setLoadingProperties] = useState<boolean>(true);
+
+  useEffect(() => {
+    // 1. Fetch Investment Packages
+    const fetchInvestments = async () => {
+      try {
+        setLoadingInvestments(true);
+        const response = await getAllInvestments();
+        const data = response.data || [];
+        const transformedData = data.map(transformBackendInvestmentToCard);
+        setInvestments(transformedData);
+      } catch (error) {
+        console.error("Failed to load investment packages from API:", error);
+      } finally {
+        setLoadingInvestments(false);
+      }
+    };
+
+    // 2. Fetch Properties
+    const fetchProperties = async () => {
+      try {
+        setLoadingProperties(true);
+        const response = await getAllProperties();
+        const data = response.data || [];
+
+        // 1. Inspect raw response from NestJS
+        console.log("🏢 Raw Properties Backend Response:", data);
+
+        // 2. Log extracted categories and types to see exact string casing/formatting
+        data.forEach((item, index) => {
+          console.log(`Property #${index + 1} (${item.title}):`, {
+            category: item.category, // e.g. "SALE", "RENT"
+            types: item.types, // e.g. ["COMMERCIAL", "RESIDENTIAL"]
+          });
+        });
+
+        const transformedData = data.map(transformBackendPropertyToCard);
+
+        // 3. Inspect transformed cards ready for UI filtering
+        console.log("🎨 Transformed Property Cards:", transformedData);
+
+        setProperties(transformedData);
+      } catch (error) {
+        console.error("Failed to load properties from API:", error);
+      } finally {
+        setLoadingProperties(false);
+      }
+    };
+
+    fetchInvestments();
+    fetchProperties();
+  }, []);
+
+  // Filter tabs
+  const investmentTabs = [
+    { label: "All" },
+    { label: "Real Estate" },
+    { label: "Agriculture" },
+  ];
+
+  const propertyTabs = [
+    { label: "All" },
+    { label: "Land" },
+    { label: "Residential" },
+    { label: "Commercial" },
+  ];
+
   return (
     <div className="font-Outfit">
       <HeroSlider />
 
+      {/* 1. Dynamic Investment Opportunities Section */}
       <ListingSection
         title="Investment Opportunities"
         subtitle="Diversify your portfolio with asset-backed projects designed for long-term capital appreciation and consistent cash flow."
@@ -38,28 +115,31 @@ const Home = () => {
             to="/listings"
             className="inline-flex items-center gap-2 text-[#021D49]"
           >
-            View All Listings
+            View All Investments
             <FaArrowRight />
           </Link>
         }
         tabs={investmentTabs}
-        cards={investmentCards.slice(0, 3)}
+        cards={investments.slice(0, 6)}
+        loading={loadingInvestments}
       />
 
+      {/* 2. Dynamic Featured Property Listings Section */}
       <ListingSection
-        title="Featured Listings"
-        subtitle="Hand-picked premium assets currently open for investment."
+        title="Featured Properties"
+        subtitle="Hand-picked premium property assets currently available for outright purchase."
         ctaText={
           <Link
             to="/listings"
             className="inline-flex items-center gap-2 text-[#021D49]"
           >
-            View All
+            View All Properties
             <FaArrowRight />
           </Link>
         }
-        tabs={featuredTabs}
-        cards={featuredCards}
+        tabs={propertyTabs}
+        cards={properties.slice(0, 6)}
+        loading={loadingProperties}
       />
 
       <AboutSection />
@@ -100,10 +180,7 @@ const Home = () => {
 
             <div className="mb-6 space-y-3 sm:mb-8 sm:space-y-4">
               {benefits.map((benefit) => (
-                <div
-                  key={benefit}
-                  className="flex items-start gap-3"
-                >
+                <div key={benefit} className="flex items-start gap-3">
                   <FaCheckCircle className="mt-1 shrink-0 text-lg text-orange-500" />
                   <p className="text-left text-slate-700">{benefit}</p>
                 </div>
@@ -155,10 +232,7 @@ const Home = () => {
 
           <div className="grid gap-6 lg:grid-cols-3 md:grid-cols-2">
             {blogs.map((post) => (
-              <BlogCard
-                key={post.id}
-                post={post}
-              />
+              <BlogCard key={post.id} post={post} />
             ))}
           </div>
         </div>

@@ -23,11 +23,7 @@ export default function Navbar() {
       >
         <div className="mx-auto flex items-center justify-between px-4 md:py-2 py-4 sm:px-6 md:px-16 lg:px-28">
           <Link to="/">
-            <img
-              src={NavImg}
-              alt="CEPROAM"
-              className="h-9 sm:h-10"
-            />
+            <img src={NavImg} alt="CEPROAM" className="h-9 sm:h-10" />
           </Link>
 
           <div className="flex items-center gap-4 md:gap-6">
@@ -88,9 +84,11 @@ export default function Navbar() {
             <button className="rounded-md border border-[#0B1F4D] px-6 py-3 text-sm font-semibold text-[#0B1F4D] transition hover:bg-[#0B1F4D] hover:text-white">
               Explore Listings
             </button>
-            <button className="rounded-md bg-[#0B1F4D] px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90">
-              Invest Now
-            </button>
+            <a href="https://cepromas-users-admin.vercel.app">
+              <button className="rounded-md bg-[#0B1F4D] px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90">
+                Invest Now
+              </button>
+            </a>
           </div>
         </div>
 

@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router";
 import {
   FaArrowLeft,
@@ -6,16 +6,81 @@ import {
   FaClock,
   FaPercent,
 } from "react-icons/fa";
-import { investmentCards } from "../data/investmentData";
 
-const ListingDetails = () => {
-  const { id } = useParams();
-  const listing = useMemo(
-    () => investmentCards.find((item) => item.id === Number(id)),
-    [id],
-  );
+import { getInvestmentDetails } from "../api/investments";
+import { getPropertyDetails } from "../api/properties";
+import { transformBackendInvestmentToCard } from "../utils/transformInvestment";
+import { transformBackendPropertyToCard } from "../utils/transformProperty";
+import type { ListingCardData } from "../types/types";
 
-  if (!listing) {
+const ListingDetails: React.FC = () => {
+  const { id } = useParams<{ id: string }>();
+
+  const [listing, setListing] = useState<ListingCardData | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (!id) return;
+
+    const fetchDetail = async () => {
+      try {
+        setLoading(true);
+        setError(false);
+
+        // 1. Try fetching as an Investment Package first
+        try {
+          const invResponse = await getInvestmentDetails(id);
+          if (invResponse?.data) {
+            const transformed = transformBackendInvestmentToCard(
+              invResponse.data,
+            );
+            setListing(transformed);
+            setLoading(false);
+            return;
+          }
+        } catch {
+          // If investment fetch fails, gracefully fallback to property lookup below
+        }
+
+        // 2. Fallback: Fetch as a Property
+        const propResponse = await getPropertyDetails(id);
+        if (propResponse?.data) {
+          const transformed = transformBackendPropertyToCard(propResponse.data);
+          setListing(transformed);
+        } else {
+          setError(true);
+        }
+      } catch (err) {
+        console.error(
+          "Failed to load listing details from both endpoints:",
+          err,
+        );
+        setError(true);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchDetail();
+  }, [id]);
+
+  // 1. LOADING SKELETON / SPINNER STATE
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-slate-50 px-6 py-24 flex items-center justify-center">
+        <div className="flex flex-col items-center gap-4">
+          <div className="h-12 w-12 animate-spin rounded-full border-4 border-orange-500 border-t-transparent" />
+          <p className="text-slate-600 font-medium">
+            Loading listing details...
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  // 2. ERROR OR NOT FOUND STATE
+  if (error || !listing) {
     return (
       <div className="min-h-screen bg-slate-50 px-6 py-24 text-center">
         <div className="mx-auto max-w-xl rounded-3xl bg-white p-10 shadow-xl">
@@ -23,7 +88,8 @@ const ListingDetails = () => {
             Listing not found
           </h1>
           <p className="mt-4 text-slate-600">
-            Please go back to the marketplace to select another project.
+            The requested opportunity could not be found or may no longer be
+            available.
           </p>
           <Link
             to="/listings"
@@ -36,6 +102,7 @@ const ListingDetails = () => {
     );
   }
 
+  // 3. RENDER LIVE DATA
   return (
     <main className="min-h-screen font-Outfit bg-slate-50 px-6 py-20">
       <div className="mx-auto max-w-6xl">
@@ -76,7 +143,7 @@ const ListingDetails = () => {
               </div>
               <div className="rounded-3xl bg-slate-50 p-6 text-center">
                 <p className="text-sm uppercase tracking-[0.2em] text-slate-500">
-                  {listing.secondaryLabel ?? "Return"}
+                  {listing.secondaryLabel ?? "Type"}
                 </p>
                 <p className="mt-3 text-xl font-semibold text-orange-500">
                   {listing.secondaryValue ?? "—"}
@@ -87,7 +154,7 @@ const ListingDetails = () => {
                   Status
                 </p>
                 <p className="mt-3 text-xl font-semibold text-slate-900">
-                  {listing.badgeRight ?? "Available"}
+                  {listing.badgeRight ?? "AVAILABLE"}
                 </p>
               </div>
             </div>
@@ -98,9 +165,8 @@ const ListingDetails = () => {
               </h2>
               <p className="mt-4 text-slate-600 leading-7">
                 This opportunity is backed by strong asset fundamentals, a
-                trusted project structure, and solid return expectations.
-                Benefit from verified land-backed value and transparent funding
-                milestones.
+                trusted project structure, and solid value expectations. Benefit
+                from verified land-backed value and transparent milestones.
               </p>
             </div>
 
@@ -115,18 +181,16 @@ const ListingDetails = () => {
               <div className="rounded-3xl bg-white p-6 shadow-sm">
                 <div className="inline-flex items-center gap-2 text-orange-500">
                   <FaClock />
-                  <span className="text-sm font-semibold">
-                    Funding progress
-                  </span>
+                  <span className="text-sm font-semibold">Category</span>
                 </div>
                 <p className="mt-3 text-slate-700">
-                  {listing.progress}% completed
+                  {listing.badgeLeft ?? "N/A"}
                 </p>
               </div>
               <div className="rounded-3xl bg-white p-6 shadow-sm">
                 <div className="inline-flex items-center gap-2 text-orange-500">
                   <FaPercent />
-                  <span className="text-sm font-semibold">Projected ROI</span>
+                  <span className="text-sm font-semibold">Value / ROI</span>
                 </div>
                 <p className="mt-3 text-slate-700">{listing.secondaryValue}</p>
               </div>
@@ -139,7 +203,7 @@ const ListingDetails = () => {
                 Next step
               </p>
               <p className="mt-3 text-xl font-semibold text-slate-900">
-                Secure your investment
+                Secure your position
               </p>
               <p className="mt-4 text-slate-600 leading-7">
                 Review the offering details, request a consultation, and reserve
@@ -147,11 +211,11 @@ const ListingDetails = () => {
               </p>
             </div>
 
-            <button className="w-full rounded-3xl bg-slate-900 px-6 py-4 text-base font-semibold text-white transition hover:bg-slate-800">
+            <button className="w-full rounded-3xl bg-slate-900 px-6 py-4 text-base font-semibold text-white transition hover:bg-slate-800 cursor-pointer">
               Request a Call
             </button>
 
-            <button className="w-full rounded-3xl border border-slate-200 bg-white px-6 py-4 text-base font-semibold text-slate-900 transition hover:bg-slate-50">
+            <button className="w-full rounded-3xl border border-slate-200 bg-white px-6 py-4 text-base font-semibold text-slate-900 transition hover:bg-slate-50 cursor-pointer">
               Download Offering PDF
             </button>
 

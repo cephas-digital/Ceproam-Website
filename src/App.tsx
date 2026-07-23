@@ -26,37 +26,17 @@ export default function App() {
       <Navbar />
 
       <Routes>
-        <Route
-          path="/"
-          element={<Home />}
-        />
+        <Route path="/" element={<Home />} />
 
-        <Route
-          path="/about"
-          element={<AboutUs />}
-        />
-        <Route
-          path="/listings"
-          element={<Listings />}
-        />
-        <Route
-          path="/listing/:id"
-          element={<ListingDetails />}
-        />
-        <Route
-          path="/properties"
-          element={<Properties />}
-        />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/listings" element={<Listings />} />
+        <Route path="/listing/:id" element={<ListingDetails />} />
+        <Route path="/properties" element={<Properties />} />
 
-        <Route
-          path="/blog"
-          element={<Blogs />}
-        />
+        <Route path="/blog" element={<Blogs />} />
 
-        <Route
-          path="/contact"
-          element={<ContactUs />}
-        />
+        <Route path="/contact" element={<ContactUs />} />
+        {/* <Route path="/listings/:id" element={<ListingSection />} /> */}
       </Routes>
     </BrowserRouter>
   );

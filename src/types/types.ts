@@ -7,7 +7,8 @@ export interface TabItem {
 }
 
 export interface ListingCardData {
-  id: number;
+  id: number | string;
+  itemType?: "INVESTMENT" | "PROPERTY";
   image: string;
 
   title: string;
