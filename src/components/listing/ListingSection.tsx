@@ -93,7 +93,12 @@ const ListingSection: React.FC<ExtendedListingSectionProps> = ({
             />
           ))
         ) : (visibleCards?.length ?? 0) > 0 ? (
-          visibleCards.map((card) => <ListingCard key={card.id} card={card} />)
+          visibleCards.map((card) => (
+            <ListingCard
+              key={card.id}
+              card={card}
+            />
+          ))
         ) : (
           <div className="col-span-full rounded-2xl border border-dashed border-gray-300 bg-gray-50 px-6 py-10 text-center text-sm text-gray-600 sm:text-base">
             No listings match this category yet.

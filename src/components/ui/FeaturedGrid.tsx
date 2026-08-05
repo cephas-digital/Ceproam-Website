@@ -10,7 +10,7 @@ export function FeatureGridSection({
   const styles = {
     light: {
       section: "bg-[#F4F3F8]",
-      card: "transition-all duration-300 ease-out hover:scale-[1.01] hover:border-l-4 hover:border-t-4 hover:border-[#00193C] hover:shadow-[-8px_-8px_20px_rgba(59,130,246,0.3)] rounded-lg",
+      card: "transition-all duration-300 ease-out  rounded-lg",
       iconWrapper: "bg-[#00193C0D] mx-auto",
       title: "text-[#00193C]",
       text: "text-slate-500",
