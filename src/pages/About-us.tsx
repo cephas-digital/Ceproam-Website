@@ -63,7 +63,7 @@ const AboutUs = () => {
       </section>
 
       <section className="bg-[#f7f8fb] py-14 sm:py-16 lg:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 lg:px-0">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-12">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
@@ -175,7 +175,7 @@ const AboutUs = () => {
       <CoreServiceSection service={agroManagementService} />
 
       <section className="bg-[#F7F7FA] py-14 sm:py-16 lg:py-20">
-        <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 sm:px-6 md:px-8 lg:grid-cols-2 lg:gap-12 lg:px-8">
+        <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 lg:px-0 lg:grid-cols-2 lg:gap-12 ">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}

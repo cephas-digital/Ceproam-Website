@@ -6,7 +6,7 @@ import { FaMountain } from "react-icons/fa";
 
 const SearchCard = () => {
   return (
-    <div className="mx-auto w-full  rounded-[1.5rem] border border-white/30 bg-white/60 p-4 shadow-xl backdrop-blur-lg sm:p-6">
+    <div className="mx-auto w-full lg:w-[742px] rounded-[1.5rem] border border-white/30 bg-white/60 p-4 shadow-xl backdrop-blur-lg sm:p-6">
       <div className="flex flex-row md:overflow-hidden overflow-x-scroll gap-3 sm:flex-row sm:items-center sm:justify-between">
         <Link
           to="/properties"

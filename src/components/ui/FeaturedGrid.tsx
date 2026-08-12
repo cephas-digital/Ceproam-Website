@@ -55,7 +55,8 @@ export function FeatureGridSection({
 
   return (
     <section className={`${sectionBg} py-14 sm:py-16 lg:py-20`}>
-      <div className="mx-auto w-full px-4 sm:px-6 md:px-14 lg:px-28">
+      {/* px-4 sm:px-6 md:px-14 lg:px-28 */}
+      <div className="mx-auto w-full max-w-7xl lg:px-0 px-4 ">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}

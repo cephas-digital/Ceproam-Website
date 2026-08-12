@@ -31,7 +31,7 @@ export default function TestimonialsSection() {
 
   return (
     <section className="bg-[#ffffff]">
-      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 md:px-8 md:py-16 lg:px-0">
+      <div className="mx-auto max-w-7xl px-4 md:py-16 lg:px-0">
         <div className="mt-16 md:mt-20 lg:mt-24">
           <div className="text-center">
             <h2 className="text-2xl font-bold text-[#0A2540] md:text-3xl lg:text-4xl">

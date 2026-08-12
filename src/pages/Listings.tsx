@@ -119,7 +119,7 @@ const Listings = () => {
   return (
     <main className="relative min-h-screen bg-slate-50 py-16 font-Outfit sm:py-20">
       <div>
-        <div className="mb-10 flex flex-col gap-6 px-4 py-6 sm:px-6 sm:py-8 md:px-14 lg:px-28">
+        <div className="mb-10 flex flex-col gap-6 mx-auto px-4 py-6 max-w-7xl lg:px-0">
           <div className="flex flex-col gap-6 xl:flex-row xl:items-center xl:justify-between">
             <div className="max-w-3xl">
               <h1 className="text-3xl font-bold tracking-tight text-[#00193C] sm:text-4xl lg:text-5xl">
@@ -206,7 +206,10 @@ const Listings = () => {
             ))
           ) : filteredListings.length > 0 ? (
             filteredListings.map((card) => (
-              <ListingTile key={card.id} card={card} />
+              <ListingTile
+                key={card.id}
+                card={card}
+              />
             ))
           ) : (
             <div className="col-span-full rounded-3xl border border-dashed border-slate-300 bg-white p-12 text-center text-slate-600">

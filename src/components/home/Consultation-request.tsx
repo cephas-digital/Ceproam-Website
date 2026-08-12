@@ -45,7 +45,7 @@ export default function ConsultationSection() {
     <section className="relative overflow-hidden bg-gradient-to-t from-[#00193C] to-[#0044A2]">
       <div className="absolute right-0 top-0 h-full w-[28%] bg-white/10 [clip-path:polygon(35%_0%,100%_0%,100%_100%,0%_100%)]" />
 
-      <div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+      <div className="relative mx-auto max-w-7xl px-4 lg:px-0 py-14  sm:py-16  lg:py-20">
         <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
           <motion.div
             initial={{ opacity: 0, x: -24 }}

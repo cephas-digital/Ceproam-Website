@@ -106,7 +106,6 @@ const Home = () => {
     <div className="font-Outfit">
       <HeroSlider />
 
-      {/* 1. Dynamic Investment Opportunities Section */}
       <ListingSection
         title="Investment Opportunities"
         subtitle="Diversify your portfolio with asset-backed projects designed for long-term capital appreciation and consistent cash flow."
@@ -124,7 +123,6 @@ const Home = () => {
         loading={loadingInvestments}
       />
 
-      {/* 2. Dynamic Featured Property Listings Section */}
       <ListingSection
         title="Featured Properties"
         subtitle="Hand-picked premium property assets currently available for outright purchase."
@@ -166,7 +164,7 @@ const Home = () => {
       />
 
       <section className="bg-[#FAF9FE] py-16 sm:py-20">
-        <div className="mx-auto flex max-w-7xl md:flex-row flex-col items-center gap-8 px-4 sm:px-6 sm:gap-10 lg:flex-row lg:justify-between lg:gap-12">
+        <div className="mx-auto flex max-w-7xl md:flex-row flex-col items-center lg:px-0 md:px-4 gap-8 sm:gap-10 lg:flex-row lg:justify-between lg:gap-12">
           <div className="max-w-xl text-center lg:text-left">
             <h2 className="mb-4 text-2xl font-bold leading-tight text-[#00193C] sm:mb-6 sm:text-3xl md:text-4xl">
               Wealth Creation through Land Banking
@@ -180,7 +178,10 @@ const Home = () => {
 
             <div className="mb-6 space-y-3 sm:mb-8 sm:space-y-4">
               {benefits.map((benefit) => (
-                <div key={benefit} className="flex items-start gap-3">
+                <div
+                  key={benefit}
+                  className="flex items-start gap-3"
+                >
                   <FaCheckCircle className="mt-1 shrink-0 text-lg text-orange-500" />
                   <p className="text-left text-slate-700">{benefit}</p>
                 </div>
@@ -209,7 +210,7 @@ const Home = () => {
       <TestimonialsSection />
 
       <section className="bg-[#F5F5F7] py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-4">
+        <div className="mx-auto max-w-7xl lg:px-0 px-4">
           <div className="mb-8 flex flex-col gap-3 text-center sm:mb-12 sm:flex-row sm:items-center sm:justify-between sm:text-left">
             <div>
               <h2 className="text-2xl font-bold text-[#00193C] sm:text-3xl md:text-4xl">
@@ -232,7 +233,10 @@ const Home = () => {
 
           <div className="grid gap-6 lg:grid-cols-3 md:grid-cols-2">
             {blogs.map((post) => (
-              <BlogCard key={post.id} post={post} />
+              <BlogCard
+                key={post.id}
+                post={post}
+              />
             ))}
           </div>
         </div>

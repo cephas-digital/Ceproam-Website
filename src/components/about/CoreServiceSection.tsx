@@ -20,7 +20,7 @@ interface CoreServiceSectionProps {
 const CoreServiceSection = ({ service, heading }: CoreServiceSectionProps) => {
   return (
     <section className="py-6 md:py-14 lg:py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
+      <div className="mx-auto max-w-7xl px-4 lg:px-0">
         <div className="mb-10 text-center sm:mb-14 lg:mb-16">
           {heading && (
             <div className="mb-16 text-center">

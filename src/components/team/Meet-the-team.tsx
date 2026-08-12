@@ -3,7 +3,7 @@ import { teamMembers } from "../../data/team-data";
 const MeetTheTeam = () => {
   return (
     <section className="bg-[#F8F8FB] py-20">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl px-4 lg:px-0">
         {/* Heading */}
         <div className="mb-14 text-center">
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-orange-500">

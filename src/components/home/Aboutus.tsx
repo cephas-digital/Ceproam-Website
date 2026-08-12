@@ -26,7 +26,7 @@ const imageVariants = {
 export default function AboutSection() {
   return (
     <section className="bg-[#f4f4f4] py-14 sm:py-16 md:py-18 lg:py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
+      <div className="max-w-7xl mx-auto lg:px-0 px-4">
         <motion.h2
           initial={{ opacity: 0, y: -18 }}
           whileInView={{ opacity: 1, y: 0 }}

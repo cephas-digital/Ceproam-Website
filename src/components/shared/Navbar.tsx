@@ -21,9 +21,13 @@ export default function Navbar() {
         transition={{ duration: 0.45 }}
         className="fixed left-0 top-0 z-40 w-full border-b border-gray-200 bg-white shadow-sm font-Outfit"
       >
-        <div className="mx-auto flex items-center justify-between px-4 md:py-2 py-4 sm:px-6 md:px-16 lg:px-28">
+        <div className="mx-auto flex items-center justify-between lg:px-0 px-4 md:py-2 py-4 max-w-7xl">
           <Link to="/">
-            <img src={NavImg} alt="CEPROAM" className="h-9 sm:h-10" />
+            <img
+              src={NavImg}
+              alt="CEPROAM"
+              className="h-9 sm:h-10"
+            />
           </Link>
 
           <div className="flex items-center gap-4 md:gap-6">
