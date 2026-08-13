@@ -207,7 +207,7 @@ const HeroSlider = () => {
           <SwiperSlide key={slide.id}>
             <HeroContent
               backgroundImage={slide.image}
-              overlayClassName="bg-[#00193CE5]"
+              overlayClassName="bg-[#00193CE5]/70"
               title={slide.title}
               description={slide.description}
               isActive={index === activeIndex}

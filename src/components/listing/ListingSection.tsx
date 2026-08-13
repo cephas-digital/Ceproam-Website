@@ -38,7 +38,7 @@ const ListingSection: React.FC<ExtendedListingSectionProps> = ({
   }, [activeTab, cards, tabs]);
 
   return (
-    <section className="mx-auto px-4 py-10 sm:px-6 sm:py-14 md:px-14 md:py-16 lg:px-28 lg:py-20">
+    <section className="mx-auto px-4 py-10 lg:px-0 sm:py-14 max-w-7xl lg:py-20">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

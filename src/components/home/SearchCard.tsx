@@ -25,6 +25,11 @@ const SearchCard = () => {
           <FaMountain />
           Land Banking
         </button>
+
+        <button className="flex md:w-full min-w-[200px]  items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-gray-700 sm:w-auto sm:min-w-[148px] sm:text-base">
+          <FaMountain />
+          Land Banking
+        </button>
       </div>
 
       <div className="mt-6 flex flex-col gap-4 border-t border-white/30 pt-4 sm:flex-row sm:items-center sm:justify-between">
