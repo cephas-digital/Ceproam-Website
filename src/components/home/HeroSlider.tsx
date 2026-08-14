@@ -216,7 +216,6 @@ const HeroSlider = () => {
         ))}
       </Swiper>
 
-      {/* Search Card */}
       <div
         className="
           relative

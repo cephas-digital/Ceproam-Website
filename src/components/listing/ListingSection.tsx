@@ -13,7 +13,7 @@ const ListingSection: React.FC<ExtendedListingSectionProps> = ({
   subtitle,
   ctaText,
   tabs = [],
-  cards = [], // 👈 Default to an empty array to prevent undefined errors
+  cards = [], //
   loading = false,
 }) => {
   const [activeTab, setActiveTab] = useState<number>(0);

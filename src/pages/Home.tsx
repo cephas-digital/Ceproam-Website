@@ -165,7 +165,7 @@ const Home = () => {
 
       <section className="bg-[#FAF9FE] py-16 sm:py-20">
         <div className="mx-auto flex max-w-7xl md:flex-row flex-col items-center lg:px-0 md:px-4 gap-8 sm:gap-10 lg:flex-row lg:justify-between lg:gap-12">
-          <div className="max-w-xl text-center lg:text-left">
+          <div className="lg:max-w-xl text-center lg:text-left">
             <h2 className="mb-4 text-2xl font-bold leading-tight text-[#00193C] sm:mb-6 sm:text-3xl md:text-4xl">
               Wealth Creation through Land Banking
             </h2>

@@ -195,7 +195,6 @@ const Listings = () => {
           </div>
         </div>
 
-        {/* Listings Display Grid */}
         <div className="mb-10 grid gap-6 px-4 sm:px-6 md:grid-cols-2 md:px-14 lg:px-28 xl:grid-cols-3">
           {loading ? (
             [1, 2, 3, 4, 5, 6].map((idx) => (

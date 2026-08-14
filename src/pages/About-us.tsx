@@ -17,7 +17,7 @@ const AboutUs = () => {
   return (
     <div className="font-Outfit">
       <section
-        className="relative min-h-[60vh] overflow-hidden sm:min-h-[70vh] md:min-h-[72vh] lg:min-h-screen"
+        className="relative min-h-[60vh] overflow-hidden sm:min-h-[70vh] md:min-h-[70vh] lg:min-h-screen"
         style={{
           backgroundImage: `url(${About})`,
           backgroundSize: "cover",
