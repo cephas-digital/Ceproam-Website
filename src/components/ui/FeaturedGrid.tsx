@@ -10,7 +10,7 @@ export function FeatureGridSection({
   const styles = {
     light: {
       section: "bg-[#F4F3F8]",
-      card: "transition-all duration-300 ease-out hover:scale-[1.01] hover:border-l-4 hover:border-t-4 hover:border-[#00193C] hover:shadow-[-8px_-8px_20px_rgba(59,130,246,0.3)] rounded-lg",
+      card: "transition-all duration-300 ease-out  rounded-lg",
       iconWrapper: "bg-[#00193C0D] mx-auto",
       title: "text-[#00193C]",
       text: "text-slate-500",
@@ -55,7 +55,8 @@ export function FeatureGridSection({
 
   return (
     <section className={`${sectionBg} py-14 sm:py-16 lg:py-20`}>
-      <div className="mx-auto w-full px-4 sm:px-6 md:px-14 lg:px-28">
+      {/* px-4 sm:px-6 md:px-14 lg:px-28 */}
+      <div className="mx-auto w-full max-w-7xl lg:px-0 px-4 ">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}

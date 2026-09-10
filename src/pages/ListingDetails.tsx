@@ -104,8 +104,8 @@ const ListingDetails: React.FC = () => {
 
   // 3. RENDER LIVE DATA
   return (
-    <main className="min-h-screen font-Outfit bg-slate-50 px-6 py-20">
-      <div className="mx-auto max-w-6xl">
+    <main className="min-h-screen font-Outfit py-20">
+      <div className="mx-auto max-w-7xl lg:px-0 px-4">
         <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-sm uppercase tracking-[0.3em] text-orange-500">
@@ -125,11 +125,11 @@ const ListingDetails: React.FC = () => {
         </div>
 
         <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-          <div className="space-y-6 rounded-[32px] bg-white p-8 shadow-xl">
+          <div className="space-y-6 rounded-[32px] lg:p-8 ">
             <img
               src={listing.image}
               alt={listing.title}
-              className="h-[400px] w-full rounded-[28px] object-cover"
+              className="lg:h-[400px] w-full rounded-[28px] object-cover"
             />
 
             <div className="grid gap-6 md:grid-cols-3">

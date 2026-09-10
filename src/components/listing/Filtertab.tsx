@@ -8,7 +8,7 @@ interface FilterTabsProps {
 
 const FilterTabs = ({ tabs, activeTab, setActiveTab }: FilterTabsProps) => {
   return (
-    <div className="flex gap-2 overflow-x-auto pb-2 scroll-smooth sm:gap-3 md:gap-4 md:overflow-x-visible">
+    <div className="flex gap-2 overflow-x-auto pb-2 scroll-smooth sm:gap-3 md:gap-4 md:overflow-x-scroll lg:overflow-x-visible">
       {tabs.map((tab, index) => {
         const Icon = tab.icon;
 

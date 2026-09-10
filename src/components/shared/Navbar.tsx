@@ -21,13 +21,18 @@ export default function Navbar() {
         transition={{ duration: 0.45 }}
         className="fixed left-0 top-0 z-40 w-full border-b border-gray-200 bg-white shadow-sm font-Outfit"
       >
-        <div className="mx-auto flex items-center justify-between px-4 md:py-2 py-4 sm:px-6 md:px-16 lg:px-28">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-0">
           <Link to="/">
-            <img src={NavImg} alt="CEPROAM" className="h-9 sm:h-10" />
+            <img
+              src={NavImg}
+              alt="CEPROAM"
+              // className="h-9 sm:h-10"
+              className="h-9 sm:h-10 lg:h-11"
+            />
           </Link>
 
           <div className="flex items-center gap-4 md:gap-6">
-            <nav className="hidden md:block">
+            <nav className="hidden lg:block">
               <ul className="flex items-center gap-8">
                 {navLinks.map((link) => (
                   <li key={link.path}>
@@ -57,7 +62,7 @@ export default function Navbar() {
 
             <button
               type="button"
-              className="inline-flex h-10 w-10 flex-col items-center justify-center gap-1 rounded-md border border-gray-200 bg-white p-2 text-gray-700 transition hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#0B1F4D] md:hidden"
+              className="inline-flex h-10 w-10 flex-col items-center justify-center gap-1 rounded-md border border-gray-200 bg-white p-2 text-gray-700 transition hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#0B1F4D] lg:hidden"
               onClick={() => setIsMenuOpen((prev) => !prev)}
               aria-expanded={isMenuOpen}
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -80,7 +85,7 @@ export default function Navbar() {
             </button>
           </div>
 
-          <div className="hidden items-center gap-3 md:flex">
+          <div className="hidden items-center gap-3 lg:flex">
             <button className="rounded-md border border-[#0B1F4D] px-6 py-3 text-sm font-semibold text-[#0B1F4D] transition hover:bg-[#0B1F4D] hover:text-white">
               Explore Listings
             </button>
@@ -93,7 +98,7 @@ export default function Navbar() {
         </div>
 
         <div
-          className={`overflow-hidden transition-[max-height,opacity] duration-300 ease-out md:hidden ${
+          className={`overflow-hidden transition-[max-height,opacity] duration-300 ease-out lg:hidden ${
             isMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
           }`}
         >
@@ -121,12 +126,20 @@ export default function Navbar() {
             </nav>
 
             <div className="space-y-3">
-              <button className="w-full rounded-md border-2 border-[#00193C] px-6 py-3 text-sm font-semibold text-[#0B1F4D] transition hover:bg-[#0B1F4D] hover:text-white">
-                Explore Listings
-              </button>
-              <button className="w-full rounded-md bg-[#00193C] px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90">
-                Invest Now
-              </button>
+              <Link
+                to="/listings"
+                className="w-full"
+              >
+                <button className="w-full rounded-md border-2 border-[#00193C] px-6 py-3 text-sm font-semibold text-[#0B1F4D] transition hover:bg-[#0B1F4D] hover:text-white">
+                  Explore Listings
+                </button>
+              </Link>
+
+              <a href="https://cepromas-users-admin.vercel.app">
+                <button className="w-full rounded-md bg-[#00193C] px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90">
+                  Invest Now
+                </button>
+              </a>
             </div>
           </div>
         </div>

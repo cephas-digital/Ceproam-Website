@@ -32,7 +32,7 @@ const ListingTile = ({ card }: ListingTileProps) => {
       <div className="space-y-4 p-4 sm:space-y-5 sm:p-6">
         <div className="flex items-start justify-between gap-3 sm:gap-4">
           <div>
-            <h3 className="text-xl font-semibold text-slate-900 sm:text-2xl">
+            <h3 className="text-sm min-h-[60px] line-clamp-2 font-semibold text-slate-900 sm:text-xl">
               {card.title}
             </h3>
             <div className="mt-2 flex items-center gap-2 text-sm text-slate-500 sm:mt-3">
@@ -40,7 +40,7 @@ const ListingTile = ({ card }: ListingTileProps) => {
               <span>{card.location}</span>
             </div>
           </div>
-          <button className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-900 text-white transition hover:bg-slate-800 sm:h-12 sm:w-12">
+          <button className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-slate-900 text-white transition hover:bg-slate-800 sm:h-12 sm:w-12">
             <FaArrowRight />
           </button>
         </div>
@@ -50,7 +50,7 @@ const ListingTile = ({ card }: ListingTileProps) => {
             <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
               {card.priceLabel}
             </p>
-            <p className="mt-2 text-lg font-semibold text-slate-900 sm:text-xl">
+            <p className="mt-2 text-sm font-semibold text-slate-900 sm:text-xl">
               {card.priceValue}
             </p>
           </div>
@@ -59,7 +59,7 @@ const ListingTile = ({ card }: ListingTileProps) => {
               <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
                 {card.secondaryLabel}
               </p>
-              <p className="mt-2 text-lg font-semibold text-orange-500 sm:text-xl">
+              <p className="mt-2 text-xs font-semibold text-orange-500 sm:text-xl">
                 {card.secondaryValue}
               </p>
             </div>
@@ -84,7 +84,7 @@ const ListingTile = ({ card }: ListingTileProps) => {
 
         <Link
           to={`/listing/${card.id}`}
-          className="inline-flex w-full items-center justify-center rounded-2xl bg-slate-900 py-4 text-base font-semibold text-white transition hover:bg-slate-800"
+          className="inline-flex w-full items-center text-xs justify-center rounded-2xl bg-slate-900 py-4 md:text-base font-semibold text-white transition hover:bg-slate-800"
         >
           {card.buttonText}
         </Link>

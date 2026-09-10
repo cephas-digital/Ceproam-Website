@@ -13,7 +13,7 @@ const ListingSection: React.FC<ExtendedListingSectionProps> = ({
   subtitle,
   ctaText,
   tabs = [],
-  cards = [], // 👈 Default to an empty array to prevent undefined errors
+  cards = [], //
   loading = false,
 }) => {
   const [activeTab, setActiveTab] = useState<number>(0);
@@ -38,7 +38,7 @@ const ListingSection: React.FC<ExtendedListingSectionProps> = ({
   }, [activeTab, cards, tabs]);
 
   return (
-    <section className="mx-auto px-4 py-10 sm:px-6 sm:py-14 md:px-14 md:py-16 lg:px-28 lg:py-20">
+    <section className="mx-auto px-4 py-10 lg:px-0 sm:py-14 max-w-7xl lg:py-20">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -93,7 +93,12 @@ const ListingSection: React.FC<ExtendedListingSectionProps> = ({
             />
           ))
         ) : (visibleCards?.length ?? 0) > 0 ? (
-          visibleCards.map((card) => <ListingCard key={card.id} card={card} />)
+          visibleCards.map((card) => (
+            <ListingCard
+              key={card.id}
+              card={card}
+            />
+          ))
         ) : (
           <div className="col-span-full rounded-2xl border border-dashed border-gray-300 bg-gray-50 px-6 py-10 text-center text-sm text-gray-600 sm:text-base">
             No listings match this category yet.

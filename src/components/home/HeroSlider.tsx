@@ -1,12 +1,123 @@
+// import { useState } from "react";
+// import type { ReactNode } from "react";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Autoplay, Pagination } from "swiper/modules";
+// import BackgroundOne from "../../assets/images/Real Estate and Agriculture Mix.svg";
+// import BackgroundTwo from "../../assets/images/Real Estate.svg";
+// import BackgroundThree from "../../assets/images/slide3.svg";
+// import "swiper/css";
+// import "swiper/css/pagination";
+// import HeroContent from "./HeroContent";
+// import SearchCard from "./SearchCard";
+
+// interface Slide {
+//   id: number;
+//   image: string;
+//   title?:
+//     | ReactNode
+//     | Array<{ text: string; color?: string; highlight?: boolean }>;
+//   subtitle?: string;
+//   description?: string;
+// }
+
+// const slides: Slide[] = [
+//   {
+//     id: 1,
+//     image: BackgroundOne,
+//     title: [
+//       { text: "Smarter Property Management System," },
+//       { text: "Designed Around People", highlight: true },
+//       { text: "and Built for Africa" },
+//     ],
+//     // subtitle: "Sustainable properties for long-term growth",
+//     description:
+//       "We bridge the gap between owners seeking seamless management and tenants seeking quality spaces. Creating a property experience built on trust, clarity and mutual value",
+//   },
+//   {
+//     id: 2,
+//     image: BackgroundTwo,
+//     title: [
+//       { text: "Build Sustainable Wealth through" },
+//       { text: "Real Estate", highlight: true },
+//       { text: "And" },
+//       { text: "Agriculture", highlight: true },
+//       { text: "." },
+//     ],
+//     // subtitle: "Homes and spaces built with purpose",
+//     description:
+//       "A community-focused cooperative empowering institutional growth through verified asset-backed investments in Africa's most resilient sectors.",
+//   },
+
+//   {
+//     id: 3,
+//     image: BackgroundThree,
+//     title: [
+//       { text: "Build Sustainable Wealth through" },
+//       { text: "Real Estate", highlight: true },
+//       { text: "And" },
+//       { text: "Agriculture", highlight: true },
+//       { text: "." },
+//     ],
+//     // subtitle: "Homes and spaces built with purpose",
+//     description:
+//       "A community-focused cooperative empowering institutional growth through verified asset-backed investments in Africa's most resilient sectors.",
+//   },
+// ];
+
+// const HeroSlider = () => {
+//   const [activeIndex, setActiveIndex] = useState(0);
+
+//   return (
+//     <section className="relative  font-Outfit w-full">
+//       <Swiper
+//         modules={[Autoplay, Pagination]}
+//         autoplay={{ delay: 4000, disableOnInteraction: false }}
+//         loop
+//         speed={800}
+//         pagination={{ clickable: true }}
+//         onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+//         className="h-full"
+//       >
+//         {slides.map((slide, index) => (
+//           <SwiperSlide key={slide.id}>
+//             <HeroContent
+//               backgroundImage={slide.image}
+//               overlayClassName="bg-[#00193CE5]"
+//               title={slide.title}
+//               subtitle={slide.subtitle}
+//               description={slide.description}
+//               isActive={index === activeIndex}
+//             />
+//           </SwiperSlide>
+//         ))}
+//       </Swiper>
+
+//       {/* "absolute bottom-[-1rem] left-1/2 z-20 mx-auto w-[calc(100%-1rem)] -translate-x-1/2 px-0 sm:static sm:mt-6 sm:w-full sm:max-w-2xl sm:translate-x-0 sm:px-4 md:max-w-2xl lg:absolute lg:bottom-[-36px] lg:left-1/2 lg:mt-0 lg:w-[calc(100%-2rem)] lg:-translate-x-1/2 lg:px-4" */}
+//       {/* "relative z-20 mx-auto mt-6 w-[calc(100%-1rem)] px-0 sm:mt-8 sm:w-full sm:max-w-2xl sm:px-4 md:mt-10 md:max-w-2xl lg:absolute lg:bottom-[-36px] lg:left-1/2 lg:mt-0 lg:w-[calc(100%-2rem)] lg:-translate-x-1/2 lg:px-4" */}
+
+//       <div className="absolute bottom-[-1rem] left-1/2 z-20 mx-auto w-[calc(100%-1rem)] -translate-x-1/2 px-0 sm:static sm:mt-6 sm:w-full sm:max-w-2xl sm:translate-x-0 sm:px-4 md:max-w-2xl lg:absolute lg:bottom-[-36px] lg:left-1/2 lg:mt-0 lg:w-[calc(100%-2rem)] lg:-translate-x-1/2 lg:px-4">
+//         <SearchCard />
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default HeroSlider;
+
 import { useState } from "react";
 import type { ReactNode } from "react";
+
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
+import { Autoplay, EffectFade, Pagination } from "swiper/modules";
+
 import BackgroundOne from "../../assets/images/Real Estate and Agriculture Mix.svg";
 import BackgroundTwo from "../../assets/images/Real Estate.svg";
-import BackgroundThree from "../../assets/images/slide3.svg";
+import BackgroundThree from "../../assets/images/slide4.svg";
+
 import "swiper/css";
+import "swiper/css/effect-fade";
 import "swiper/css/pagination";
+
 import HeroContent from "./HeroContent";
 import SearchCard from "./SearchCard";
 
@@ -15,7 +126,11 @@ interface Slide {
   image: string;
   title?:
     | ReactNode
-    | Array<{ text: string; color?: string; highlight?: boolean }>;
+    | Array<{
+        text: string;
+        color?: string;
+        highlight?: boolean;
+      }>;
   subtitle?: string;
   description?: string;
 }
@@ -24,26 +139,26 @@ const slides: Slide[] = [
   {
     id: 1,
     image: BackgroundOne,
+    // title: [
+    //   { text: "Smarter Property Management System," },
+    //   { text: "Designed Around People", highlight: true },
+    //   { text: "and Built for Africa" },
+    // ],
     title: [
-      { text: "Smarter Property Management System," },
+      { text: "Smarter Property Management" },
       { text: "Designed Around People", highlight: true },
-      { text: "and Built for Africa" },
     ],
-    // subtitle: "Sustainable properties for long-term growth",
     description:
-      "We bridge the gap between owners seeking seamless management and tenants seeking quality spaces. Creating a property experience built on trust, clarity and mutual value",
+      "We bridge the gap between owners seeking seamless management and tenants seeking quality spaces. Creating a property experience built on trust, clarity and mutual value.",
   },
+
   {
     id: 2,
     image: BackgroundTwo,
     title: [
-      { text: "Build Sustainable Wealth through" },
-      { text: "Real Estate", highlight: true },
-      { text: "And" },
-      { text: "Agriculture", highlight: true },
-      { text: "." },
+      { text: "Build Sustainable Wealth" },
+      { text: "Through Real Estate & Agriculture", highlight: true },
     ],
-    // subtitle: "Homes and spaces built with purpose",
     description:
       "A community-focused cooperative empowering institutional growth through verified asset-backed investments in Africa's most resilient sectors.",
   },
@@ -52,13 +167,12 @@ const slides: Slide[] = [
     id: 3,
     image: BackgroundThree,
     title: [
-      { text: "Build Sustainable Wealth through" },
-      { text: "Real Estate", highlight: true },
-      { text: "And" },
-      { text: "Agriculture", highlight: true },
-      { text: "." },
+      { text: "  Grow Wealth That Lasts Through" },
+      { text: "  Asset-Backed Opportunities.", highlight: true },
+      // { text: " and " },
+      // { text: "Agriculture", highlight: true },
+      // { text: "." },
     ],
-    // subtitle: "Homes and spaces built with purpose",
     description:
       "A community-focused cooperative empowering institutional growth through verified asset-backed investments in Africa's most resilient sectors.",
   },
@@ -68,23 +182,33 @@ const HeroSlider = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="relative  font-Outfit w-full">
+    <section className="relative w-full font-Outfit">
       <Swiper
-        modules={[Autoplay, Pagination]}
-        autoplay={{ delay: 4000, disableOnInteraction: false }}
+        modules={[Autoplay, Pagination, EffectFade]}
+        effect="fade"
+        fadeEffect={{
+          crossFade: true,
+        }}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
         loop
-        speed={800}
-        pagination={{ clickable: true }}
-        onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-        className="h-full"
+        speed={1000}
+        pagination={{
+          clickable: true,
+        }}
+        onSlideChange={(swiper) => {
+          setActiveIndex(swiper.realIndex);
+        }}
+        className="hero-swiper w-full"
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={slide.id}>
             <HeroContent
               backgroundImage={slide.image}
-              overlayClassName="bg-[#00193CE5]"
+              overlayClassName="bg-[#00193CE5]/70"
               title={slide.title}
-              subtitle={slide.subtitle}
               description={slide.description}
               isActive={index === activeIndex}
             />
@@ -92,7 +216,24 @@ const HeroSlider = () => {
         ))}
       </Swiper>
 
-      <div className="absolute bottom-[-1rem] left-1/2 z-20 mx-auto w-[calc(100%-1rem)] -translate-x-1/2 px-0 sm:static sm:mt-6 sm:w-full sm:max-w-2xl sm:translate-x-0 sm:px-4 md:max-w-2xl lg:absolute lg:bottom-[-36px] lg:left-1/2 lg:mt-0 lg:w-[calc(100%-2rem)] lg:-translate-x-1/2 lg:px-4">
+      <div
+        className="
+          relative
+          z-20
+          mx-auto
+          -mt-10
+          w-[calc(100%-2rem)]
+          max-w-2xl
+          sm:-mt-12
+          lg:absolute
+          lg:bottom-[-40px]
+          lg:left-1/2
+          lg:mt-0
+          lg:w-[calc(100%-4rem)]
+          lg:max-w-5xl
+          lg:-translate-x-1/2
+        "
+      >
         <SearchCard />
       </div>
     </section>
