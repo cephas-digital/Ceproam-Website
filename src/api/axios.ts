@@ -3,7 +3,7 @@ import type { InternalAxiosRequestConfig } from "axios";
 import { useAuthStore } from "../stores/auth.store.ts";
 
 const api = axios.create({
-  baseURL: "https://cepromas-backend-api.onrender.com",
+  baseURL: "https://cepromas-api.cephasict.com/",
 });
 
 // Attach token automatically
