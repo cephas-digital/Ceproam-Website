@@ -132,7 +132,7 @@ export default function Navbar() {
                 </button>
               </Link>
 
-              <a href="https://cepromas-users-admin.vercel.app">
+              <a href="https://ceproam-users.vercel.app/">
                 <button className="w-full rounded-md bg-[#00193C] px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90">
                   Invest Now
                 </button>
