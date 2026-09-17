@@ -89,7 +89,7 @@ export default function Navbar() {
             <button className="rounded-md border border-[#0B1F4D] px-6 py-3 text-sm font-semibold text-[#0B1F4D] transition hover:bg-[#0B1F4D] hover:text-white">
               Explore Listings
             </button>
-            <a href="https://cepromas-users-admin.vercel.app">
+            <a href="https://ceproam-users.vercel.app/">
               <button className="rounded-md bg-[#0B1F4D] px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90">
                 Invest Now
               </button>
@@ -126,10 +126,7 @@ export default function Navbar() {
             </nav>
 
             <div className="space-y-3">
-              <Link
-                to="/listings"
-                className="w-full"
-              >
+              <Link to="/listings" className="w-full">
                 <button className="w-full rounded-md border-2 border-[#00193C] px-6 py-3 text-sm font-semibold text-[#0B1F4D] transition hover:bg-[#0B1F4D] hover:text-white">
                   Explore Listings
                 </button>
