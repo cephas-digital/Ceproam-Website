@@ -220,7 +220,7 @@ const HeroContent = ({
 
           <div className="mt-7 flex items-center justify-center gap-3 sm:mt-9 sm:gap-4">
             <a
-              href="https://cepromas-users-admin.vercel.app"
+              href="https://ceproam-users.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
             >
