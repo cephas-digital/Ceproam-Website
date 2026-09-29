@@ -11,7 +11,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#F3F3F6]">
+    <footer className="relative font-Outfit bg-[#F3F3F6]">
       <div className="mx-auto max-w-7xl py-16  px-4 lg:px-0">
         <div className="grid gap-8 md:grid-cols-2 md:gap-10 lg:grid-cols-[280px_220px_220px_280px] lg:justify-between">
           <div>

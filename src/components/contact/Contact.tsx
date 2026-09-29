@@ -79,10 +79,10 @@ export default function ContactSection() {
   };
   return (
     <section className="bg-[#F8F8FD] py-20">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl px-4">
         <div className="grid gap-12 lg:grid-cols-[2fr_1fr]">
           <div className="rounded-2xl border border-[#C4C6D14D] bg-white p-8 shadow-sm md:p-10">
-            <h2 className="mb-10 text-4xl font-bold text-[#00193C]">
+            <h2 className="mb-10 md:text-3xl text-xl font-bold text-[#00193C]">
               Request a Consultation
             </h2>
 
@@ -195,7 +195,7 @@ export default function ContactSection() {
                   key={item.title}
                   className="flex gap-4"
                 >
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-[#E9F0FF] text-[#0B234F]">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#E9F0FF] text-[#0B234F]">
                     {item.icon}
                   </div>
 

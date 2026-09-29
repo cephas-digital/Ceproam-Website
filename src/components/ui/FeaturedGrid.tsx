@@ -68,7 +68,7 @@ export function FeatureGridSection({
             {title}
           </h2>
 
-          <p className={`mt-2 md:text-base text-sm ${current.text}`}>
+          <p className={`mt-2 md:text-base leading-8 text-sm ${current.text}`}>
             {subtitle}
           </p>
         </motion.div>

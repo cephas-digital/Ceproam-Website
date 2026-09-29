@@ -2,7 +2,6 @@ import { motion } from "motion/react";
 import ContactImg from "../assets/images/contact-us.svg";
 import ContactSection from "../components/contact/Contact";
 import OfficeMap from "../components/contact/Map";
-import Footer from "../components/shared/Footer";
 import VirtualTour from "../components/contact/Virtual-tour";
 
 const ContactUs = () => {
@@ -27,7 +26,7 @@ const ContactUs = () => {
               GET IN TOUCH
             </p>
 
-            <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl sm:leading-[1.15] lg:text-6xl lg:leading-[1.1]">
+            <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl sm:leading-[1.15] lg:text-5xl lg:leading-[1.1]">
               Let's
               <span className="text-[#FF5500]"> Build</span> Your Asset
               Portfolio
@@ -46,8 +45,6 @@ const ContactUs = () => {
       <VirtualTour />
 
       <OfficeMap />
-
-      <Footer />
     </div>
   );
 };

@@ -29,8 +29,44 @@
   transition: all 0.3s ease;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .hero-swiper .swiper-pagination-bullet-active {
   width: 24px;
   border-radius: 999px;
   opacity: 1;
 }
+
+/* @keyframes due-diligence-slide {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.due-diligence-track {
+  animation: due-diligence-slide 24s linear infinite;
+}
+
+.due-diligence-track:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .due-diligence-track {
+    animation: none;
+  }
+} */

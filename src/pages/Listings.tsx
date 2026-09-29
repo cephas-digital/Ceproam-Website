@@ -4,7 +4,6 @@ import FilterTabs from "../components/listing/Filtertab";
 import GrowthCalculator from "../components/listing/Listing-calculator";
 import { FeatureGridSection } from "../components/ui/FeaturedGrid";
 import { whyInvestWithUs } from "../data/data";
-import Footer from "../components/shared/Footer";
 
 // API Helpers & Transformers
 import { getAllInvestments } from "../api/investments";
@@ -122,7 +121,7 @@ const Listings = () => {
         <div className="mb-10 flex flex-col gap-6 mx-auto px-4 py-6 max-w-7xl lg:px-0">
           <div className="flex flex-col gap-6 xl:flex-row xl:items-center xl:justify-between">
             <div className="max-w-3xl">
-              <h1 className="text-3xl font-bold tracking-tight text-[#00193C] sm:text-4xl lg:text-5xl">
+              <h1 className="text-3xl font-bold tracking-tight lg:leading-[1.1] text-[#00193C] sm:text-4xl lg:text-4xl">
                 Marketplace of <span className="text-[#FF5500]">Secure</span>{" "}
                 Assets
               </h1>
@@ -133,12 +132,12 @@ const Listings = () => {
             </div>
 
             <div className="w-full xl:max-w-[420px]">
-              <div className="flex flex-col gap-4 rounded-[32px] bg-[#F4F3F8] p-5 text-center shadow-sm sm:flex-row sm:gap-6 sm:p-6 sm:text-left">
+              <div className="flex md:flex-col flex-row gap-4 rounded-[32px] bg-[#F4F3F8] p-5 text-center shadow-sm sm:flex-row sm:gap-6 sm:p-6 sm:text-left">
                 <div className="flex-1 sm:border-r sm:border-r-slate-200 sm:pr-6">
                   <p className="text-sm font-medium uppercase text-slate-500">
                     Active Investors
                   </p>
-                  <p className="mt-3 text-2xl font-bold text-slate-900 sm:mt-4 sm:text-3xl">
+                  <p className="mt-3 text-xl font-bold text-slate-900 sm:mt-4 sm:text-3xl">
                     12,450+
                   </p>
                 </div>
@@ -147,7 +146,7 @@ const Listings = () => {
                   <p className="text-sm font-medium uppercase text-slate-500">
                     Total Paid ROI
                   </p>
-                  <p className="mt-3 text-2xl font-bold text-orange-500 sm:mt-4 sm:text-3xl">
+                  <p className="mt-3 text-xl font-bold text-orange-500 sm:mt-4 sm:text-3xl">
                     2.4B+
                   </p>
                 </div>
@@ -225,8 +224,6 @@ const Listings = () => {
           items={whyInvestWithUs}
           variant="light"
         />
-
-        <Footer />
       </div>
     </main>
   );

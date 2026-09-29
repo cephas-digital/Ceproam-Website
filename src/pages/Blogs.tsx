@@ -3,7 +3,6 @@ import BlogsImg from "../assets/images/Blogs.svg";
 import FarmImage from "../assets/images/Cashew Farm Investment.png";
 import FilterTabs from "../components/listing/Filtertab";
 import FeaturedBlog from "../components/blogs/FeaturedBlogs";
-import Footer from "../components/shared/Footer";
 import BlogCard from "../components/blogs/BlogCard";
 import ListingBanner from "../components/blogs/ListingBanner";
 import NewsletterCard from "../components/blogs/NewsletterCard";
@@ -42,7 +41,7 @@ const Blogs = () => {
               INVESTOR EDUCATION
             </button>
 
-            <h1 className="text-2xl font-bold leading-tight text-white sm:text-4xl sm:leading-[1.15] lg:text-6xl lg:leading-[1.1]">
+            <h1 className="text-2xl font-bold leading-tight text-white sm:text-4xl sm:leading-[1.15] lg:text-4xl lg:leading-[1.1]">
               Market
               <span className="text-[#FF5500]"> Insights</span> & Financial
               Intelligence
@@ -102,7 +101,7 @@ const Blogs = () => {
 
       <section className="bg-[#F4F3F8] py-16 sm:py-20">
         <div className="mx-auto flex max-w-4xl flex-col items-center px-4 text-center sm:px-6">
-          <h2 className="md:text-4xl text-2xl font-bold text-[#00193C] ">
+          <h2 className="md:text-3xl text-2xl font-bold text-[#00193C] ">
             Ready to Secure Your financial future?
           </h2>
 
@@ -115,22 +114,20 @@ const Blogs = () => {
           <div className="mt-10 flex w-full flex-col gap-4 sm:w-auto sm:flex-row">
             <button
               type="button"
-              className="rounded-md bg-[#00193C] px-8 py-4 md:w-[363px] md:h-[64px] text-xl font-bold text-white transition hover:bg-orange-600"
+              className="rounded-md bg-[#00193C] px-8 py-4 md:w-[363px] md:h-[64px] md:text-xl font-bold text-white transition hover:bg-orange-600"
             >
               Get Started Today
             </button>
 
             <button
               type="button"
-              className="rounded-md md:w-[285px] md:h-[68px]  border-[#00193C] text-xl border-2 px-8 py-4 font-bold text-[#00193C] transition hover:bg-white hover:text-[#0B3D91]"
+              className="rounded-md md:w-[285px] md:h-[68px]  border-[#00193C] md:text-xl border-2 px-8 py-4 font-bold text-[#00193C] transition hover:bg-white hover:text-[#0B3D91]"
             >
               Contact Us
             </button>
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };

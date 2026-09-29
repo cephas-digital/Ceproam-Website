@@ -21,14 +21,16 @@ const FeaturedInsight = ({ insight }: Props) => {
               {insight.category}
             </p>
 
-            <h1 className="text-2xl font-bold leading-tight text-[#00193C] sm:text-[28px] lg:text-[32px]">
+            <h1 className="text-xl font-bold leading-tight text-[#00193C] sm:text-[28px] lg:text-[32px]">
               {insight.title}
             </h1>
 
-            <p className="mt-4 text-sm text-gray-600 sm:mt-5 sm:text-base">{insight.description}</p>
+            <p className="mt-4 text-sm text-gray-600 sm:mt-5 sm:text-base">
+              {insight.description}
+            </p>
           </div>
 
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="mt-8 flex flex-row gap-4 sm:flex-row sm:items-center justify-between  ">
             <div className="flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-200 font-semibold">
                 OA
@@ -43,7 +45,7 @@ const FeaturedInsight = ({ insight }: Props) => {
               </div>
             </div>
 
-            <button className="rounded-full border p-3 transition hover:bg-orange-500 hover:text-white">
+            <button className="rounded-full w-10  h-10 border p-3 transition hover:bg-orange-500 hover:text-white">
               <FiArrowRight />
             </button>
           </div>

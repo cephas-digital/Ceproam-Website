@@ -21,9 +21,13 @@ const InsightCard = ({ insight }: Props) => {
       </div>
 
       <div className="p-5 sm:p-6">
-        <h3 className="text-xl font-bold text-[#00193C] sm:text-2xl">{insight.title}</h3>
+        <h3 className="text-xl font-bold text-[#00193C] sm:text-2xl">
+          {insight.title}
+        </h3>
 
-        <p className="mt-3 text-sm text-gray-600 sm:text-base">{insight.description}</p>
+        <p className="mt-3 text-sm text-gray-600 sm:text-base">
+          {insight.description}
+        </p>
 
         <div className="mt-6 flex items-center justify-between">
           <span className="text-sm text-gray-500">{insight.readTime}</span>

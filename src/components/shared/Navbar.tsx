@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router";
 import NavImg from "../../assets/images/navabr.png";
 const navLinks = [
@@ -12,6 +12,15 @@ const navLinks = [
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const updateScrollState = () => setIsScrolled(window.scrollY > 10);
+
+    updateScrollState();
+    window.addEventListener("scroll", updateScrollState, { passive: true });
+    return () => window.removeEventListener("scroll", updateScrollState);
+  }, []);
 
   return (
     <>
@@ -19,14 +28,17 @@ export default function Navbar() {
         initial={{ y: -12, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.45 }}
-        className="fixed left-0 top-0 z-40 w-full border-b border-gray-200 bg-white shadow-sm font-Outfit"
+        className={`fixed left-0 top-0 z-40 w-full font-Outfit transition-[background-color,backdrop-filter,box-shadow,border-color] duration-300 ease-out ${
+          isScrolled
+            ? "border-b border-gray-200/80 bg-white/90 shadow-sm backdrop-blur-xl"
+            : "border-b border-transparent bg-transparent shadow-none"
+        }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-0">
           <Link to="/">
             <img
               src={NavImg}
               alt="CEPROAM"
-              // className="h-9 sm:h-10"
               className="h-9 sm:h-10 lg:h-11"
             />
           </Link>
@@ -41,8 +53,12 @@ export default function Navbar() {
                       className={({ isActive }) =>
                         `relative pb-1 text-sm font-semibold transition-colors ${
                           isActive
-                            ? "text-[#0B1F4D]"
-                            : "text-[#43474F] hover:text-[#0B1F4D]"
+                            ? isScrolled
+                              ? "text-[#0B1F4D]"
+                              : "text-black"
+                            : isScrolled
+                              ? "text-[#43474F] hover:text-[#0B1F4D]"
+                              : "text-black hover:text-[#0B1F4D]"
                         }`
                       }
                     >
@@ -62,7 +78,11 @@ export default function Navbar() {
 
             <button
               type="button"
-              className="inline-flex h-10 w-10 flex-col items-center justify-center gap-1 rounded-md border border-gray-200 bg-white p-2 text-gray-700 transition hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#0B1F4D] lg:hidden"
+              className={`inline-flex h-10 w-10 flex-col items-center justify-center gap-1 rounded-md border p-2 transition-colors focus:outline-none focus:ring-2 focus:ring-[#0B1F4D] lg:hidden ${
+                isScrolled
+                  ? "border-gray-200 bg-white text-gray-700 hover:bg-gray-50"
+                  : "border-white/40 bg-white/10 text-white hover:bg-white/20"
+              }`}
               onClick={() => setIsMenuOpen((prev) => !prev)}
               aria-expanded={isMenuOpen}
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -86,12 +106,15 @@ export default function Navbar() {
           </div>
 
           <div className="hidden items-center gap-3 lg:flex">
-            <button className="rounded-md border border-[#0B1F4D] px-6 py-3 text-sm font-semibold text-[#0B1F4D] transition hover:bg-[#0B1F4D] hover:text-white">
-              Explore Listings
-            </button>
+            <Link to="/listings">
+              <button className="rounded-md border border-[#0B1F4D] px-6 py-3 text-sm font-semibold text-[#0B1F4D] transition hover:bg-[#0B1F4D] hover:text-white">
+                List Properties
+              </button>
+            </Link>
+
             <a href="https://ceproam-users.vercel.app/">
               <button className="rounded-md bg-[#0B1F4D] px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90">
-                Invest Now
+                Explore Listing
               </button>
             </a>
           </div>
@@ -126,15 +149,22 @@ export default function Navbar() {
             </nav>
 
             <div className="space-y-3">
-              <Link to="/listings" className="w-full">
-                <button className="w-full rounded-md border-2 border-[#00193C] px-6 py-3 text-sm font-semibold text-[#0B1F4D] transition hover:bg-[#0B1F4D] hover:text-white">
-                  Explore Listings
+              <a
+                href="https://ceproam-agent-j9ba.vercel.app/"
+                target="_blank"
+                // className="w-full"
+              >
+                <button className="w-full mb-4 rounded-md border-2 border-[#00193C] px-6 py-3 text-sm font-semibold text-[#0B1F4D] transition hover:bg-[#0B1F4D] hover:text-white">
+                  List Properties
                 </button>
-              </Link>
+              </a>
 
-              <a href="https://ceproam-users.vercel.app/">
+              <a
+                href="https://ceproam-users.vercel.app/"
+                target="_blank"
+              >
                 <button className="w-full rounded-md bg-[#00193C] px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90">
-                  Invest Now
+                  Explore Listing
                 </button>
               </a>
             </div>

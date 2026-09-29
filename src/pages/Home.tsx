@@ -164,7 +164,8 @@ const Home = () => {
       />
 
       <section className="bg-[#FAF9FE] py-16 sm:py-20">
-        <div className="mx-auto flex max-w-7xl md:flex-row flex-col items-center lg:px-0 md:px-4 gap-8 sm:gap-10 lg:flex-row lg:justify-between lg:gap-12">
+        {/* mx-auto w-full max-w-7xl lg:px-0 px-4 */}
+        <div className="mx-auto flex max-w-7xl md:flex-row flex-col px-4 items-center  gap-8 sm:gap-10 lg:flex-row lg:justify-between lg:gap-12">
           <div className="lg:max-w-xl text-center lg:text-left">
             <h2 className="mb-4 text-2xl font-bold leading-tight text-[#00193C] sm:mb-6 sm:text-3xl md:text-4xl">
               Wealth Creation through Land Banking
@@ -193,7 +194,7 @@ const Home = () => {
             </button>
           </div>
 
-          <div className="group relative w-full max-w-[520px]">
+          <div className="group relative w-full md:max-w-[520px]">
             <div className="absolute inset-0 translate-y-6 sm:translate-y-8" />
 
             <img
@@ -213,7 +214,7 @@ const Home = () => {
         <div className="mx-auto max-w-7xl lg:px-0 px-4">
           <div className="mb-8 flex flex-col gap-3 text-center sm:mb-12 sm:flex-row sm:items-center sm:justify-between sm:text-left">
             <div>
-              <h2 className="text-2xl font-bold text-[#00193C] sm:text-3xl md:text-4xl">
+              <h2 className="text-2xl font-bold text-[#00193C] sm:text-3xl md:text-3xl">
                 Recent Blogs
               </h2>
 

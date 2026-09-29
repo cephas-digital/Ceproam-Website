@@ -16,20 +16,26 @@ const SearchCard = () => {
           Property
         </Link>
 
-        <button className="flex lg:w-full min-w-[200px]  items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-gray-700 sm:w-auto sm:min-w-[200px] sm:text-base">
-          <GiFarmTractor />
-          Agri-Projects
-        </button>
+        <Link to="/properties">
+          <button className="flex lg:w-full min-w-[200px]  items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-gray-700 sm:w-auto sm:min-w-[200px] sm:text-base">
+            <GiFarmTractor />
+            Agri-Projects
+          </button>
+        </Link>
 
-        <button className="flex lg:w-full min-w-[200px]  items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-gray-700 sm:w-auto sm:min-w-[200px] sm:text-base">
-          <FaMountain />
-          Land Banking
-        </button>
+        <Link to="/properties">
+          <button className="flex lg:w-full min-w-[200px]  items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-gray-700 sm:w-auto sm:min-w-[200px] sm:text-base">
+            <FaMountain />
+            Land Banking
+          </button>
+        </Link>
 
-        <button className="flex lg:w-full min-w-[200px]  items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-gray-700 sm:w-auto sm:min-w-[200px] sm:text-base">
-          <FaMountain />
-          Land Banking
-        </button>
+        <Link to="/properties">
+          <button className="flex lg:w-full min-w-[200px]  items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-gray-700 sm:w-auto sm:min-w-[200px] sm:text-base">
+            <FaMountain />
+            Land Banking
+          </button>
+        </Link>
       </div>
 
       <div className="mt-6 flex flex-col gap-4 border-t border-white/30 pt-4 sm:flex-row sm:items-center sm:justify-between">

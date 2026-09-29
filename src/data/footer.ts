@@ -40,7 +40,7 @@ export const contactItems: ContactItem[] = [
 
 export const socialLinks: SocialLink[] = [
   {
-    label: "Twitter",
+    label: "Facebook",
     href: "#",
     icon: FaFacebookF,
   },

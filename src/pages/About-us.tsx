@@ -6,7 +6,6 @@ import mission from "../assets/images/mission.svg";
 import RealEsateOne from "../assets/images/real-estateOne.png";
 import RealEsateTwo from "../assets/images/Background.png";
 import RealEsateThree from "../assets/images/real-esatte-3.png";
-import Footer from "../components/shared/Footer";
 import { coreValues } from "../data/core-values";
 import { FeatureGridSection } from "../components/ui/FeaturedGrid";
 import CoreServiceSection from "../components/about/CoreServiceSection";
@@ -35,7 +34,7 @@ const AboutUs = () => {
               Ceproam
             </p>
 
-            <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl sm:leading-[1.15] lg:text-6xl lg:leading-[1.1]">
+            <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl sm:leading-[1.15] lg:text-5xl lg:leading-[1.1]">
               The Intersection of
               <span className="text-[#ff6b00]"> Agriculture</span>,
               <span className="text-[#ff6b00]"> Investment</span> and
@@ -288,12 +287,14 @@ const AboutUs = () => {
           </p>
 
           <div className="mt-10 flex w-full flex-col gap-4 sm:w-auto sm:flex-row">
-            <button
-              type="button"
-              className="rounded-md bg-[#FF6000] px-8 py-3 font-semibold text-white transition hover:bg-orange-600"
-            >
-              Become a Member
-            </button>
+            <a href="https://ceproam-users.vercel.app/">
+              <button
+                type="button"
+                className="rounded-md bg-[#FF6000] px-8 py-3 font-semibold text-white transition hover:bg-orange-600"
+              >
+                Become a Member
+              </button>
+            </a>
 
             <button
               type="button"
@@ -304,8 +305,6 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };

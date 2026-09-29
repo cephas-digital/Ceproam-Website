@@ -17,7 +17,7 @@ const VirtualTour = () => {
               Live Support
             </span>
 
-            <h2 className="mb-5 text-3xl font-bold leading-tight text-[#0D2344] md:text-4xl">
+            <h2 className="mb-5 text-2xl font-bold leading-tight text-[#0D2344] md:text-3xl">
               Schedule a Virtual Tour
             </h2>
 

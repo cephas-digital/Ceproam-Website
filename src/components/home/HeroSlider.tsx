@@ -1,118 +1,12 @@
-// import { useState } from "react";
-// import type { ReactNode } from "react";
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import { Autoplay, Pagination } from "swiper/modules";
-// import BackgroundOne from "../../assets/images/Real Estate and Agriculture Mix.svg";
-// import BackgroundTwo from "../../assets/images/Real Estate.svg";
-// import BackgroundThree from "../../assets/images/slide3.svg";
-// import "swiper/css";
-// import "swiper/css/pagination";
-// import HeroContent from "./HeroContent";
-// import SearchCard from "./SearchCard";
-
-// interface Slide {
-//   id: number;
-//   image: string;
-//   title?:
-//     | ReactNode
-//     | Array<{ text: string; color?: string; highlight?: boolean }>;
-//   subtitle?: string;
-//   description?: string;
-// }
-
-// const slides: Slide[] = [
-//   {
-//     id: 1,
-//     image: BackgroundOne,
-//     title: [
-//       { text: "Smarter Property Management System," },
-//       { text: "Designed Around People", highlight: true },
-//       { text: "and Built for Africa" },
-//     ],
-//     // subtitle: "Sustainable properties for long-term growth",
-//     description:
-//       "We bridge the gap between owners seeking seamless management and tenants seeking quality spaces. Creating a property experience built on trust, clarity and mutual value",
-//   },
-//   {
-//     id: 2,
-//     image: BackgroundTwo,
-//     title: [
-//       { text: "Build Sustainable Wealth through" },
-//       { text: "Real Estate", highlight: true },
-//       { text: "And" },
-//       { text: "Agriculture", highlight: true },
-//       { text: "." },
-//     ],
-//     // subtitle: "Homes and spaces built with purpose",
-//     description:
-//       "A community-focused cooperative empowering institutional growth through verified asset-backed investments in Africa's most resilient sectors.",
-//   },
-
-//   {
-//     id: 3,
-//     image: BackgroundThree,
-//     title: [
-//       { text: "Build Sustainable Wealth through" },
-//       { text: "Real Estate", highlight: true },
-//       { text: "And" },
-//       { text: "Agriculture", highlight: true },
-//       { text: "." },
-//     ],
-//     // subtitle: "Homes and spaces built with purpose",
-//     description:
-//       "A community-focused cooperative empowering institutional growth through verified asset-backed investments in Africa's most resilient sectors.",
-//   },
-// ];
-
-// const HeroSlider = () => {
-//   const [activeIndex, setActiveIndex] = useState(0);
-
-//   return (
-//     <section className="relative  font-Outfit w-full">
-//       <Swiper
-//         modules={[Autoplay, Pagination]}
-//         autoplay={{ delay: 4000, disableOnInteraction: false }}
-//         loop
-//         speed={800}
-//         pagination={{ clickable: true }}
-//         onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-//         className="h-full"
-//       >
-//         {slides.map((slide, index) => (
-//           <SwiperSlide key={slide.id}>
-//             <HeroContent
-//               backgroundImage={slide.image}
-//               overlayClassName="bg-[#00193CE5]"
-//               title={slide.title}
-//               subtitle={slide.subtitle}
-//               description={slide.description}
-//               isActive={index === activeIndex}
-//             />
-//           </SwiperSlide>
-//         ))}
-//       </Swiper>
-
-//       {/* "absolute bottom-[-1rem] left-1/2 z-20 mx-auto w-[calc(100%-1rem)] -translate-x-1/2 px-0 sm:static sm:mt-6 sm:w-full sm:max-w-2xl sm:translate-x-0 sm:px-4 md:max-w-2xl lg:absolute lg:bottom-[-36px] lg:left-1/2 lg:mt-0 lg:w-[calc(100%-2rem)] lg:-translate-x-1/2 lg:px-4" */}
-//       {/* "relative z-20 mx-auto mt-6 w-[calc(100%-1rem)] px-0 sm:mt-8 sm:w-full sm:max-w-2xl sm:px-4 md:mt-10 md:max-w-2xl lg:absolute lg:bottom-[-36px] lg:left-1/2 lg:mt-0 lg:w-[calc(100%-2rem)] lg:-translate-x-1/2 lg:px-4" */}
-
-//       <div className="absolute bottom-[-1rem] left-1/2 z-20 mx-auto w-[calc(100%-1rem)] -translate-x-1/2 px-0 sm:static sm:mt-6 sm:w-full sm:max-w-2xl sm:translate-x-0 sm:px-4 md:max-w-2xl lg:absolute lg:bottom-[-36px] lg:left-1/2 lg:mt-0 lg:w-[calc(100%-2rem)] lg:-translate-x-1/2 lg:px-4">
-//         <SearchCard />
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default HeroSlider;
-
 import { useState } from "react";
 import type { ReactNode } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Pagination } from "swiper/modules";
 
-import BackgroundOne from "../../assets/images/Real Estate and Agriculture Mix.svg";
-import BackgroundTwo from "../../assets/images/Real Estate.svg";
-import BackgroundThree from "../../assets/images/slide4.svg";
+import BackgroundOne from "../../assets/images/Real Estate and Agriculture Mix.jpg";
+import BackgroundTwo from "../../assets/images/agriculture.jpeg";
+import BackgroundThree from "../../assets/images/asset.jpeg";
 
 import "swiper/css";
 import "swiper/css/effect-fade";
@@ -139,11 +33,7 @@ const slides: Slide[] = [
   {
     id: 1,
     image: BackgroundOne,
-    // title: [
-    //   { text: "Smarter Property Management System," },
-    //   { text: "Designed Around People", highlight: true },
-    //   { text: "and Built for Africa" },
-    // ],
+
     title: [
       { text: "Smarter Property Management" },
       { text: "Designed Around People", highlight: true },
@@ -156,25 +46,25 @@ const slides: Slide[] = [
     id: 2,
     image: BackgroundTwo,
     title: [
-      { text: "Build Sustainable Wealth" },
-      { text: "Through Real Estate & Agriculture", highlight: true },
+      { text: "Access" },
+      { text: "Farmlands", highlight: true },
+      { text: ".Build" },
+      { text: "Agricultural", highlight: true },
+      { text: "Value" },
     ],
     description:
-      "A community-focused cooperative empowering institutional growth through verified asset-backed investments in Africa's most resilient sectors.",
+      "Access verified, high-yield farmland across Africa's most fertile regions — a tangible asset class delivering consistent returns rooted in real productivity",
   },
 
   {
     id: 3,
     image: BackgroundThree,
     title: [
-      { text: "  Grow Wealth That Lasts Through" },
-      { text: "  Asset-Backed Opportunities.", highlight: true },
-      // { text: " and " },
-      // { text: "Agriculture", highlight: true },
-      // { text: "." },
+      { text: "  Monetize, Syndicate, and Close Deals Faster Across" },
+      { text: "  Real Estate & Agriculture.", highlight: true },
     ],
     description:
-      "A community-focused cooperative empowering institutional growth through verified asset-backed investments in Africa's most resilient sectors.",
+      "The intelligent asset infrastructure built for Property Owners, Realtors, and Project Sponsors. Whether you are listing high-demand properties or packaging syndicated agro and land opportunities, CEPROMAS puts your assets in front of verified, capital-ready investors.",
   },
 ];
 
@@ -207,7 +97,8 @@ const HeroSlider = () => {
           <SwiperSlide key={slide.id}>
             <HeroContent
               backgroundImage={slide.image}
-              overlayClassName="bg-[#00193CE5]/70"
+              // overlayClassName="bg-[#00193CE5]/70"
+              overlayClassName="bg-[#000000]/60"
               title={slide.title}
               description={slide.description}
               isActive={index === activeIndex}
