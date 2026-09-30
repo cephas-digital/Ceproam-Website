@@ -7,7 +7,6 @@ export interface PerspectiveData {
   role: string;
   image: string;
   imageAlt?: string;
-  s;
   buttonText?: string;
   onButtonClick?: () => void;
 }

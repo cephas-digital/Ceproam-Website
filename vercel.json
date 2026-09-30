@@ -4,9 +4,8 @@
       "source": "/ceproam/assets/:path*",
       "destination": "/assets/:path*"
     },
-
     {
-      "source": "/(.*",
+      "source": "/(.*)",
       "destination": "/"
     }
   ]

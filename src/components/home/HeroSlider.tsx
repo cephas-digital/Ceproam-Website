@@ -34,11 +34,11 @@ const slides: Slide[] = [
     image: BackgroundOne,
 
     title: [
-      { text: "Smarter Property Management" },
+      { text: "AI-Powered Management for Property, Assets & Agriculture" },
       { text: "Designed Around People", highlight: true },
     ],
     description:
-      "We bridge the gap between owners seeking seamless management and tenants seeking quality spaces. Creating a property experience built on trust, clarity and mutual value.",
+      "Connecting people, property, assets and agriculture through intelligent technology to simplify management and unlock opportunities.",
   },
 
   {
@@ -46,8 +46,8 @@ const slides: Slide[] = [
     image: BackgroundTwo,
     title: [
       { text: "Access" },
-      { text: "Farmlands", highlight: true },
-      { text: ".Build" },
+      { text: "Farmlands,", highlight: true },
+      { text: "Build" },
       { text: "Agricultural", highlight: true },
       { text: "Value" },
     ],
