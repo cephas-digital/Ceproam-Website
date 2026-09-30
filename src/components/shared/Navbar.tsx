@@ -81,7 +81,7 @@ export default function Navbar() {
               className={`inline-flex h-10 w-10 flex-col items-center justify-center gap-1 rounded-md border p-2 transition-colors focus:outline-none focus:ring-2 focus:ring-[#0B1F4D] lg:hidden ${
                 isScrolled
                   ? "border-gray-200 bg-white text-gray-700 hover:bg-gray-50"
-                  : "border-white/40 bg-white/10 text-white hover:bg-white/20"
+                  : "border-white/40 bg-white/10 text-black hover:bg-white/20"
               }`}
               onClick={() => setIsMenuOpen((prev) => !prev)}
               aria-expanded={isMenuOpen}
@@ -106,13 +106,19 @@ export default function Navbar() {
           </div>
 
           <div className="hidden items-center gap-3 lg:flex">
-            <Link to="/listings">
+            <a
+              href="https://ceproam-admin.vercel.app/"
+              target="_blank"
+            >
               <button className="rounded-md border border-[#0B1F4D] px-6 py-3 text-sm font-semibold text-[#0B1F4D] transition hover:bg-[#0B1F4D] hover:text-white">
                 List Properties
               </button>
-            </Link>
+            </a>
 
-            <a href="https://ceproam-users.vercel.app/">
+            <a
+              href="https://ceproam-users.vercel.app/"
+              target="_blank"
+            >
               <button className="rounded-md bg-[#0B1F4D] px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90">
                 Explore Listing
               </button>
@@ -135,7 +141,7 @@ export default function Navbar() {
                       className={({ isActive }) =>
                         `block rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
                           isActive
-                            ? "bg-[#eef5ff] text-[#0B1F4D]"
+                            ? "bg-[#eef5ff]  text-[#0B1F4D]"
                             : "text-gray-600 hover:bg-gray-50 hover:text-[#0B1F4D]"
                         }`
                       }
@@ -150,7 +156,7 @@ export default function Navbar() {
 
             <div className="space-y-3">
               <a
-                href="https://ceproam-agent-j9ba.vercel.app/"
+                href="https://ceproam-admin.vercel.app/"
                 target="_blank"
                 // className="w-full"
               >

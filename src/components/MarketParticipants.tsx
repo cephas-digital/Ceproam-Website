@@ -89,7 +89,7 @@ const tabContent: Record<TabKey, TabContent> = {
 
   buyersInvestors: {
     label: "Buyers & Investors",
-    path: "/buyers-investors",
+    path: "/home",
 
     quote:
       '""Own tangible land, buy verified properties, and co-invest in high-yield agribusiness.""',
