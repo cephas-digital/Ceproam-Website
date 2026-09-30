@@ -108,13 +108,13 @@ const HeroContent = ({
                 className="min-w-[140px] rounded-md bg-orange-500 px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-orange-600 sm:min-w-[160px] sm:px-8 sm:py-4 sm:text-base
                 "
               >
-                Invest Now
+                Explore opportunities
               </button>
             </a>
 
-            <a href="https://ceproam-agent-j9ba.vercel.app/">
+            <a href="https://ceproam-admin.vercel.app/">
               <button className=" min-w-[165px] rounded-md border-2 border-white px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/10 sm:min-w-[190px] sm:px-8 sm:py-4 sm:text-base">
-                Explore Listings
+                List Properties
               </button>
             </a>
           </div>

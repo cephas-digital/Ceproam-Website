@@ -129,14 +129,12 @@ const OpportunityCard: React.FC<OpportunityCardProps> = ({ opportunity }) => {
           })}
         </ul>
 
-        <Link to="/home">
-          <button
-            type="button"
-            className="mt-auto pt-6 inline-flex w-fit items-center gap-2 text-[14px] font-medium text-[#FF6000] transition-all duration-200 hover:gap-3 hover:text-[#ff984d]"
-          >
-            {opportunity.linkText}
-            <FiArrowRight size={11} />
-          </button>
+        <Link
+          className="mt-auto pt-6 inline-flex w-fit items-center gap-2 text-[14px] font-medium text-[#FF6000] transition-all duration-200 hover:gap-3 hover:text-[#ff984d]"
+          to="/home"
+        >
+          {opportunity.linkText}
+          <FiArrowRight size={11} />
         </Link>
       </div>
     </article>

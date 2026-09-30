@@ -33,7 +33,7 @@ const SearchCard = () => {
         <Link to="/properties">
           <button className="flex lg:w-full min-w-[200px]  items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-gray-700 sm:w-auto sm:min-w-[200px] sm:text-base">
             <FaMountain />
-            Land Banking
+            Leasing
           </button>
         </Link>
       </div>

@@ -58,7 +58,7 @@
 }
 
 .due-diligence-track {
-  animation: due-diligence-slide 24s linear infinite;
+  animation: due-diligence-slide 10s linear infinite;
 }
 
 .due-diligence-track:hover {

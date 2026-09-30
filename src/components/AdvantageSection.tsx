@@ -162,7 +162,7 @@ const AdvantageSection = ({
                 ) : (
                   <span
                     className="
-                      text-[20px]
+                      text-[22px]
                       leading-none
                     "
                   >

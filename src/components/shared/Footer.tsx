@@ -13,8 +13,8 @@ export default function Footer() {
   return (
     <footer className="relative font-Outfit bg-[#F3F3F6]">
       <div className="mx-auto max-w-7xl py-16  px-4 lg:px-0">
-        <div className="grid gap-8 md:grid-cols-2 md:gap-10 lg:grid-cols-[280px_220px_220px_280px] lg:justify-between">
-          <div>
+        <div className="grid grid-cols-2 gap-8 md:gap-10 lg:grid-cols-[280px_220px_220px_280px] lg:justify-between">
+          <div className="order-1 min-w-0 lg:order-none">
             <img
               src={FooterImg}
               alt="CEPROAM"
@@ -35,6 +35,7 @@ export default function Footer() {
                 return (
                   <a
                     key={social.label}
+                    target="_blank"
                     href={social.href}
                     aria-label={social.label}
                     className="text-[#0F2343] transition hover:text-[#FF6B00]"
@@ -46,18 +47,22 @@ export default function Footer() {
             </div>
           </div>
 
-          <FooterColumn
-            title="Navigation"
-            links={navigationLinks}
-          />
+          <div className="order-3 min-w-0 lg:order-none">
+            <FooterColumn
+              title="Navigation"
+              links={navigationLinks}
+            />
+          </div>
 
-          <FooterColumn
-            title="Resources"
-            links={resourceLinks}
-          />
+          <div className="order-4 min-w-0 lg:order-none">
+            <FooterColumn
+              title="Resources"
+              links={resourceLinks}
+            />
+          </div>
 
           {/* Contact */}
-          <div>
+          <div className="order-2 min-w-0 lg:order-none">
             <h3 className="mb-8 text-sm font-bold uppercase tracking-wide text-[#0F2343]">
               Contact Us
             </h3>

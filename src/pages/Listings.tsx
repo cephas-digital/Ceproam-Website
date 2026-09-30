@@ -116,9 +116,11 @@ const Listings = () => {
   }, [activeTab, allItems, searchQuery]);
 
   return (
-    <main className="relative min-h-screen bg-slate-50 py-16 font-Outfit sm:py-20">
+    <main className="relative min-h-screen  py-16 font-Outfit sm:py-20">
+      {/* bg-slate-50 */}
+
       <div>
-        <div className="mb-10 flex flex-col gap-6 mx-auto px-4 py-6 max-w-7xl lg:px-0">
+        <div className="mb-10  flex flex-col gap-6 mx-auto px-4 py-6 max-w-7xl lg:px-0">
           <div className="flex flex-col gap-6 xl:flex-row xl:items-center xl:justify-between">
             <div className="max-w-3xl">
               <h1 className="text-3xl font-bold tracking-tight lg:leading-[1.1] text-[#00193C] sm:text-4xl lg:text-4xl">

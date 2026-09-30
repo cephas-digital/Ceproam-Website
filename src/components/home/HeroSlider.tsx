@@ -2,14 +2,13 @@ import { useState } from "react";
 import type { ReactNode } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectFade, Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 
 import BackgroundOne from "../../assets/images/Real Estate and Agriculture Mix.jpg";
 import BackgroundTwo from "../../assets/images/agriculture.jpeg";
 import BackgroundThree from "../../assets/images/asset.jpeg";
 
 import "swiper/css";
-import "swiper/css/effect-fade";
 import "swiper/css/pagination";
 
 import HeroContent from "./HeroContent";
@@ -74,20 +73,17 @@ const HeroSlider = () => {
   return (
     <section className="relative w-full font-Outfit">
       <Swiper
-        modules={[Autoplay, Pagination, EffectFade]}
-        effect="fade"
-        fadeEffect={{
-          crossFade: true,
-        }}
+        modules={[Autoplay, Pagination]}
         autoplay={{
           delay: 5000,
-          disableOnInteraction: false,
+          disableOnInteraction: true,
         }}
         loop
         speed={1000}
         pagination={{
           clickable: true,
         }}
+        grabCursor
         onSlideChange={(swiper) => {
           setActiveIndex(swiper.realIndex);
         }}
@@ -97,7 +93,6 @@ const HeroSlider = () => {
           <SwiperSlide key={slide.id}>
             <HeroContent
               backgroundImage={slide.image}
-              // overlayClassName="bg-[#00193CE5]/70"
               overlayClassName="bg-[#000000]/60"
               title={slide.title}
               description={slide.description}

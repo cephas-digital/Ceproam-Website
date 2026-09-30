@@ -41,17 +41,17 @@ export const contactItems: ContactItem[] = [
 export const socialLinks: SocialLink[] = [
   {
     label: "Facebook",
-    href: "#",
+    href: "https://www.facebook.com/profile.php?id=61592629798134",
     icon: FaFacebookF,
   },
   {
     label: "LinkedIn",
-    href: "#",
+    href: "https://www.linkedin.com/company/ceproamreal",
     icon: FaLinkedinIn,
   },
   {
     label: "Instagram",
-    href: "#",
+    href: "https://www.instagram.com/ceproamreal",
     icon: FaInstagram,
   },
 ];
