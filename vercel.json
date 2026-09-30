@@ -1,6 +1,8 @@
 {
   "rewrites": [
-    { "source": "/ceproam/assets/:path*", "destination": "/assets/:path*" },
-    { "source": "/(.*)", "destination": "/" }
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ]
 }
