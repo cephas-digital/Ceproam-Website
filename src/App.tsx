@@ -14,6 +14,13 @@ import PropertyAgents from "./pages/PropertyAgents";
 import InvestmentSponsors from "./pages/InvestmentSponsors";
 // import BuyersInvestors from "./pages/BuyersInvestors";
 
+// Inside the suite the URL starts with /ceproam (e.g. /ceproam/about).
+// On ceproam-website.vercel.app directly the URL starts with / (e.g. /about).
+// So we pick the basename from the real URL instead of hard-coding it.
+const basename = window.location.pathname.startsWith("/ceproam")
+  ? "/ceproam"
+  : "/";
+
 function ScrollToTop() {
   const { pathname } = useLocation();
 
@@ -26,59 +33,26 @@ function ScrollToTop() {
 
 export default function App() {
   return (
-   <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <BrowserRouter basename={basename}>
       <ScrollToTop />
       <Navbar />
 
       <Routes>
-        <Route
-          path="/"
-          element={<HomeTwo />}
-        />
+        <Route path="/" element={<HomeTwo />} />
 
-        <Route
-          path="/home"
-          element={<Home />}
-        />
+        <Route path="/home" element={<Home />} />
 
-        <Route
-          path="/about"
-          element={<AboutUs />}
-        />
-        <Route
-          path="/listings"
-          element={<Listings />}
-        />
-        <Route
-          path="/listing/:id"
-          element={<ListingDetails />}
-        />
-        <Route
-          path="/properties"
-          element={<Properties />}
-        />
-        <Route
-          path="/property-agents"
-          element={<PropertyAgents />}
-        />
-        <Route
-          path="/investment-sponsors"
-          element={<InvestmentSponsors />}
-        />
-        {/* <Route
-          path="/buyers-investors"
-          element={<BuyersInvestors />}
-        /> */}
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/listings" element={<Listings />} />
+        <Route path="/listing/:id" element={<ListingDetails />} />
+        <Route path="/properties" element={<Properties />} />
+        <Route path="/property-agents" element={<PropertyAgents />} />
+        <Route path="/investment-sponsors" element={<InvestmentSponsors />} />
+        {/* <Route path="/buyers-investors" element={<BuyersInvestors />} /> */}
 
-        <Route
-          path="/blog"
-          element={<Blogs />}
-        />
+        <Route path="/blog" element={<Blogs />} />
 
-        <Route
-          path="/contact"
-          element={<ContactUs />}
-        />
+        <Route path="/contact" element={<ContactUs />} />
         {/* <Route path="/listings/:id" element={<ListingSection />} /> */}
       </Routes>
 
