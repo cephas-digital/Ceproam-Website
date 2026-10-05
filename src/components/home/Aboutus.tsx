@@ -89,7 +89,7 @@ export default function AboutSection() {
               </p>
             </motion.div>
 
-            <Link to="about">
+            <Link to="/about">
               <motion.button
                 whileHover={{ x: 10 }}
                 whileTap={{ scale: 0.95 }}
