@@ -174,7 +174,7 @@ const Home = () => {
             <p className="mb-6 text-base leading-relaxed text-slate-600 sm:mb-8 sm:text-lg">
               Land banking is the secret of the wealthy. By acquiring land in
               the path of urban expansion, you position yourself for exponential
-              capital appreciation as infrastructure develops
+              capital appreciation as infrastructure develops.
             </p>
 
             <div className="mb-6 space-y-3 sm:mb-8 sm:space-y-4">

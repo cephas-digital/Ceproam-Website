@@ -14,12 +14,13 @@ import PropertyAgents from "./pages/PropertyAgents";
 import InvestmentSponsors from "./pages/InvestmentSponsors";
 // import BuyersInvestors from "./pages/BuyersInvestors";
 
-// Inside the suite the URL starts with /ceproam (e.g. /ceproam/about).
-// On ceproam-website.vercel.app directly the URL starts with / (e.g. /about).
-// So we pick the basename from the real URL instead of hard-coding it.
-const basename = window.location.pathname.startsWith("/ceproam")
-  ? "/ceproam"
-  : "/";
+
+const isInSuite = window.location.pathname.startsWith("/ceproam");
+
+const basename = isInSuite ? "/ceproam" : "/";
+
+
+const siteTitle = isInSuite ? "Cephas Suite" : "ceproam-website";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -32,6 +33,10 @@ function ScrollToTop() {
 }
 
 export default function App() {
+  useEffect(() => {
+    document.title = siteTitle;
+  }, []);
+
   return (
     <BrowserRouter basename={basename}>
       <ScrollToTop />
