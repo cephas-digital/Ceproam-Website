@@ -68,7 +68,7 @@ const HeroContent = ({
         >
           <h2
             className="
-              text-[clamp(2rem,3vw,3rem)]
+              text-[clamp(2rem,3vw,3.5rem)]
               font-bold
               leading-[1.05]
               tracking-[-0.025em]

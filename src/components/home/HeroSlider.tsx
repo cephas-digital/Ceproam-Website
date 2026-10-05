@@ -63,7 +63,7 @@ const slides: Slide[] = [
       { text: "  Real Estate & Agriculture.", highlight: true },
     ],
     description:
-      "The intelligent asset infrastructure built for Property Owners, Realtors, and Project Sponsors. Whether you are listing high-demand properties or packaging syndicated agro and land opportunities, CEPROMAS puts your assets in front of verified, capital-ready investors.",
+      "The intelligent asset infrastructure built for Property Owners, Realtors, and Project Sponsors. Whether you are listing high-demand properties or packaging syndicated agro and land opportunities, CEPROAM puts your assets in front of verified, capital-ready investors.",
   },
 ];
 
